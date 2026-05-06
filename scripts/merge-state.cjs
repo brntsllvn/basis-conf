@@ -101,12 +101,11 @@ async function main() {
   const incoming = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
   const local    = loadDb();
 
-  // Normalise: slots is an object keyed by id in AppState
-  // contacts is an array; normalise to map by id
-  const localSlots    = local.slots    || {};
+  // Normalise: both slots and contacts are arrays; convert to maps keyed by id for merging
+  const localSlots    = Object.fromEntries((local.slots    || []).map(s => [s.id, s]));
   const localContacts = Object.fromEntries((local.contacts || []).map(c => [c.id, c]));
 
-  const inSlots    = incoming.slots    || {};
+  const inSlots    = Object.fromEntries((incoming.slots    || []).map(s => [s.id, s]));
   const inContacts = Object.fromEntries((incoming.contacts || []).map(c => [c.id, c]));
 
   const allSlotIds    = new Set([...Object.keys(localSlots),    ...Object.keys(inSlots)]);
@@ -227,7 +226,7 @@ async function main() {
   // ── write merged state ─────────────────────────────────────────────────
   const merged = {
     ...local,
-    slots:    mergedSlots,
+    slots:    Object.values(mergedSlots),
     contacts: Object.values(mergedContacts),
   };
 

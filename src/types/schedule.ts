@@ -36,11 +36,14 @@ export interface TimeSlot {
   isTbd: boolean;
   notes: string;
   color?: string;
+  pinned?: boolean;
 }
 
 export interface Contact {
   id: string;
   name: string;
+  firstName?: string;
+  lastName?: string;
   company: string;
   title: string;
   email: string;
