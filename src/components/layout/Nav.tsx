@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useSchedule } from '../../state/ScheduleContext';
-import { downloadJson, importFromJson } from '../../state/persistence';
+import { downloadJson, importFromJson, saveState } from '../../state/persistence';
 import { useRef } from 'react';
 
 export function Nav() {
@@ -15,6 +15,7 @@ export function Nav() {
       try {
         const imported = importFromJson(reader.result as string);
         dispatch({ type: 'IMPORT_STATE', state: imported });
+        saveState(imported);
       } catch (err) {
         alert('Invalid file: ' + (err as Error).message);
       }
