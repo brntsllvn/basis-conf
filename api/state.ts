@@ -13,7 +13,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'GET') {
     const { blobs } = await list({ prefix: BLOB_NAME });
     if (!blobs.length) return res.json(null);
-    const r = await fetch(blobs[0].url);
+    const r = await fetch(blobs[0].url, { cache: 'no-store' });
     return res.json(await r.json());
   }
 
