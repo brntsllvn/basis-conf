@@ -11,7 +11,10 @@
     "preview": "vite preview",
     "test": "vitest run",
     "merge": "node scripts/merge-state.cjs",
-    "snapshot": "node scripts/snapshot.cjs"
+    "snapshot": "node scripts/snapshot.cjs",
+    "pull-prod": "node --env-file=.env.local scripts/pull-prod.cjs",
+    "push-prod": "node --env-file=.env.local scripts/push-prod.cjs",
+    "revert-prod": "node --env-file=.env.local scripts/revert-prod.cjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
