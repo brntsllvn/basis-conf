@@ -731,6 +731,10 @@
         {
           "contactId": "c-keenan-szulik",
           "slotRole": "Moderator"
+        },
+        {
+          "contactId": "a70f7ca5-62fe-4855-9db8-3bfd489ec86e",
+          "slotRole": "Moderator"
         }
       ],
       "isSponsored": false,
