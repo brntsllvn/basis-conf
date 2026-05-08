@@ -6,26 +6,23 @@ const API_URL = window.location.hostname === 'localhost'
   : '/api/state';
 const LS_KEY = 'conf-planner-v1';
 
-let useServer = true;
-
-async function tryServer<T>(fn: () => Promise<T>): Promise<T | null> {
-  if (!useServer) return null;
-  try {
-    return await fn();
-  } catch {
-    useServer = false;
-    console.warn('Server unavailable, falling back to localStorage');
-    return null;
-  }
-}
+// Tracks whether the server was reachable at load time.
+// Once false, we skip the server on subsequent loads to avoid repeated
+// failures on startup — but saves always retry the server so a transient
+// failure during load doesn't permanently disable writes.
+let serverReachable = true;
 
 export async function loadState(): Promise<AppState> {
-  const serverData = await tryServer(async () => {
-    const res = await fetch(API_URL);
-    const data = await res.json();
-    return data as AppState | null;
-  });
-  if (serverData) return serverData;
+  if (serverReachable) {
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      return data as AppState;
+    } catch {
+      serverReachable = false;
+      console.warn('Server unavailable, falling back to localStorage');
+    }
+  }
 
   try {
     const raw = localStorage.getItem(LS_KEY);
@@ -38,13 +35,18 @@ export async function loadState(): Promise<AppState> {
 }
 
 export async function saveState(state: AppState): Promise<void> {
-  await tryServer(async () => {
+  // Always attempt the server on save — a transient load failure shouldn't
+  // permanently disable writes for the session.
+  try {
     await fetch(API_URL, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(state),
     });
-  });
+    serverReachable = true; // restore if it recovered
+  } catch {
+    console.warn('Server save failed, state persisted to localStorage only');
+  }
 
   try {
     localStorage.setItem(LS_KEY, JSON.stringify(state));
@@ -55,8 +57,14 @@ export async function saveState(state: AppState): Promise<void> {
 
 export function importFromJson(json: string): AppState {
   const parsed = JSON.parse(json) as AppState;
-  if (!parsed.version || !parsed.slots || !parsed.contacts) {
-    throw new Error('Invalid state file');
+  if (
+    !parsed.version ||
+    !Array.isArray(parsed.slots) ||
+    !Array.isArray(parsed.contacts) ||
+    !Array.isArray(parsed.days) ||
+    !Array.isArray(parsed.venues)
+  ) {
+    throw new Error('Invalid state file: missing or malformed required fields');
   }
   return parsed;
 }

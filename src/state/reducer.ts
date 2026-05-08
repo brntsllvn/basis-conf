@@ -107,7 +107,8 @@ export function scheduleReducer(state: AppState, action: Action): AppState {
     }
 
     case 'IMPORT_STATE':
-      return { ...action.state, lastModified: now };
+      // Preserve the state's own lastModified; caller sets it if needed.
+      return action.state;
 
     default:
       return state;
