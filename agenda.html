@@ -38,6 +38,119 @@
       print-color-adjust: exact;
     }
 
+    #root { display: block; padding: 0.5in 0.45in; }
+
+    .hdr {
+      background: var(--bark); padding: 10px 12px 9px;
+      display: grid; grid-template-columns: 1fr auto; align-items: center;
+    }
+    .hdr-name  { font-family: 'Newsreader', serif; font-size: 26px; font-weight: 700; color: var(--warm); line-height: 1; }
+    .hdr-sub   { font-size: 7px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tan); margin-top: 4px; }
+    .hdr-meta  { text-align: right; }
+    .hdr-dates  { font-size: 7.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-top: 2px; }
+    .hdr-hosts  { font-size: 7px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 3px; }
+    .hdr-venue  { font-size: 6px; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.92); margin-top: 5px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 4px; }
+    .hdr-addr   { font-size: 5.5px; letter-spacing: 0.08em; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+    .rule { height: 3px; background: linear-gradient(90deg, var(--moss) 0%, var(--fern) 45%, var(--tan) 100%); }
+
+    .wed-block { background: var(--cedar); padding: 7px 12px; margin: 8px 0 10px; }
+
+    .days-row { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; }
+    .day-col  { display: flex; flex-direction: column; }
+
+    .day-head  { padding-bottom: 5px; border-bottom: 2px solid var(--pine); margin-bottom: 5px; }
+    .day-label { font-family: 'Newsreader', serif; font-size: 15px; font-weight: 700; color: var(--pine); }
+    .day-date  { font-size: 7px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+
+    .legend       { display: flex; gap: 14px; margin: 8px 0 10px; justify-content: center; }
+    .legend-item  { display: flex; align-items: center; gap: 3px; font-size: 5.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .legend-swatch        { width: 8px; height: 8px; flex-shrink: 0; border-left: 2px solid; }
+    .legend-swatch--main  { background: #DFC070; border-color: var(--cedar); }
+    .legend-swatch--lla   { background: #7DB876; border-color: var(--moss);  }
+    .legend-swatch--llb   { background: #6EA2D8; border-color: #2E52A8;      }
+
+    .day-grid { position: relative; overflow: visible; }
+    .sb-area  { position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 1; }
+
+    .time-tick { position: absolute; left: 0; right: 0; border-top: 1px solid rgba(160,136,64,0.18); pointer-events: none; }
+    .time-tick-label {
+      position: absolute; top: -6px; left: calc(100% + 4px);
+      font-size: 5px; font-weight: 500; color: var(--muted);
+      letter-spacing: 0.06em; white-space: nowrap; line-height: 1;
+    }
+
+    .sb {
+      position: absolute; overflow: hidden;
+      padding: 2px 3px 2px 5px;
+      display: flex; flex-direction: column; gap: 0.5px;
+    }
+    .sb--main { background: #DFC070; border-left: 3px solid var(--cedar); }
+    .sb--lla  { background: #7DB876; border-left: 3px solid var(--moss);  }
+    .sb--llb  { background: #6EA2D8; border-left: 3px solid #2E52A8;      }
+    .sb--util { background: rgba(234,224,203,0.45); border-left: 2px solid rgba(160,136,64,0.45); }
+    .sb--break     { background: #D0D0C8; border-left: 2px solid #989890; }
+    .sb-break-lbl  { font-size: 6px; font-weight: 600; color: rgba(80,80,80,0.65); text-transform: uppercase; }
+
+    .sb-company  { font-size: 5px;   font-weight: 700; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sb-title    { font-size: 6.5px; font-weight: 600; color: var(--text);  line-height: 1.2;
+                   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+    .sb-title--tbd { font-style: italic; color: var(--fog); }
+    .sb-host     { font-size: 5.5px; font-weight: 600; color: var(--cedar); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sb-speakers { font-size: 5.5px; color: var(--muted); overflow: hidden; }
+    .sb-speakers--tbd { font-style: italic; }
+    .sb-tiny     { font-size: 5.5px; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1; padding-top: 2px; }
+
+    .eve-block {
+      background: var(--cedar); padding: 9px 12px; margin-top: 8px;
+    }
+    .eve-label { font-size: 6.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tan); margin-bottom: 4px; }
+    .eve-title { font-family: 'Newsreader', serif; font-size: 13px; font-weight: 700; color: var(--warm); line-height: 1.25; }
+    .eve-sub   { font-size: 7.5px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+
+    .footer {
+      background: var(--bark); padding: 6px 12px; margin-top: 12px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-left  { font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .footer-left strong { color: var(--tan); font-weight: 600; }
+    .footer-right { font-family: 'Newsreader', serif; font-size: 9px; color: rgba(255,255,255,0.65); }
+
+    .export-bar { width: 8.5in; margin: 0 auto; padding: 12px 0; display: flex; justify-content: flex-end; }
+    .export-btn { background: var(--pine); color: var(--warm); border: none; border-radius: 4px; padding: 8px 18px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; }
+    .export-btn:hover    { background: var(--moss); }
+    .export-btn:disabled { opacity: 0.5; cursor: wait; }
+    @media print { .export-bar { display: none; } }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bark:      #16090A;
+      --cedar:     #3D1F10;
+      --pine:      #1B2E1A;
+      --moss:      #2E4823;
+      --fern:      #4A6637;
+      --fog:       #5A4E42;
+      --parchment: #EAE0CB;
+      --warm:      #F5EDD8;
+      --tan:       #C49A5A;
+      --tan-light: #B8A870;
+      --tan-rule:  #A08840;
+      --text:      #0D0604;
+      --muted:     #3A2A1A;
+    }
+
+    @page { size: legal portrait; margin: 0; }
+
+    html, body {
+      width: 8.5in;
+      margin: 0 auto;
+      background: white;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
     /* ── LAYOUT ───────────────────────────────────────── */
     #root { display: block; padding: 0.5in 0.45in; }
     .section { position: relative; }
@@ -149,143 +262,60 @@
 <div id="root"></div>
 <script>
 
-const STAMP    = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const STAMP      = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 const DAY_ORIGIN = 420;
+const PX_PER_MIN = 1.3;
+const GRID_START = 3;    // slot 3 = 7:15 AM
+const GRID_END   = 120;  // slot 120 = 5:00 PM
 
 const DAY_META = {
   thu: { label: 'Day One', date: 'Thursday · May 28, 2026' },
-  fri: { label: 'Day Two', date: 'Friday · May 29, 2026' },
+  fri: { label: 'Day Two', date: 'Friday · May 29, 2026'   },
 };
-
 const EVENING = {
-  thu: [{ label: 'Evening · Thursday, May 28, 2026', title: 'Evening Soiree', sub: 'Hosted by First Trust · Bell Harbor · Seattle, Washington' }],
-  fri: [{ label: 'Evening · Friday, May 29, 2026', title: 'Mariners vs. Diamondbacks', sub: 'Hosted by Basis Northwest · T-Mobile Park · Seattle, Washington' }],
+  thu: [
+    { label: 'Evening · Thursday, May 28 · 5:00–7:00 PM', title: 'Thursday Evening Soiree', sub: 'Hosted by First Trust · Bell Harbor · Seattle, Washington' },
+  ],
+  fri: [
+    { label: 'Evening · Friday, May 29 · 5:00–6:00 PM', title: 'Going Away Party',        sub: 'Basis Northwest 2026 · Farewell Reception' },
+    { label: 'Evening · Friday, May 29 · 7:10 PM',       title: 'Mariners vs. Diamondbacks', sub: 'Hosted by Basis Northwest · T-Mobile Park · Seattle, Washington' },
+  ],
 };
+const VENUE_ORDER = { 'main-stage': 0, 'll-a': 1, 'll-b': 2 };
 
-function slotToTime(n) {
-  const m  = DAY_ORIGIN + n * 5;
-  const h  = Math.floor(m / 60), min = m % 60;
-  const ap = h >= 12 ? 'PM' : 'AM';
-  const dh = h > 12 ? h - 12 : (h === 0 ? 12 : h);
-  return `${dh}:${min.toString().padStart(2, '0')} ${ap}`;
+function slotToMin(slot) { return DAY_ORIGIN + slot * 5; }
+function slotToY(slot)   { return (slotToMin(slot) - slotToMin(GRID_START)) * PX_PER_MIN; }
+function slotsToH(dur)   { return dur * 5 * PX_PER_MIN; }
+
+function venueClass(v) {
+  return v === 'll-a' ? 'sb--lla' : v === 'll-b' ? 'sb--llb' : 'sb--main';
 }
 
-// ── data ──────────────────────────────────────────────────
+function isBg(s) {
+  return s.type === 'break' || (s.type === 'event' && /doors|registration|breakfast|lunch|expo|speaker salon/i.test(s.title || ''));
+}
 
-function buildDays(state) {
-  const CONTENT = new Set(['keynote', 'solo', 'panel', 'open']);
-  const UTIL = /^(doors|registration|breakfast|lunch|expo|happy hour|thursday|load|mariners|dinner|thanks for coming)/i;
-
-  const cmap = Object.fromEntries(state.contacts.map(c => [c.id, c]));
-  function nameOf(id) {
-    const c = cmap[id];
-    if (!c) return '';
-    const full = `${c.firstName || ''} ${c.lastName || ''}`.trim();
-    return full || c.name || '';
-  }
-
-  function sessionFrom(slot) {
-    const speakers = slot.assignments
-      .filter(a => a.slotRole !== 'Moderator')
-      .map(a => nameOf(a.contactId)).filter(Boolean).join(' · ') || null;
-    const mod = slot.assignments.find(a => a.slotRole === 'Moderator');
-    return {
-      startSlot:   slot.startSlot,
-      company:     slot.company || '',
-      title:       slot.title || null,
-      placeholder: slot.isTbd || !slot.title || slot.type === 'open' || slot.title === 'To Be Announced',
-      speakers,
-      host:   mod ? nameOf(mod.contactId) : null,
-      canvas: slot.isSponsored && (slot.company || '').includes('Canvas'),
-      pinned: !!slot.pinned,
-    };
-  }
-
-  return state.days.filter(d => d.id !== 'wed').map(day => {
-    const meta  = DAY_META[day.id] || { label: day.label, date: day.date };
-    const slots = state.slots.filter(s => s.dayId === day.id).sort((a, b) => a.startSlot - b.startSlot);
-
-    const breakfast  = slots.find(s => /breakfast/i.test(s.title || '') && s.type === 'event');
-    const lunch      = slots.find(s => /lunch/i.test(s.title || '') && s.type === 'event');
-    const lunchStart = lunch?.startSlot ?? 54;
-    const lunchEnd   = lunchStart + (lunch?.durationSlots ?? 18);
-
-    const llaSlots = slots.filter(s => s.venueId === 'll-a' && CONTENT.has(s.type));
-    const llbSlots = slots.filter(s => s.venueId === 'll-b' && CONTENT.has(s.type));
-    const bStarts  = [...new Set([...llaSlots, ...llbSlots].map(s => s.startSlot))].sort((a, b) => a - b);
-    const firstBStart = bStarts[0] ?? lunchStart + 12;
-    const lastBSlot = [...llaSlots, ...llbSlots].reduce((best, s) => s.startSlot > (best?.startSlot ?? -1) ? s : best, null);
-
-    const speakerSalon = slots.find(s => /speaker salon/i.test(s.title || '') && s.venueId === 'main-stage');
-    const breakfastBand = breakfast
-      ? { label: 'Breakfast + Expo', startSlot: breakfast.startSlot, endSlot: breakfast.startSlot + breakfast.durationSlots }
-      : speakerSalon
-      ? { label: 'Breakfast + Speaker Salon', startSlot: speakerSalon.startSlot, endSlot: speakerSalon.startSlot + speakerSalon.durationSlots }
-      : null;
-
-    const morning = slots.filter(s =>
-      s.venueId === 'main-stage' && s.startSlot < lunchStart &&
-      (CONTENT.has(s.type) || (s.type === 'event' && s.company && !UTIL.test(s.title || ''))) &&
-      !/speaker salon/i.test(s.title || '') &&
-      !(s.isTbd && !s.title)
-    );
-
-    const afternoon = slots.filter(s =>
-      s.venueId === 'main-stage' && s.startSlot >= lunchEnd && s.type !== 'break' &&
-      (CONTENT.has(s.type) || (s.type === 'event' && !UTIL.test(s.title || '') && s.startSlot < 150)) &&
-      !(s.isTbd && !s.title)
-    );
-
-    return {
-      ...meta,
-      id: day.id,
-      breakfastBand,
-      lunchRange:    `${slotToTime(lunchStart)} – ${slotToTime(firstBStart)}`,
-      breakoutRange: bStarts.length && lastBSlot
-        ? `${slotToTime(bStarts[0])} – ${slotToTime(lastBSlot.startSlot + lastBSlot.durationSlots)}`
-        : '',
-      morning:   morning.map(sessionFrom),
-      breakouts: bStarts.map(ss => ({
-        lla: llaSlots.find(s => s.startSlot === ss) ? sessionFrom(llaSlots.find(s => s.startSlot === ss)) : null,
-        llb: llbSlots.find(s => s.startSlot === ss) ? sessionFrom(llbSlots.find(s => s.startSlot === ss)) : null,
-      })),
-      afternoon: afternoon.map(sessionFrom),
-      evening:   EVENING[day.id] || [],
-    };
+function assignCols(slots) {
+  return slots.map(s => {
+    if (isBg(s)) return { ...s, col: 0, totalCols: 1 };
+    const concurrent = slots
+      .filter(o => !isBg(o))
+      .filter(o => o.startSlot <= s.startSlot && o.startSlot + o.durationSlots > s.startSlot)
+      .sort((a, b) => a.startSlot - b.startSlot || (VENUE_ORDER[a.venueId] ?? 3) - (VENUE_ORDER[b.venueId] ?? 3));
+    return { ...s, col: concurrent.indexOf(s), totalCols: concurrent.length };
   });
 }
 
-// ── session builder ───────────────────────────────────────
-// No boxes. Left accent stripe + text stack.
+function renderAgenda(state) {
+  const cmap = Object.fromEntries(state.contacts.map(c => [c.id, c]));
+  function nameOf(id) {
+    const c = cmap[id]; if (!c) return '';
+    return (`${c.firstName || ''} ${c.lastName || ''}`).trim() || c.name || '';
+  }
 
-function buildSession(parent, session) {
-  if (!session) return null;
-
-  const isTbd = session.placeholder || !session.title;
-
-  let cls = 'session';
-  if (!isTbd && session.canvas) cls += ' session--canvas';
-
-  const el = parent.append('div').attr('class', cls);
-
-  const title   = isTbd ? 'Title to-be-announced' : session.title;
-  const compCls = 'session-company' + (session.canvas ? ' session-company--canvas' : '');
-
-  if (session.company) el.append('div').attr('class', compCls).text(session.company);
-  el.append('div').attr('class', 'session-title' + (isTbd ? ' session-title--tbd' : '')).text(title);
-  if (session.host)    el.append('div').attr('class', 'session-host').text('Host: ' + session.host);
-  if (session.speakers) el.append('div').attr('class', 'session-speakers').text(session.speakers);
-  else if (isTbd)       el.append('div').attr('class', 'session-speakers session-speakers--tbd').text('Speaker to-be-announced');
-
-  return el;
-}
-
-// ── renderer ──────────────────────────────────────────────
-
-function renderAgenda(DAYS) {
+  const GRID_HEIGHT = (GRID_END - GRID_START) * 5 * PX_PER_MIN;
   const page = d3.select('#root');
 
-  // Header
   const hdr = page.append('div').attr('class', 'hdr');
   const hl  = hdr.append('div');
   hl.append('div').attr('class', 'hdr-name').text('Basis Northwest 2026');
@@ -293,114 +323,122 @@ function renderAgenda(DAYS) {
   const hm = hdr.append('div').attr('class', 'hdr-meta');
   hm.append('div').attr('class', 'hdr-dates').text('May 28 to 29, 2026 · Seattle, Washington');
   hm.append('div').attr('class', 'hdr-hosts').text('Hosted by Brent Sullivan · Shang Chou');
-
-  // Rule
+  hm.append('div').attr('class', 'hdr-venue').text('Bell Harbor International Conference Center');
+  hm.append('div').attr('class', 'hdr-addr').text('2211 Alaskan Way, Pier 66 · Seattle, WA 98121');
   page.append('div').attr('class', 'rule');
 
-  // Wednesday pre-conf
-  const wed    = page.append('div').attr('class', 'section');
-  const wedWrap = wed.append('div').attr('class', 'wed-wrap');
-  const wedBlk  = wedWrap.append('div').attr('class', 'eve-block');
-  wedBlk.append('div').attr('class', 'eve-label').text('Pre-Conference · Wednesday, May 27, 2026');
-  wedBlk.append('div').attr('class', 'eve-title').text('Welcome Reception');
-  wedBlk.append('div').attr('class', 'eve-sub').text('Hosted by Canvas (Franklin Templeton) · Aerlume, Seattle');
+  const wb = page.append('div').attr('class', 'wed-block');
+  wb.append('div').attr('class', 'eve-label').text('Pre-Conference · Wednesday, May 27, 2026');
+  wb.append('div').attr('class', 'eve-title').text('Welcome Reception');
+  wb.append('div').attr('class', 'eve-sub').text('Hosted by Canvas (Franklin Templeton) · Aerlume, Seattle');
 
-  // Day headings
-  const dayRow = page.append('div').attr('class', 'section section--cols');
-  DAYS.forEach(day => {
-    const col = dayRow.append('div').attr('class', 'col');
-    const dh  = col.append('div').attr('class', 'day-head');
-    dh.append('div').attr('class', 'day-label').text(day.label);
-    dh.append('div').attr('class', 'day-date').text(day.date);
+  const leg = page.append('div').attr('class', 'legend');
+  [['main','Main Stage'],['lla','LL-A'],['llb','LL-B']].forEach(([k, lbl]) => {
+    const li = leg.append('div').attr('class', 'legend-item');
+    li.append('div').attr('class', `legend-swatch legend-swatch--${k}`);
+    li.append('span').text(lbl);
   });
 
-  // Breakfast strips
-  const bfRow = page.append('div').attr('class', 'section section--cols');
-  DAYS.forEach(day => {
-    const col = bfRow.append('div').attr('class', 'col');
-    if (day.breakfastBand) {
-      const s = col.append('div').attr('class', 'strip');
-      s.append('div').attr('class', 'strip-label').text(day.breakfastBand.label);
+  const daysRow = page.append('div').attr('class', 'days-row');
+
+  const startMin = slotToMin(GRID_START);
+  const tickBase = Math.ceil(startMin / 30) * 30;
+
+  state.days.filter(d => d.id !== 'wed').forEach(day => {
+    const meta  = DAY_META[day.id] || { label: day.label, date: day.date };
+    const slots = state.slots
+      .filter(s => s.dayId === day.id && s.startSlot >= GRID_START && s.startSlot < GRID_END)
+      .filter(s => s.type !== 'load-in')
+      .filter(s => !/mariners|thursday happy|nuveen.*dinner|going away/i.test(s.title || ''));
+
+    const laid = assignCols(slots);
+    const col  = daysRow.append('div').attr('class', 'day-col');
+
+    const dh = col.append('div').attr('class', 'day-head');
+    dh.append('div').attr('class', 'day-label').text(meta.label);
+    dh.append('div').attr('class', 'day-date').text(meta.date);
+
+    const grid   = col.append('div').attr('class', 'day-grid').style('height', GRID_HEIGHT + 'px');
+    const sbArea = grid.append('div').attr('class', 'sb-area');
+
+    const showLabels = day.id === 'thu';
+    for (let m = tickBase; m <= slotToMin(GRID_END); m += 30) {
+      const y    = (m - startMin) * PX_PER_MIN;
+      const tick = grid.append('div').attr('class', 'time-tick').style('top', y + 'px');
+      if (showLabels) {
+        const h  = Math.floor(m / 60), mn = m % 60;
+        const dh2 = h > 12 ? h - 12 : h === 0 ? 12 : h;
+        const lbl = `${dh2}:${mn.toString().padStart(2,'0')} ${h >= 12 ? 'PM' : 'AM'}`;
+        tick.append('span').attr('class', 'time-tick-label').text(lbl);
+      }
+    }
+
+    laid.forEach(s => {
+      const top    = slotToY(s.startSlot);
+      const height = slotsToH(s.durationSlots);
+      const isTbd  = s.isTbd || !s.title || s.title === 'To Be Announced';
+      const isBreak = s.type === 'break';
+      const isUtil  = s.type === 'event' && /doors|registration|breakfast|lunch|expo|speaker salon/i.test(s.title || '');
+
+      let cls = 'sb ';
+      if (isBreak)       cls += 'sb--break';
+      else if (isUtil)   cls += 'sb--util';
+      else               cls += venueClass(s.venueId);
+
+      const block = sbArea.append('div').attr('class', cls)
+        .style('top',     top + 'px')
+        .style('height',  Math.max(height - 1, 2) + 'px')
+        .style('left',    (s.col / s.totalCols * 100) + '%')
+        .style('width',   (1 / s.totalCols * 100) + '%')
+        .style('z-index', (isBreak || isUtil) ? '0' : '1');
+
+      if (isBreak) {
+        if (height >= 10) block.append('div').attr('class', 'sb-break-lbl').text('Break');
+        return;
+      }
+      if (height < 8) {
+        block.append('div').attr('class', 'sb-tiny').text(s.title || '');
+        return;
+      }
+
+      const speakers = s.assignments
+        .filter(a => a.slotRole !== 'Moderator')
+        .map(a => nameOf(a.contactId)).filter(Boolean).join(' · ');
+      const modAsgn = s.assignments.find(a => a.slotRole === 'Moderator');
+      const host = modAsgn ? nameOf(modAsgn.contactId) : null;
+
+      if (s.company && height > 14) block.append('div').attr('class', 'sb-company').text(s.company);
+      block.append('div').attr('class', 'sb-title' + (isTbd ? ' sb-title--tbd' : '')).text(isTbd ? 'To Be Announced' : s.title);
+      if (height > 18) {
+        if (host)            block.append('div').attr('class', 'sb-host').text('Host: ' + host);
+        if (speakers)        block.append('div').attr('class', 'sb-speakers').text(speakers);
+        else if (isTbd && s.company) block.append('div').attr('class', 'sb-speakers sb-speakers--tbd').text('Speaker to-be-announced');
+      }
+    });
+
+    const evs = EVENING[day.id];
+    if (evs) {
+      evs.forEach(ev => {
+        const evBlk = col.append('div').attr('class', 'eve-block');
+        evBlk.append('div').attr('class', 'eve-label').text(ev.label);
+        evBlk.append('div').attr('class', 'eve-title').text(ev.title);
+        evBlk.append('div').attr('class', 'eve-sub').text(ev.sub);
+      });
     }
   });
 
-  // First Half
-  const fhLabel = page.append('div').attr('class', 'lunch');
-  fhLabel.append('div').attr('class', 'lunch-label').text('First Half · Main Stage');
-  fhLabel.append('div').attr('class', 'lunch-time').text('8:30 – 11:30 AM');
-
-  const morningRow = page.append('div').attr('class', 'section section--cols');
-  DAYS.forEach(day => {
-    const col  = morningRow.append('div').attr('class', 'col');
-    const list = col.append('div').attr('class', 'session-list');
-    day.morning.forEach(s => buildSession(list, s));
-  });
-
-  // Lunch
-  const lunchEl = page.append('div').attr('class', 'lunch');
-  lunchEl.append('div').attr('class', 'lunch-label').text('Lunch + Expo');
-  lunchEl.append('div').attr('class', 'lunch-time').text('11:30 AM – 12:30 PM');
-
-  // Breakout
-  const bk = page.append('div').attr('class', 'bk');
-  const bkHdr = bk.append('div').attr('class', 'lunch');
-  bkHdr.append('div').attr('class', 'lunch-label').text('Breakout Sessions');
-  bkHdr.append('div').attr('class', 'lunch-time').text('12:30 – 1:30 PM');
-  const bkDays = bk.append('div').attr('class', 'bk-days');
-  DAYS.forEach(day => {
-    const half  = bkDays.append('div').attr('class', 'bk-half');
-    const rooms = half.append('div').attr('class', 'bk-rooms');
-    const roomA = rooms.append('div').attr('class', 'bk-room');
-    roomA.append('div').attr('class', 'bk-room-lbl').text('Breakout A');
-    const roomB = rooms.append('div').attr('class', 'bk-room');
-    roomB.append('div').attr('class', 'bk-room-lbl').text('Breakout B');
-    day.breakouts.forEach(slot => {
-      buildSession(roomA, slot.lla);
-      buildSession(roomB, slot.llb);
-    });
-  });
-
-  // Second Half
-  const shLabel = page.append('div').attr('class', 'lunch');
-  shLabel.append('div').attr('class', 'lunch-label').text('Second Half · Main Stage');
-  shLabel.append('div').attr('class', 'lunch-time').text('1:30 – 4:55 PM');
-
-  const afternoonRow = page.append('div').attr('class', 'section section--cols');
-  DAYS.forEach(day => {
-    const col  = afternoonRow.append('div').attr('class', 'col');
-    const list = col.append('div').attr('class', 'session-list');
-    day.afternoon.forEach(s => buildSession(list, s));
-  });
-
-  // Evening
-  const eveningRow = page.append('div').attr('class', 'section section--cols section--nobot');
-  DAYS.forEach(day => {
-    const col   = eveningRow.append('div').attr('class', 'col col--eve');
-    const stack = col.append('div').attr('class', 'eve-stack');
-    day.evening.forEach(ev => {
-      const blk = stack.append('div').attr('class', 'eve-block');
-      blk.append('div').attr('class', 'eve-label').text(ev.label);
-      blk.append('div').attr('class', 'eve-title').text(ev.title);
-      blk.append('div').attr('class', 'eve-sub').text(ev.sub);
-    });
-  });
-
-  // Footer
   const foot = page.append('div').attr('class', 'footer');
   foot.append('div').attr('class', 'footer-left')
     .html(`Presented by <strong>Canvas</strong> &nbsp;·&nbsp; Preliminary · Subject to Change &nbsp;·&nbsp; ${STAMP}`);
   foot.append('div').attr('class', 'footer-right').text('www.basisconf.com');
 }
 
-// ── export ────────────────────────────────────────────────
-
 const exportBar = d3.select('body').append('div').attr('class', 'export-bar');
 const exportBtn = exportBar.append('button').attr('class', 'export-btn').text('Export Image');
 exportBtn.on('click', async function () {
   exportBtn.attr('disabled', true).text('Rendering...');
   const canvas = await html2canvas(document.getElementById('root'), {
-    scale: 4, useCORS: true, allowTaint: true,
-    backgroundColor: '#F5F0E8', logging: false,
+    scale: 4, useCORS: true, allowTaint: true, backgroundColor: '#F5F0E8', logging: false,
   });
   const link = document.createElement('a');
   link.download = `basis-northwest-2026-agenda-${new Date().toISOString().slice(0, 10)}.png`;
@@ -411,9 +449,9 @@ exportBtn.on('click', async function () {
 
 // ── init ──────────────────────────────────────────────────
 
-const STATE = {"version":1,"days":[{"id":"wed","label":"Wed 5/27 — Load-In","date":"2025-05-27"},{"id":"thu","label":"Thu 5/28","date":"2025-05-28"},{"id":"fri","label":"Fri 5/29","date":"2025-05-29"}],"venues":[{"id":"main-stage","label":"Main Stage"},{"id":"ll-a","label":"LL-A"},{"id":"ll-b","label":"LL-B"}],"slots":[{"id":"wed-main-loadin","dayId":"wed","venueId":"main-stage","startSlot":24,"durationSlots":96,"type":"load-in","company":"","title":"Load in (Fern & Staff)","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"wed-expo-loadin","dayId":"wed","venueId":"ll-a","startSlot":60,"durationSlots":60,"type":"load-in","company":"","title":"Load in (Expos)","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"wed-canvas-dinner","dayId":"wed","venueId":"main-stage","startSlot":120,"durationSlots":24,"type":"event","company":"Canvas","title":"Canvas Dinner @ Aerlume","assignments":[],"isSponsored":true,"isTbd":false,"notes":"Aerlume, 2003 Western Ave, Seattle. Near Pier 66 / waterfront. 5-7 PM. Hosted by Canvas."},{"id":"thu-main-doors","dayId":"thu","venueId":"main-stage","startSlot":3,"durationSlots":3,"type":"event","company":"","title":"Doors & Registration","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-breakfast","dayId":"thu","venueId":"main-stage","startSlot":6,"durationSlots":12,"type":"event","company":"","title":"Breakfast + Expo","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-opening-remarks","dayId":"thu","venueId":"main-stage","startSlot":18,"durationSlots":1,"type":"event","company":"Canvas","title":"Welcome Remarks","assignments":[{"contactId":"c-chris-loveless","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"thu-main-keynote1","dayId":"thu","venueId":"main-stage","startSlot":19,"durationSlots":5,"type":"keynote","company":"Canvas","title":"Taxable Wealth: From Core Strategies to Cutting Edge Solutions","assignments":[{"contactId":"c-ehren-stanhope","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"thu-main-arnott","dayId":"thu","venueId":"main-stage","startSlot":24,"durationSlots":5,"type":"solo","company":"Research Affiliates","title":"Index Solutions for Tax Alpha Portfolios","assignments":[{"contactId":"c-rob-arnott","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Will send PPT closer to event"},{"id":"thu-main-break1","dayId":"thu","venueId":"main-stage","startSlot":30,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-ryan","dayId":"thu","venueId":"main-stage","startSlot":33,"durationSlots":5,"type":"solo","company":"Alpha Architect","title":"What is a Syndicated 351 and How It Can Be Used as a Tool for Your Business","assignments":[{"contactId":"c-ryan-kirlin","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"351 exchanges are a hot topic"},{"id":"thu-main-jeff","dayId":"thu","venueId":"main-stage","startSlot":39,"durationSlots":9,"type":"solo","company":"First Trust","title":"Derivatives Evolution in Tax-Aware Portfolios","assignments":[{"contactId":"c-jeff-chang","slotRole":"Speaker"},{"contactId":"c-jon-ft","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Session title TBD"},{"id":"thu-main-open1","dayId":"thu","venueId":"main-stage","startSlot":49,"durationSlots":5,"type":"solo","company":"","title":"To Be Announced","assignments":[],"isSponsored":true,"isTbd":true,"notes":""},{"id":"thu-main-lunch","dayId":"thu","venueId":"main-stage","startSlot":54,"durationSlots":24,"type":"event","company":"","title":"Lunch / Expo","assignments":[],"isSponsored":false,"isTbd":false,"notes":"30 dedicated / 1.5 food available"},{"id":"thu-main-alex","dayId":"thu","venueId":"main-stage","startSlot":78,"durationSlots":5,"type":"solo","company":"f/m Investments","title":"The Wrapper-Agnostic Future","assignments":[{"contactId":"c-alex-fm","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Session title TBD"},{"id":"thu-main-bunn","dayId":"thu","venueId":"main-stage","startSlot":84,"durationSlots":5,"type":"solo","company":"Tax Foundation","title":"Tax Foundation's Objective Lens on Partisan Policy and What Proposals Mean for Your Clients","assignments":[{"contactId":"c-daniel-bunn","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"VIP. Session title TBD."},{"id":"thu-main-break2","dayId":"thu","venueId":"main-stage","startSlot":90,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-aqr","dayId":"thu","venueId":"main-stage","startSlot":93,"durationSlots":5,"type":"solo","company":"AQR","title":"The Tax Benefits of Pre-Tax Alpha","assignments":[{"contactId":"c-joseph-liberman","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Session title TBD"},{"id":"thu-main-aqr-fort","dayId":"thu","venueId":"main-stage","startSlot":99,"durationSlots":5,"type":"solo","company":"Fort Point Capital Partners","title":"Single Asset Risk and Tax Management","assignments":[{"contactId":"c-ralph-drybrough","slotRole":"Moderator"},{"contactId":"c-roy-haya","slotRole":"Speaker"},{"contactId":"c-ted-pyne","slotRole":"Speaker"},{"contactId":"c-vijay-boyapati","slotRole":"Speaker"},{"contactId":"c-jim-totten","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Ted Pyne: compliance approval pending. Vijay Boyapati: participation pending. Jim Totten (Axcelus)."},{"id":"thu-main-break3","dayId":"thu","venueId":"main-stage","startSlot":105,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-nuveen","dayId":"thu","venueId":"main-stage","startSlot":108,"durationSlots":5,"type":"panel","company":"Nuveen / Brooklyn","title":"Building Tax-Smart Portfolios: From Asset Allocation and Private Markets to Long/Short SMAs","assignments":[{"contactId":"c-erkko-etula","slotRole":"Speaker"},{"contactId":"c-katrina-difiglia","slotRole":"Speaker"},{"contactId":"c-jill-jensen","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"For taxable investors, after-tax outcomes matter more than pre-tax returns. Integrated tax-aware asset allocation + long/short SMAs (130/30, 200/200)."},{"id":"thu-main-alliance","dayId":"thu","venueId":"main-stage","startSlot":114,"durationSlots":5,"type":"solo","company":"AllianceBernstein","title":"To Be Announced","assignments":[{"contactId":"c-michael-capella","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":"Speaker TBD","pinned":true},{"id":"thu-main-ft-closer","dayId":"thu","venueId":"main-stage","startSlot":119,"durationSlots":1,"type":"event","company":"First Trust","title":"FT Closing Remarks","assignments":[{"contactId":"c-jon-ft","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"First Trust hosting the happy hour"},{"id":"thu-main-hh","dayId":"thu","venueId":"main-stage","startSlot":120,"durationSlots":26,"type":"event","company":"First Trust","title":"Thursday Happy Hour","assignments":[],"isSponsored":true,"isTbd":false,"notes":"Hosted by First Trust"},{"id":"thu-main-nuveen-dinner","dayId":"thu","venueId":"ll-b","startSlot":144,"durationSlots":24,"type":"event","company":"Nuveen / Brooklyn","title":"Dinner (Offsite)","assignments":[],"isSponsored":true,"isTbd":true,"notes":"TBD offsite location. 7-9 PM."},{"id":"thu-lla-pimco","dayId":"thu","venueId":"ll-a","startSlot":66,"durationSlots":5,"type":"panel","company":"Morgan Stanley","title":"Partnership Solutions","assignments":[{"contactId":"c-brian-smith","slotRole":"Moderator"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"thu-lla-351","dayId":"thu","venueId":"ll-a","startSlot":72,"durationSlots":5,"type":"panel","company":"","title":"351 Panel","assignments":[{"contactId":"c-john-west","slotRole":"Moderator"},{"contactId":"c-meb-faber","slotRole":"Speaker"},{"contactId":"c-ryan-kirlin","slotRole":"Speaker"},{"contactId":"c-rafael-zayas","slotRole":"Speaker"},{"contactId":"c-jason-marcus","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Moderator: John West. Panelists: Meb Faber, Ryan Kirlin, Rafael Zayas, TBD someone from Scharf. Ask Dorothy Friedrich dorothy@scharfinvestments.com"},{"id":"thu-llb-oz","dayId":"thu","venueId":"ll-b","startSlot":66,"durationSlots":5,"type":"panel","company":"Parcion Private Wealth / OZ / Griffin Capital / CIM Group","title":"Opportunity Zones 2.0: Planning for QOFs","assignments":[{"contactId":"c-terry-cook","slotRole":"Moderator"},{"contactId":"c-nick-rosenthal","slotRole":"Speaker"},{"contactId":"c-robert-dupree","slotRole":"Speaker"},{"contactId":"c-jim-dubeck","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Nick said he'll let Terry decide the Session Title (4/1). Support: Matt Cardall mcardall@cimgroup.com"},{"id":"thu-llb-johnwest","dayId":"thu","venueId":"ll-b","startSlot":72,"durationSlots":5,"type":"solo","company":"Arqitel","title":"Unlocking Tax Alpha in Private Real Estate: Why Most Managers Leave It on the Table","assignments":[{"contactId":"c-andrew-berman","slotRole":"Speaker"},{"contactId":"c-nick-bruce","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-doors","dayId":"fri","venueId":"main-stage","startSlot":3,"durationSlots":3,"type":"event","company":"","title":"Doors & Registration","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-vip-breakfast","dayId":"fri","venueId":"main-stage","startSlot":6,"durationSlots":15,"type":"event","company":"Basis Northwest","title":"Speaker Salon","assignments":[{"contactId":"c-brent-sullivan","slotRole":"Host"}],"isSponsored":false,"isTbd":false,"notes":"7:30-8:45 AM"},{"id":"fri-main-panel8","dayId":"fri","venueId":"main-stage","startSlot":24,"durationSlots":5,"type":"keynote","company":"Canvas","title":"AMA: Canvas and Coffee and Everything Taxable Wealth In Between","assignments":[{"contactId":"c-brent-sullivan","slotRole":"Moderator"},{"contactId":"c-ehren-stanhope","slotRole":"Speaker"},{"contactId":"c-joe-giroux","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"fri-main-savina","dayId":"fri","venueId":"main-stage","startSlot":30,"durationSlots":5,"type":"solo","company":"Dimensional Fund Advisors","title":"Long-Only and Long-Short SMAs – The Dimensional Perspective","assignments":[{"contactId":"c-savina-rizova","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Support: Taylor.Smith@dimensional.com, Kacie.Walsh@dimensional.com"},{"id":"fri-main-savina-panel","dayId":"fri","venueId":"main-stage","startSlot":36,"durationSlots":4,"type":"panel","company":"","title":"Panel w/ Savina","assignments":[{"contactId":"c-savina-rizova","slotRole":"Speaker"},{"contactId":"d5a070bc-60c6-42b3-a732-850374d07c51","slotRole":"Moderator"},{"contactId":"9433d9d3-e5bf-44d8-a5f6-de4f7510b4cd","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":"Panel details TBD"},{"id":"fri-main-break1","dayId":"fri","venueId":"main-stage","startSlot":40,"durationSlots":2,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-firsttrust","dayId":"fri","venueId":"main-stage","startSlot":42,"durationSlots":5,"type":"panel","company":"First Trust","title":"It's Not What You Make, But What You Can Spend: Tax-Efficient Real Estate Investing","assignments":[{"contactId":"c-christian-lena","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"First Trust Panel — Christian + who else? TBD"},{"id":"fri-main-lunch","dayId":"fri","venueId":"main-stage","startSlot":54,"durationSlots":24,"type":"event","company":"","title":"Lunch / Expo","assignments":[],"isSponsored":false,"isTbd":false,"notes":"20 min dedicated"},{"id":"fri-main-practitioner","dayId":"fri","venueId":"main-stage","startSlot":84,"durationSlots":9,"type":"panel","company":"Basis Northwest","title":"Live from the Field: Tax Aware Long-Short Working Group","assignments":[{"contactId":"c-keenan-szulik","slotRole":"Moderator"}],"isSponsored":false,"isTbd":false,"notes":"Practitioner Group. Brent Long-Short host."},{"id":"fri-main-paul-ms","dayId":"fri","venueId":"main-stage","startSlot":94,"durationSlots":5,"type":"solo","company":"Parametric (Morgan Stanley)","title":"The Tax-Loss Harvesting Endgame: Navigating the Liquidation, Gifting, and Estate Planning Off-Ramps","assignments":[{"contactId":"c-paul-bouchey","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Session title TBD"},{"id":"fri-main-break2","dayId":"fri","venueId":"main-stage","startSlot":99,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-beer","dayId":"fri","venueId":"main-stage","startSlot":48,"durationSlots":6,"type":"solo","company":"DBi","title":"Can We Make Managed Futures More Tax Efficient?","assignments":[{"contactId":"c-andrew-beer","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Session title TBD"},{"id":"fri-main-vise","dayId":"fri","venueId":"main-stage","startSlot":102,"durationSlots":5,"type":"solo","company":"Vise","title":"To Be Announced","assignments":[],"isSponsored":false,"isTbd":true,"notes":"Runik TBD"},{"id":"fri-main-meb","dayId":"fri","venueId":"main-stage","startSlot":114,"durationSlots":5,"type":"solo","company":"Cambria","title":"An Interview With Meb","assignments":[{"contactId":"c-dave-nadig","slotRole":"Moderator"},{"contactId":"c-meb-faber","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Final presentation Day 2. Session title TBD."},{"id":"fri-main-closing","dayId":"fri","venueId":"main-stage","startSlot":119,"durationSlots":1,"type":"event","company":"","title":"Thanks for Coming — Brent Closing","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-mariners","dayId":"fri","venueId":"main-stage","startSlot":120,"durationSlots":33,"type":"event","company":"","title":"Mariners vs. Diamondbacks @ T-Mobile Park","assignments":[],"isSponsored":false,"isTbd":false,"notes":"First pitch 7:10 PM PT. Group outing."},{"id":"fri-lla-wealth","dayId":"fri","venueId":"ll-a","startSlot":66,"durationSlots":5,"type":"panel","company":"","title":"De-Risking Single Stock Positions","assignments":[{"contactId":"c-shang-chou","slotRole":"Moderator"},{"contactId":"c-mike-allison","slotRole":"Speaker"},{"contactId":"c-mohsen-ghazi","slotRole":"Speaker"},{"contactId":"c-erkko-etula","slotRole":"Speaker"},{"contactId":"c-dave-donnelly","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Shang Chou running panel. Mike Allison only confirmed panelist so far."},{"id":"fri-lla-fi-panel","dayId":"fri","venueId":"ll-a","startSlot":72,"durationSlots":5,"type":"panel","company":"","title":"The Tax Trap: Why Everyone Gets Bonds Wrong","assignments":[{"contactId":"c-dave-nadig","slotRole":"Moderator"},{"contactId":"c-eric-golden","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Title TBD. Dave Nadig + Eric Golden."},{"id":"fri-lla-private-markets","dayId":"fri","venueId":"ll-a","startSlot":84,"durationSlots":5,"type":"panel","company":"Longview Investment Partners","title":"Tax-Efficient Investing in Private Markets","assignments":[{"contactId":"a70f7ca5-62fe-4855-9db8-3bfd489ec86e","slotRole":"Moderator"},{"contactId":"c-andrew-berman","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-llb-taotao","dayId":"fri","venueId":"ll-a","startSlot":79,"durationSlots":5,"type":"solo","company":"BlackRock","title":"To Be Announced","assignments":[{"contactId":"c-taotao","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":""},{"id":"fri-llb-antti","dayId":"fri","venueId":"ll-b","startSlot":79,"durationSlots":5,"type":"solo","company":"Brooklyn Investment Group","title":"To Be Announced","assignments":[{"contactId":"c-antti-petajisto","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":""},{"id":"fri-llb-bondbloxx","dayId":"fri","venueId":"ll-b","startSlot":66,"durationSlots":5,"type":"panel","company":"","title":"Yes, You Can Simply Achieve 1% Tax Alpha in Fixed Income","assignments":[{"contactId":"c-carolyn-barnette","slotRole":"Moderator"},{"contactId":"c-matt-zenz","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-llb-ppli","dayId":"fri","venueId":"ll-b","startSlot":72,"durationSlots":5,"type":"panel","company":"PPLI","title":"Private Placement Life Insurance Planning","assignments":[{"contactId":"c-dave-reynolds","slotRole":"Moderator"},{"contactId":"c-travis-burke","slotRole":"Speaker"},{"contactId":"c-mohsen-ghazi","slotRole":"Speaker"},{"contactId":"c-jim-carroll","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Moderator: Dave Reynolds (Spearhead). Michael Liebeskind (Golconda) — power of PPLI structure. Jim Carroll — investment flexibility of SMAs for PPLI. Mohsen Ghazi — family office use cases."},{"id":"ab3e3540-59e3-4372-a3a2-94bb88965074","dayId":"fri","venueId":"main-stage","startSlot":108,"durationSlots":5,"type":"solo","company":"Perkins Coie","title":"Family Office Infrastructure Design","assignments":[{"contactId":"c-mohsen-ghazi","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""}],"contacts":[{"id":"c-ehren-stanhope","name":"Ehren Stanhope","company":"Canvas","title":"Chief Investment Strategist","email":"ehren.stanhope@osam.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-chris-loveless","name":"Chris Loveless","company":"Canvas","title":"President","email":"chris.loveless@osam.com","phone":"","supportName":"Laura Kelleher","supportEmail":"laura.kelleher@osam.com","supportPhone":"","notes":""},{"id":"c-joe-giroux","name":"Joe Giroux","company":"Canvas","title":"Portfolio Manager","email":"joe.giroux@osam.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-ryan-kirlin","name":"Ryan Patrick Kirlin","company":"Alpha Architect","title":"President","email":"ryan@alphaarchitect.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-rob-arnott","name":"Rob Arnott","company":"Research Affiliates","title":"Founder & Chairman","email":"arnott@rallc.com","phone":"","supportName":"Brent Leadbetter","supportEmail":"leadbetter@rallc.com","supportPhone":"","notes":"Will send PPT closer to event"},{"id":"c-jeff-chang","name":"Jeff Chang","company":"Vest","title":"President","email":"jchang@vestfin.com","phone":"","supportName":"Brianna Fessler","supportEmail":"bfessler@vestfin.com","supportPhone":"","notes":""},{"id":"c-daniel-bunn","name":"Daniel Bunn","company":"Tax Foundation","title":"President & CEO","email":"dbunn@taxfoundation.org","phone":"","supportName":"Katelynn Barbosa","supportEmail":"kbarbosa@taxfoundation.org","supportPhone":"","notes":"VIP"},{"id":"c-joseph-liberman","name":"Joseph Liberman","company":"AQR Capital Management","title":"Managing Director","email":"Joseph.Liberman@aqr.com","phone":"","supportName":"Dan Villalon","supportEmail":"Dan.Villalon@aqr.com","supportPhone":"","notes":""},{"id":"c-alex-fm","name":"Alexander Morris","company":"f/m Investments","title":"","email":"amorris@fminvest.com","phone":"","supportName":"Courtney Sheehy","supportEmail":"csheehy@fminvest.com","supportPhone":"","notes":""},{"id":"c-savina-rizova","name":"Savina Rizova","company":"Dimensional Fund Advisors","title":"Co-Chief Investment Officer","email":"Savina.Rizova@dimensional.com","phone":"","supportName":"Taylor Smith / Kacie Walsh","supportEmail":"Taylor.Smith@dimensional.com, Kacie.Walsh@dimensional.com","supportPhone":"","notes":""},{"id":"c-meb-faber","name":"Meb Faber","company":"Cambria","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Kai sent email requesting session title"},{"id":"c-paul-bouchey","name":"Paul Bouchey","company":"Parametric (Morgan Stanley)","title":"Managing Director Applied Research / Former CIO","email":"paul.bouchey@gmail.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-andrew-beer","name":"Andrew Beer","company":"DBi","title":"Managing Member","email":"a@dbi.co","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-jon-ft","name":"Jon DiGiovanni","company":"First Trust","title":"Managing Director","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Fri main panel"},{"id":"c-shang-chou","name":"Shang Chou","company":"Dishmi","title":"Managing Partner","email":"shang@dishmicap.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Emcee as needed both days"},{"id":"c-dave-nadig","name":"Dave Nadig","company":"ETF.com","title":"President & Director of Research","email":"dave@etf.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Emcee as needed"},{"id":"c-keenan-szulik","name":"Keenan Szulik","company":"Slocum Management","title":"CEO","email":"kszulik8@gmail.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Practitioner Group Host"},{"id":"c-jim-carroll","name":"Jim Carroll","company":"Ballast Rock Private Wealth","title":"Senior Wealth Advisor and Portfolio Manager","email":"jim.carroll@ballastrockpw.com","phone":"914-479-9539","supportName":"","supportEmail":"","supportPhone":"","notes":"Investment flexibility of SMAs for PPLI"},{"id":"c-terry-cook","name":"Terry Cook","company":"Parcion Private Wealth","title":"Co-Founder and Managing Principal","email":"terry@parcionpw.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"OZ Panel","firstName":"Terry","lastName":"Cook"},{"id":"c-nick-rosenthal","name":"Nick Rosenthal","company":"Griffin Capital Company, LLC","title":"Co-Chief Executive Officer","email":"nrosenthal@griffincapital.com","phone":"","supportName":"Bill White","supportEmail":"bwitte@griffincapital.com","supportPhone":"","notes":"OZ Panel","firstName":"Nick","lastName":"Rosenthal"},{"id":"c-robert-dupree","name":"Robert Dupree","company":"CIM Group","title":"Co-Head of Infrastructure & Impact","email":"rdupree@cimgroup.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"OZ Panel","firstName":"Robert","lastName":"Dupree"},{"id":"c-jim-dubeck","name":"Jim Dubeck","company":"Moss Adams LLP","title":"Director, National Tax — Partnerships","email":"jim.dubeck@mossadams.com","phone":"(206) 302-6416","supportName":"","supportEmail":"","supportPhone":"","notes":"OZ Panel","firstName":"Jim","lastName":"Dubeck"},{"id":"c-john-west","name":"John West","company":"RE/Arqitel","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-ralph-drybrough","name":"Ralph Drybrough","company":"Fort Point Capital Partners","title":"Partner, Head of Derivative Solutions","email":"rd@fortpointcap.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-roy-haya","name":"Roy Haya","company":"Fort Point Capital Partners","title":"Head of Derivative Solutions","email":"rh@fortpointcap.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-mike-allison","name":"Mike Allison","company":"IRP","title":"Strategist & Portfolio Manager","email":"mike@investmentresearchpartners.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-rafael-zayas","name":"Rafael Zayas","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"351 Panel"},{"id":"c-dave-reynolds","name":"Dave Reynolds","company":"Spearhead Administrative Services","title":"Chief Marketing Officer","email":"dreynolds@spearheadadmin.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Largest SMA platform for PPLI. PPLI Panel Moderator."},{"id":"c-michael-liebeskind","name":"Michael Liebeskind","company":"Golconda","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Power of the PPLI structure"},{"id":"c-mohsen-ghazi","name":"Mohsen Ghazi","company":"Perkins Coie","title":"Partner, Tax & Private Client Services","email":"mghazi@perkinscoie.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Family office use cases for PPLI","firstName":"Mohsen","lastName":"Ghazi"},{"id":"c-eric-golden","name":"Eric Golden","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Fixed income panel with Dave Nadig"},{"id":"d5a070bc-60c6-42b3-a732-850374d07c51","name":"Ally Jane Ayers","company":"BrooklynFi","title":"CEO","email":"aj@brooklynfi.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"9433d9d3-e5bf-44d8-a5f6-de4f7510b4cd","name":"Paisley Nardini","company":"Simplify","title":"","email":"paisley.nardini@simplify.us","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-travis-burke","name":"Travis Burke","company":"Golconda Partners","title":"Senior Managing Director","email":"travis.burke@golconda.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-christian-lena","name":"Christian Lena","company":"First Trust","title":"Senior Vice President","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-erkko-etula","name":"Erkko Etula","company":"Brooklyn Investment Group","title":"CEO & Chief Investment Officer","email":"erkko@bkln.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-katrina-difiglia","name":"Katrina DiFiglia","company":"Nuveen","title":"MD Portfolio Strategist","email":"katrina.schmaltz@nuveen.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-jill-jensen","name":"Jill Jensen","company":"Nuveen","title":"MD Alternative Specialist","email":"jill.jensen@nuveen.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-ted-pyne","name":"Ted Pyne","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Compliance approval pending"},{"id":"c-vijay-boyapati","name":"Vijay Boyapati","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Participation pending discussion"},{"id":"c-jim-totten","name":"Jim Totten","company":"Axcelus","title":"Head of Distribution","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-brent-sullivan","name":"Brent Sullivan","company":"Tax Alpha Insider","title":"Founder","email":"brent@taxalphainsider.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-andrew-berman","name":"Andrew Berman","company":"Arquitel","title":"Founding Partner","email":"aberman@arqitel.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-nick-bruce","name":"Nick Bruce","company":"Arquitel","title":"Founding Partner","email":"nbruce@arqitel.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"a70f7ca5-62fe-4855-9db8-3bfd489ec86e","firstName":"Tom","lastName":"Bratkovich","name":"Tom Bratkovich","company":"Longview Investment Partners","email":"tbratkovich@longviewip.com","role":"","notes":""},{"id":"c-jason-marcus","name":"Jason Marcus","firstName":"Jason","lastName":"Marcus","company":"Scharf Investments","title":"COO/CCO","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-michael-capella","name":"Michael Capella","firstName":"Michael","lastName":"Capella","company":"AllianceBernstein","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-dave-donnelly","name":"Dave Donnelly","firstName":"Dave","lastName":"Donnelly","company":"BlackRock","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-carolyn-barnette","name":"Carolyn Barnette","firstName":"Carolyn","lastName":"Barnette","company":"BondBloxx","title":"","email":"carolynhbarnette@gmail.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-matt-zenz","name":"Matt Zenz","firstName":"Matt","lastName":"Zenz","company":"Longview Research Partners","title":"","email":"zenz@longviewresearchpartners.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-brian-smith","name":"Brian Smith","firstName":"Brian","lastName":"Smith","company":"Morgan Stanley","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-taotao","name":"TaoTao","firstName":"TaoTao","lastName":"","company":"BlackRock","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-antti-petajisto","name":"Antti Petajisto","firstName":"Antti","lastName":"Petajisto","company":"Brooklyn Investment Group","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-tba","name":"TBA","firstName":"TBA","lastName":"","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""}],"lastModified":"2026-05-01T20:41:56.939Z"};
+const STATE = {"version":1,"days":[{"id":"wed","label":"Wed 5/27 — Load-In","date":"2025-05-27"},{"id":"thu","label":"Thu 5/28","date":"2025-05-28"},{"id":"fri","label":"Fri 5/29","date":"2025-05-29"}],"venues":[{"id":"main-stage","label":"Main Stage"},{"id":"ll-a","label":"LL-A"},{"id":"ll-b","label":"LL-B"}],"slots":[{"id":"wed-main-loadin","dayId":"wed","venueId":"main-stage","startSlot":24,"durationSlots":96,"type":"load-in","company":"","title":"Load in (Fern & Staff)","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"wed-expo-loadin","dayId":"wed","venueId":"ll-a","startSlot":60,"durationSlots":60,"type":"load-in","company":"","title":"Load in (Expos)","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"wed-canvas-dinner","dayId":"wed","venueId":"main-stage","startSlot":120,"durationSlots":24,"type":"event","company":"Canvas","title":"Canvas Dinner @ Aerlume","assignments":[],"isSponsored":true,"isTbd":false,"notes":"Aerlume, 2003 Western Ave, Seattle. Near Pier 66 / waterfront. 5-7 PM. Hosted by Canvas."},{"id":"thu-main-doors","dayId":"thu","venueId":"main-stage","startSlot":3,"durationSlots":3,"type":"event","company":"","title":"Doors & Registration","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-breakfast","dayId":"thu","venueId":"main-stage","startSlot":6,"durationSlots":12,"type":"event","company":"","title":"Breakfast + Expo","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-opening-remarks","dayId":"thu","venueId":"main-stage","startSlot":18,"durationSlots":1,"type":"event","company":"Canvas","title":"Welcome Remarks","assignments":[{"contactId":"c-chris-loveless","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"thu-main-keynote1","dayId":"thu","venueId":"main-stage","startSlot":19,"durationSlots":5,"type":"keynote","company":"Canvas","title":"Taxable Wealth: From Core Strategies to Cutting Edge Solutions","assignments":[{"contactId":"c-ehren-stanhope","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"thu-main-arnott","dayId":"thu","venueId":"main-stage","startSlot":24,"durationSlots":5,"type":"solo","company":"Research Affiliates","title":"Index Solutions for Tax Alpha Portfolios","assignments":[{"contactId":"c-rob-arnott","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Will send PPT closer to event"},{"id":"thu-main-break1","dayId":"thu","venueId":"main-stage","startSlot":30,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-ryan","dayId":"thu","venueId":"main-stage","startSlot":33,"durationSlots":5,"type":"solo","company":"Alpha Architect","title":"What is a Syndicated 351 and How It Can Be Used as a Tool for Your Business","assignments":[{"contactId":"c-ryan-kirlin","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"351 exchanges are a hot topic"},{"id":"thu-main-jeff","dayId":"thu","venueId":"main-stage","startSlot":39,"durationSlots":9,"type":"solo","company":"First Trust","title":"Derivatives Evolution in Tax-Aware Portfolios","assignments":[{"contactId":"c-jeff-chang","slotRole":"Speaker"},{"contactId":"c-jon-ft","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Session title TBD"},{"id":"thu-main-open1","dayId":"thu","venueId":"main-stage","startSlot":49,"durationSlots":5,"type":"solo","company":"","title":"To Be Announced","assignments":[],"isSponsored":true,"isTbd":true,"notes":""},{"id":"thu-main-lunch","dayId":"thu","venueId":"main-stage","startSlot":54,"durationSlots":24,"type":"event","company":"","title":"Lunch / Expo","assignments":[],"isSponsored":false,"isTbd":false,"notes":"30 dedicated / 1.5 food available"},{"id":"thu-main-alex","dayId":"thu","venueId":"main-stage","startSlot":78,"durationSlots":5,"type":"solo","company":"f/m Investments","title":"The Wrapper-Agnostic Future","assignments":[{"contactId":"c-alex-fm","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Session title TBD"},{"id":"thu-main-bunn","dayId":"thu","venueId":"main-stage","startSlot":84,"durationSlots":5,"type":"solo","company":"Tax Foundation","title":"Tax Foundation's Objective Lens on Partisan Policy and What Proposals Mean for Your Clients","assignments":[{"contactId":"c-daniel-bunn","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"VIP. Session title TBD."},{"id":"thu-main-break2","dayId":"thu","venueId":"main-stage","startSlot":90,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-aqr","dayId":"thu","venueId":"main-stage","startSlot":93,"durationSlots":5,"type":"solo","company":"AQR","title":"The Tax Benefits of Pre-Tax Alpha","assignments":[{"contactId":"c-joseph-liberman","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Session title TBD"},{"id":"thu-main-aqr-fort","dayId":"thu","venueId":"main-stage","startSlot":99,"durationSlots":5,"type":"solo","company":"Fort Point Capital Partners","title":"Single Asset Risk and Tax Management","assignments":[{"contactId":"c-ralph-drybrough","slotRole":"Moderator"},{"contactId":"c-roy-haya","slotRole":"Speaker"},{"contactId":"c-ted-pyne","slotRole":"Speaker"},{"contactId":"c-vijay-boyapati","slotRole":"Speaker"},{"contactId":"c-jim-totten","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Ted Pyne: compliance approval pending. Vijay Boyapati: participation pending. Jim Totten (Axcelus)."},{"id":"thu-main-break3","dayId":"thu","venueId":"main-stage","startSlot":105,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"thu-main-nuveen","dayId":"thu","venueId":"main-stage","startSlot":108,"durationSlots":5,"type":"panel","company":"Nuveen / Brooklyn","title":"Building Tax-Smart Portfolios: From Asset Allocation and Private Markets to Long/Short SMAs","assignments":[{"contactId":"c-erkko-etula","slotRole":"Speaker"},{"contactId":"c-katrina-difiglia","slotRole":"Speaker"},{"contactId":"c-jill-jensen","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"For taxable investors, after-tax outcomes matter more than pre-tax returns. Integrated tax-aware asset allocation + long/short SMAs (130/30, 200/200)."},{"id":"thu-main-alliance","dayId":"thu","venueId":"main-stage","startSlot":114,"durationSlots":5,"type":"solo","company":"AllianceBernstein","title":"To Be Announced","assignments":[{"contactId":"c-michael-capella","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":"Speaker TBD","pinned":true},{"id":"thu-main-ft-closer","dayId":"thu","venueId":"main-stage","startSlot":119,"durationSlots":1,"type":"event","company":"First Trust","title":"FT Closing Remarks","assignments":[{"contactId":"c-jon-ft","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"First Trust hosting the happy hour"},{"id":"thu-main-hh","dayId":"thu","venueId":"main-stage","startSlot":120,"durationSlots":26,"type":"event","company":"First Trust","title":"Thursday Happy Hour","assignments":[],"isSponsored":true,"isTbd":false,"notes":"Hosted by First Trust"},{"id":"thu-main-nuveen-dinner","dayId":"thu","venueId":"ll-b","startSlot":144,"durationSlots":24,"type":"event","company":"Nuveen / Brooklyn","title":"Dinner (Offsite)","assignments":[],"isSponsored":true,"isTbd":true,"notes":"TBD offsite location. 7-9 PM."},{"id":"thu-lla-pimco","dayId":"thu","venueId":"ll-a","startSlot":66,"durationSlots":5,"type":"panel","company":"Morgan Stanley","title":"Partnership Solutions","assignments":[{"contactId":"c-brian-smith","slotRole":"Moderator"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"thu-lla-351","dayId":"thu","venueId":"ll-a","startSlot":72,"durationSlots":5,"type":"panel","company":"","title":"351 Panel","assignments":[{"contactId":"c-john-west","slotRole":"Moderator"},{"contactId":"c-meb-faber","slotRole":"Speaker"},{"contactId":"c-ryan-kirlin","slotRole":"Speaker"},{"contactId":"c-rafael-zayas","slotRole":"Speaker"},{"contactId":"c-jason-marcus","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Moderator: John West. Panelists: Meb Faber, Ryan Kirlin, Rafael Zayas, TBD someone from Scharf. Ask Dorothy Friedrich dorothy@scharfinvestments.com"},{"id":"thu-llb-oz","dayId":"thu","venueId":"ll-b","startSlot":66,"durationSlots":5,"type":"panel","company":"Parcion Private Wealth / OZ / Griffin Capital / CIM Group","title":"Opportunity Zones 2.0: Planning for QOFs","assignments":[{"contactId":"c-terry-cook","slotRole":"Moderator"},{"contactId":"c-nick-rosenthal","slotRole":"Speaker"},{"contactId":"c-robert-dupree","slotRole":"Speaker"},{"contactId":"c-jim-dubeck","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Nick said he'll let Terry decide the Session Title (4/1). Support: Matt Cardall mcardall@cimgroup.com"},{"id":"thu-llb-johnwest","dayId":"thu","venueId":"ll-b","startSlot":72,"durationSlots":5,"type":"solo","company":"Arqitel","title":"Unlocking Tax Alpha in Private Real Estate: Why Most Managers Leave It on the Table","assignments":[{"contactId":"c-andrew-berman","slotRole":"Speaker"},{"contactId":"c-nick-bruce","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-doors","dayId":"fri","venueId":"main-stage","startSlot":3,"durationSlots":3,"type":"event","company":"","title":"Doors & Registration","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-vip-breakfast","dayId":"fri","venueId":"main-stage","startSlot":6,"durationSlots":15,"type":"event","company":"Basis Northwest","title":"Speaker Salon","assignments":[{"contactId":"c-brent-sullivan","slotRole":"Host"}],"isSponsored":false,"isTbd":false,"notes":"7:30-8:45 AM"},{"id":"fri-main-break0","dayId":"fri","venueId":"main-stage","startSlot":21,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":"8:45-9:00 AM"},{"id":"fri-main-panel8","dayId":"fri","venueId":"main-stage","startSlot":24,"durationSlots":5,"type":"keynote","company":"Canvas","title":"AMA: Canvas and Coffee and Everything Taxable Wealth In Between","assignments":[{"contactId":"c-brent-sullivan","slotRole":"Moderator"},{"contactId":"c-ehren-stanhope","slotRole":"Speaker"},{"contactId":"c-joe-giroux","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":""},{"id":"fri-main-savina","dayId":"fri","venueId":"main-stage","startSlot":30,"durationSlots":5,"type":"solo","company":"Dimensional Fund Advisors","title":"Long-Only and Long-Short SMAs – The Dimensional Perspective","assignments":[{"contactId":"c-savina-rizova","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Support: Taylor.Smith@dimensional.com, Kacie.Walsh@dimensional.com"},{"id":"fri-main-savina-panel","dayId":"fri","venueId":"main-stage","startSlot":36,"durationSlots":4,"type":"panel","company":"","title":"Panel w/ Savina","assignments":[{"contactId":"c-savina-rizova","slotRole":"Speaker"},{"contactId":"d5a070bc-60c6-42b3-a732-850374d07c51","slotRole":"Moderator"},{"contactId":"9433d9d3-e5bf-44d8-a5f6-de4f7510b4cd","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":"Panel details TBD"},{"id":"fri-main-break1","dayId":"fri","venueId":"main-stage","startSlot":40,"durationSlots":2,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-firsttrust","dayId":"fri","venueId":"main-stage","startSlot":42,"durationSlots":5,"type":"panel","company":"First Trust","title":"It's Not What You Make, But What You Can Spend: Tax-Efficient Real Estate Investing","assignments":[{"contactId":"c-christian-lena","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"First Trust Panel — Christian + who else? TBD"},{"id":"fri-main-lunch","dayId":"fri","venueId":"main-stage","startSlot":54,"durationSlots":24,"type":"event","company":"","title":"Lunch / Expo","assignments":[],"isSponsored":false,"isTbd":false,"notes":"20 min dedicated"},{"id":"fri-main-practitioner","dayId":"fri","venueId":"main-stage","startSlot":84,"durationSlots":9,"type":"panel","company":"Basis Northwest","title":"Live from the Field: Tax Aware Long-Short Working Group","assignments":[{"contactId":"c-keenan-szulik","slotRole":"Moderator"}],"isSponsored":false,"isTbd":false,"notes":"Practitioner Group. Brent Long-Short host."},{"id":"fri-llb-practitioner-tba","dayId":"fri","venueId":"ll-b","startSlot":89,"durationSlots":4,"type":"solo","company":"","title":"To Be Announced","assignments":[],"isSponsored":false,"isTbd":true,"notes":"Concurrent with second half of practitioner group"},{"id":"fri-main-paul-ms","dayId":"fri","venueId":"main-stage","startSlot":94,"durationSlots":5,"type":"solo","company":"Parametric (Morgan Stanley)","title":"The Tax-Loss Harvesting Endgame: Navigating the Liquidation, Gifting, and Estate Planning Off-Ramps","assignments":[{"contactId":"c-paul-bouchey","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Session title TBD"},{"id":"fri-main-break2","dayId":"fri","venueId":"main-stage","startSlot":99,"durationSlots":3,"type":"break","company":"","title":"BREAK","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-beer","dayId":"fri","venueId":"main-stage","startSlot":48,"durationSlots":6,"type":"solo","company":"DBi","title":"Can We Make Managed Futures More Tax Efficient?","assignments":[{"contactId":"c-andrew-beer","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Session title TBD"},{"id":"fri-main-vise","dayId":"fri","venueId":"main-stage","startSlot":102,"durationSlots":5,"type":"solo","company":"Vise","title":"To Be Announced","assignments":[{"contactId":"c-runik-mehrotra","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":""},{"id":"fri-main-meb","dayId":"fri","venueId":"main-stage","startSlot":114,"durationSlots":5,"type":"solo","company":"Cambria","title":"An Interview With Meb","assignments":[{"contactId":"c-dave-nadig","slotRole":"Moderator"},{"contactId":"c-meb-faber","slotRole":"Speaker"}],"isSponsored":true,"isTbd":false,"notes":"Final presentation Day 2. Session title TBD."},{"id":"fri-main-closing","dayId":"fri","venueId":"main-stage","startSlot":119,"durationSlots":1,"type":"event","company":"","title":"Thanks for Coming — Brent Closing","assignments":[],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-main-mariners","dayId":"fri","venueId":"main-stage","startSlot":120,"durationSlots":33,"type":"event","company":"","title":"Mariners vs. Diamondbacks @ T-Mobile Park","assignments":[],"isSponsored":false,"isTbd":false,"notes":"First pitch 7:10 PM PT. Group outing."},{"id":"fri-lla-wealth","dayId":"fri","venueId":"ll-a","startSlot":66,"durationSlots":5,"type":"panel","company":"","title":"De-Risking Single Stock Positions","assignments":[{"contactId":"c-shang-chou","slotRole":"Moderator"},{"contactId":"c-mike-allison","slotRole":"Speaker"},{"contactId":"c-mohsen-ghazi","slotRole":"Speaker"},{"contactId":"c-erkko-etula","slotRole":"Speaker"},{"contactId":"c-dave-donnelly","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Shang Chou running panel. Mike Allison only confirmed panelist so far."},{"id":"fri-lla-fi-panel","dayId":"fri","venueId":"ll-a","startSlot":72,"durationSlots":5,"type":"panel","company":"","title":"The Tax Trap: Why Everyone Gets Bonds Wrong","assignments":[{"contactId":"c-dave-nadig","slotRole":"Moderator"},{"contactId":"c-eric-golden","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Title TBD. Dave Nadig + Eric Golden."},{"id":"fri-lla-private-markets","dayId":"fri","venueId":"ll-a","startSlot":84,"durationSlots":5,"type":"panel","company":"Longview Investment Partners","title":"Tax-Efficient Investing in Private Markets","assignments":[{"contactId":"a70f7ca5-62fe-4855-9db8-3bfd489ec86e","slotRole":"Moderator"},{"contactId":"c-andrew-berman","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-llb-taotao","dayId":"fri","venueId":"ll-a","startSlot":78,"durationSlots":5,"type":"solo","company":"BlackRock","title":"To Be Announced","assignments":[{"contactId":"c-taotao","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":""},{"id":"fri-llb-antti","dayId":"fri","venueId":"ll-b","startSlot":78,"durationSlots":5,"type":"solo","company":"Brooklyn Investment Group","title":"To Be Announced","assignments":[{"contactId":"c-antti-petajisto","slotRole":"Speaker"}],"isSponsored":false,"isTbd":true,"notes":""},{"id":"fri-llb-bondbloxx","dayId":"fri","venueId":"ll-b","startSlot":66,"durationSlots":5,"type":"panel","company":"","title":"Yes, You Can Simply Achieve 1% Tax Alpha in Fixed Income","assignments":[{"contactId":"c-carolyn-barnette","slotRole":"Moderator"},{"contactId":"c-matt-zenz","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""},{"id":"fri-llb-ppli","dayId":"fri","venueId":"ll-b","startSlot":72,"durationSlots":5,"type":"panel","company":"PPLI","title":"Private Placement Life Insurance Planning","assignments":[{"contactId":"c-dave-reynolds","slotRole":"Moderator"},{"contactId":"c-travis-burke","slotRole":"Speaker"},{"contactId":"c-mohsen-ghazi","slotRole":"Speaker"},{"contactId":"c-jim-carroll","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":"Moderator: Dave Reynolds (Spearhead). Michael Liebeskind (Golconda) — power of PPLI structure. Jim Carroll — investment flexibility of SMAs for PPLI. Mohsen Ghazi — family office use cases."},{"id":"ab3e3540-59e3-4372-a3a2-94bb88965074","dayId":"fri","venueId":"main-stage","startSlot":108,"durationSlots":5,"type":"solo","company":"Perkins Coie","title":"Family Office Infrastructure Design","assignments":[{"contactId":"c-mohsen-ghazi","slotRole":"Speaker"}],"isSponsored":false,"isTbd":false,"notes":""}],"contacts":[{"id":"c-ehren-stanhope","name":"Ehren Stanhope","company":"Canvas","title":"Chief Investment Strategist","email":"ehren.stanhope@osam.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-chris-loveless","name":"Chris Loveless","company":"Canvas","title":"President","email":"chris.loveless@osam.com","phone":"","supportName":"Laura Kelleher","supportEmail":"laura.kelleher@osam.com","supportPhone":"","notes":""},{"id":"c-joe-giroux","name":"Joe Giroux","company":"Canvas","title":"Portfolio Manager","email":"joe.giroux@osam.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-ryan-kirlin","name":"Ryan Patrick Kirlin","company":"Alpha Architect","title":"President","email":"ryan@alphaarchitect.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-rob-arnott","name":"Rob Arnott","company":"Research Affiliates","title":"Founder & Chairman","email":"arnott@rallc.com","phone":"","supportName":"Brent Leadbetter","supportEmail":"leadbetter@rallc.com","supportPhone":"","notes":"Will send PPT closer to event"},{"id":"c-jeff-chang","name":"Jeff Chang","company":"Vest","title":"President","email":"jchang@vestfin.com","phone":"","supportName":"Brianna Fessler","supportEmail":"bfessler@vestfin.com","supportPhone":"","notes":""},{"id":"c-daniel-bunn","name":"Daniel Bunn","company":"Tax Foundation","title":"President & CEO","email":"dbunn@taxfoundation.org","phone":"","supportName":"Katelynn Barbosa","supportEmail":"kbarbosa@taxfoundation.org","supportPhone":"","notes":"VIP"},{"id":"c-joseph-liberman","name":"Joseph Liberman","company":"AQR Capital Management","title":"Managing Director","email":"Joseph.Liberman@aqr.com","phone":"","supportName":"Dan Villalon","supportEmail":"Dan.Villalon@aqr.com","supportPhone":"","notes":""},{"id":"c-alex-fm","name":"Alexander Morris","company":"f/m Investments","title":"","email":"amorris@fminvest.com","phone":"","supportName":"Courtney Sheehy","supportEmail":"csheehy@fminvest.com","supportPhone":"","notes":""},{"id":"c-savina-rizova","name":"Savina Rizova","company":"Dimensional Fund Advisors","title":"Co-Chief Investment Officer","email":"Savina.Rizova@dimensional.com","phone":"","supportName":"Taylor Smith / Kacie Walsh","supportEmail":"Taylor.Smith@dimensional.com, Kacie.Walsh@dimensional.com","supportPhone":"","notes":""},{"id":"c-meb-faber","name":"Meb Faber","company":"Cambria","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Kai sent email requesting session title"},{"id":"c-paul-bouchey","name":"Paul Bouchey","company":"Parametric (Morgan Stanley)","title":"Managing Director Applied Research / Former CIO","email":"paul.bouchey@gmail.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-andrew-beer","name":"Andrew Beer","company":"DBi","title":"Managing Member","email":"a@dbi.co","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-jon-ft","name":"Jon DiGiovanni","company":"First Trust","title":"Managing Director","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Fri main panel"},{"id":"c-shang-chou","name":"Shang Chou","company":"Dishmi","title":"Managing Partner","email":"shang@dishmicap.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Emcee as needed both days"},{"id":"c-dave-nadig","name":"Dave Nadig","company":"ETF.com","title":"President & Director of Research","email":"dave@etf.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Emcee as needed"},{"id":"c-keenan-szulik","name":"Keenan Szulik","company":"Slocum Management","title":"CEO","email":"kszulik8@gmail.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Practitioner Group Host"},{"id":"c-jim-carroll","name":"Jim Carroll","company":"Ballast Rock Private Wealth","title":"Senior Wealth Advisor and Portfolio Manager","email":"jim.carroll@ballastrockpw.com","phone":"914-479-9539","supportName":"","supportEmail":"","supportPhone":"","notes":"Investment flexibility of SMAs for PPLI"},{"id":"c-terry-cook","name":"Terry Cook","company":"Parcion Private Wealth","title":"Co-Founder and Managing Principal","email":"terry@parcionpw.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"OZ Panel","firstName":"Terry","lastName":"Cook"},{"id":"c-nick-rosenthal","name":"Nick Rosenthal","company":"Griffin Capital Company, LLC","title":"Co-Chief Executive Officer","email":"nrosenthal@griffincapital.com","phone":"","supportName":"Bill White","supportEmail":"bwitte@griffincapital.com","supportPhone":"","notes":"OZ Panel","firstName":"Nick","lastName":"Rosenthal"},{"id":"c-robert-dupree","name":"Robert Dupree","company":"CIM Group","title":"Co-Head of Infrastructure & Impact","email":"rdupree@cimgroup.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"OZ Panel","firstName":"Robert","lastName":"Dupree"},{"id":"c-jim-dubeck","name":"Jim Dubeck","company":"Moss Adams LLP","title":"Director, National Tax — Partnerships","email":"jim.dubeck@mossadams.com","phone":"(206) 302-6416","supportName":"","supportEmail":"","supportPhone":"","notes":"OZ Panel","firstName":"Jim","lastName":"Dubeck"},{"id":"c-john-west","name":"John West","company":"RE/Arqitel","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-ralph-drybrough","name":"Ralph Drybrough","company":"Fort Point Capital Partners","title":"Partner, Head of Derivative Solutions","email":"rd@fortpointcap.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-roy-haya","name":"Roy Haya","company":"Fort Point Capital Partners","title":"Head of Derivative Solutions","email":"rh@fortpointcap.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-mike-allison","name":"Mike Allison","company":"IRP","title":"Strategist & Portfolio Manager","email":"mike@investmentresearchpartners.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-rafael-zayas","name":"Rafael Zayas","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"351 Panel"},{"id":"c-dave-reynolds","name":"Dave Reynolds","company":"Spearhead Administrative Services","title":"Chief Marketing Officer","email":"dreynolds@spearheadadmin.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Largest SMA platform for PPLI. PPLI Panel Moderator."},{"id":"c-michael-liebeskind","name":"Michael Liebeskind","company":"Golconda","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Power of the PPLI structure"},{"id":"c-mohsen-ghazi","name":"Mohsen Ghazi","company":"Perkins Coie","title":"Partner, Tax & Private Client Services","email":"mghazi@perkinscoie.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Family office use cases for PPLI","firstName":"Mohsen","lastName":"Ghazi"},{"id":"c-eric-golden","name":"Eric Golden","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Fixed income panel with Dave Nadig"},{"id":"d5a070bc-60c6-42b3-a732-850374d07c51","name":"Ally Jane Ayers","company":"BrooklynFi","title":"CEO","email":"aj@brooklynfi.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"9433d9d3-e5bf-44d8-a5f6-de4f7510b4cd","name":"Paisley Nardini","company":"Simplify","title":"","email":"paisley.nardini@simplify.us","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-travis-burke","name":"Travis Burke","company":"Golconda Partners","title":"Senior Managing Director","email":"travis.burke@golconda.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-christian-lena","name":"Christian Lena","company":"First Trust","title":"Senior Vice President","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-erkko-etula","name":"Erkko Etula","company":"Brooklyn Investment Group","title":"CEO & Chief Investment Officer","email":"erkko@bkln.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-katrina-difiglia","name":"Katrina DiFiglia","company":"Nuveen","title":"MD Portfolio Strategist","email":"katrina.schmaltz@nuveen.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-jill-jensen","name":"Jill Jensen","company":"Nuveen","title":"MD Alternative Specialist","email":"jill.jensen@nuveen.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-ted-pyne","name":"Ted Pyne","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Compliance approval pending"},{"id":"c-vijay-boyapati","name":"Vijay Boyapati","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":"Participation pending discussion"},{"id":"c-jim-totten","name":"Jim Totten","company":"Axcelus","title":"Head of Distribution","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-brent-sullivan","name":"Brent Sullivan","company":"Tax Alpha Insider","title":"Founder","email":"brent@taxalphainsider.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-andrew-berman","name":"Andrew Berman","company":"Arquitel","title":"Founding Partner","email":"aberman@arqitel.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-nick-bruce","name":"Nick Bruce","company":"Arquitel","title":"Founding Partner","email":"nbruce@arqitel.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"a70f7ca5-62fe-4855-9db8-3bfd489ec86e","firstName":"Tom","lastName":"Bratkovich","name":"Tom Bratkovich","company":"Longview Investment Partners","email":"tbratkovich@longviewip.com","role":"","notes":""},{"id":"c-jason-marcus","name":"Jason Marcus","firstName":"Jason","lastName":"Marcus","company":"Scharf Investments","title":"COO/CCO","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-michael-capella","name":"Michael Capella","firstName":"Michael","lastName":"Capella","company":"AllianceBernstein","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-dave-donnelly","name":"Dave Donnelly","firstName":"Dave","lastName":"Donnelly","company":"BlackRock","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-carolyn-barnette","name":"Carolyn Barnette","firstName":"Carolyn","lastName":"Barnette","company":"BondBloxx","title":"","email":"carolynhbarnette@gmail.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-matt-zenz","name":"Matt Zenz","firstName":"Matt","lastName":"Zenz","company":"Longview Research Partners","title":"","email":"zenz@longviewresearchpartners.com","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-brian-smith","name":"Brian Smith","firstName":"Brian","lastName":"Smith","company":"Morgan Stanley","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-taotao","name":"TaoTao","firstName":"TaoTao","lastName":"","company":"BlackRock","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-antti-petajisto","name":"Antti Petajisto","firstName":"Antti","lastName":"Petajisto","company":"Brooklyn Investment Group","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-tba","name":"TBA","firstName":"TBA","lastName":"","company":"","title":"","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""},{"id":"c-runik-mehrotra","name":"Runik Mehrotra","firstName":"Runik","lastName":"Mehrotra","company":"Vise","title":"Co-Founder & Chief Investment Officer","email":"","phone":"","supportName":"","supportEmail":"","supportPhone":"","notes":""}],"lastModified":"2026-05-01T20:41:56.939Z"};
 
-renderAgenda(buildDays(STATE));
+renderAgenda(STATE);
 
 </script>
 </body>
