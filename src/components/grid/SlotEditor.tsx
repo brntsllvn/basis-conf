@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { TimeSlot, SlotType, SlotRole, SlotAssignment } from '../../types/schedule';
+import type { TimeSlot, SlotType, SlotRole, SlotAssignment, VenueId, DayId } from '../../types/schedule';
 import { useSchedule } from '../../state/ScheduleContext';
 import { slotToTime, slotsToDuration } from '../../utils/time';
 
@@ -19,6 +19,8 @@ export function SlotEditor({ slot, onClose }: Props) {
   const [company, setCompany] = useState(slot.company);
   const [title, setTitle] = useState(slot.title);
   const [type, setType] = useState<SlotType>(slot.type);
+  const [venueId, setVenueId] = useState<VenueId>(slot.venueId);
+  const [dayId, setDayId] = useState<DayId>(slot.dayId);
   const [notes, setNotes] = useState(slot.notes);
   const [isSponsored, setIsSponsored] = useState(slot.isSponsored);
   const [isTbd, setIsTbd] = useState(slot.isTbd);
@@ -28,6 +30,8 @@ export function SlotEditor({ slot, onClose }: Props) {
     setCompany(slot.company);
     setTitle(slot.title);
     setType(slot.type);
+    setVenueId(slot.venueId);
+    setDayId(slot.dayId);
     setNotes(slot.notes);
     setIsSponsored(slot.isSponsored);
     setIsTbd(slot.isTbd);
@@ -38,7 +42,7 @@ export function SlotEditor({ slot, onClose }: Props) {
     dispatch({
       type: 'UPDATE_SLOT',
       slotId: slot.id,
-      changes: { company, title, type, notes, isSponsored, isTbd, assignments },
+      changes: { company, title, type, venueId, dayId, notes, isSponsored, isTbd, assignments },
     });
     onClose();
   };
@@ -66,7 +70,6 @@ export function SlotEditor({ slot, onClose }: Props) {
   const startTime = slotToTime(slot.startSlot);
   const endTime = slotToTime(slot.startSlot + slot.durationSlots);
   const duration = slotsToDuration(slot.durationSlots);
-  const venue = state.venues.find((v) => v.id === slot.venueId);
 
   const assignedIds = new Set(assignments.map((a) => a.contactId));
   const unassigned = state.contacts.filter((c) => !assignedIds.has(c.id));
@@ -80,7 +83,7 @@ export function SlotEditor({ slot, onClose }: Props) {
         </div>
 
         <div className="editor-info">
-          {venue?.label} &middot; {startTime} – {endTime} ({duration}m)
+          {startTime} – {endTime} ({duration}m)
         </div>
 
         <div className="editor-field">
@@ -91,6 +94,21 @@ export function SlotEditor({ slot, onClose }: Props) {
         <div className="editor-field">
           <label>Talk Title</label>
           <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        </div>
+
+        <div className="editor-row">
+          <div className="editor-field">
+            <label>Day</label>
+            <select value={dayId} onChange={(e) => setDayId(e.target.value as DayId)}>
+              {state.days.map(d => <option key={d.id} value={d.id}>{d.label}</option>)}
+            </select>
+          </div>
+          <div className="editor-field">
+            <label>Room</label>
+            <select value={venueId} onChange={(e) => setVenueId(e.target.value as VenueId)}>
+              {state.venues.map(v => <option key={v.id} value={v.id}>{v.label}</option>)}
+            </select>
+          </div>
         </div>
 
         <div className="editor-field">

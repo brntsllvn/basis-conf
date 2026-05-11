@@ -20,7 +20,7 @@ export function TimeColumn({ rowHeight }: Props) {
 
   return (
     <div className="time-column-wrapper">
-      <div className="venue-header" style={{ visibility: 'hidden' }}>Time</div>
+      <div className="day-column-header" style={{ visibility: 'hidden' }}>Time</div>
       <div
         className="time-column"
         style={{

@@ -19,27 +19,24 @@ function findFirstAvailableStartSlot(
   durationSlots: number,
 ) {
   for (let start = DEFAULT_START_SLOT; start + durationSlots <= FINISH_SEARCH_SLOT; start += SLOT_STEP) {
-    if (!wouldOverlap(slots, slotId, dayId, venueId, start, durationSlots)) {
-      return start;
-    }
+    if (!wouldOverlap(slots, slotId, dayId, venueId, start, durationSlots)) return start;
   }
-
   return DEFAULT_START_SLOT;
 }
 
 export function GridPage() {
-  const { state, activeDay, setActiveDay, dispatch } = useSchedule();
+  const { state, dispatch } = useSchedule();
   const [rowHeight, setRowHeight] = useState(6);
+  const [addDay, setAddDay] = useState<DayId>('thu');
 
   const handleAddSlot = () => {
     const id = crypto?.randomUUID?.() ?? `slot-${Math.random().toString(36).slice(2, 10)}`;
-    const startSlot = findFirstAvailableStartSlot(state.slots, id, activeDay, DEFAULT_VENUE, DEFAULT_DURATION);
-
+    const startSlot = findFirstAvailableStartSlot(state.slots, id, addDay, DEFAULT_VENUE, DEFAULT_DURATION);
     dispatch({
       type: 'ADD_SLOT',
       slot: {
         id,
-        dayId: activeDay,
+        dayId: addDay,
         venueId: DEFAULT_VENUE,
         startSlot,
         durationSlots: DEFAULT_DURATION,
@@ -57,18 +54,28 @@ export function GridPage() {
   return (
     <div className="grid-page">
       <div className="grid-toolbar">
-        <div className="day-tabs">
-          {state.days.map((day) => (
-            <button
-              key={day.id}
-              className={`day-tab ${activeDay === day.id ? 'active' : ''}`}
-              onClick={() => setActiveDay(day.id as DayId)}
-            >
-              {day.label}
-            </button>
-          ))}
+        <div className="grid-legend">
+          <span className="grid-legend-item">
+            <span className="grid-legend-swatch" style={{ background: '#DFC070', borderLeftColor: '#3D1F10' }} />
+            Main Stage
+          </span>
+          <span className="grid-legend-item">
+            <span className="grid-legend-swatch" style={{ background: '#7DB876', borderLeftColor: '#2E4823' }} />
+            LL-A
+          </span>
+          <span className="grid-legend-item">
+            <span className="grid-legend-swatch" style={{ background: '#6EA2D8', borderLeftColor: '#2E52A8' }} />
+            LL-B
+          </span>
         </div>
         <div className="toolbar-actions">
+          <select
+            className="day-select"
+            value={addDay}
+            onChange={(e) => setAddDay(e.target.value as DayId)}
+          >
+            {state.days.map(d => <option key={d.id} value={d.id}>{d.label}</option>)}
+          </select>
           <button className="btn btn-primary" onClick={handleAddSlot}>+ Add Slot</button>
           <div className="zoom-control">
             <label>Zoom:</label>
