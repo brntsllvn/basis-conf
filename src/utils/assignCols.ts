@@ -17,10 +17,11 @@ export function assignCols(slots: TimeSlot[]): SlotWithCol[] {
     if (isBg(s)) return { ...s, col: 0, totalCols: 1 };
     const concurrent = slots
       .filter(o => !isBg(o))
-      .filter(o => o.startSlot <= s.startSlot && o.startSlot + o.durationSlots > s.startSlot)
+      .filter(o => o.startSlot < s.startSlot + s.durationSlots &&
+                   o.startSlot + o.durationSlots > s.startSlot)
       .sort((a, b) =>
-        a.startSlot - b.startSlot ||
-        (VENUE_ORDER[a.venueId] ?? 3) - (VENUE_ORDER[b.venueId] ?? 3)
+        (VENUE_ORDER[a.venueId] ?? 3) - (VENUE_ORDER[b.venueId] ?? 3) ||
+        a.startSlot - b.startSlot
       );
     return { ...s, col: concurrent.indexOf(s), totalCols: concurrent.length };
   });
