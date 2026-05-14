@@ -399,7 +399,12 @@ function renderAgenda(state) {
         if (height >= 10) block.append('div').attr('class', 'sb-break-lbl').text('Break');
         return;
       }
-      if (isBg(s)) return;
+      if (isBg(s)) {
+        const hasConcurrentNonBg = daySlots.some(o => !isBg(o) && o.startSlot === s.startSlot);
+        if (!hasConcurrentNonBg && height >= 8)
+          block.append('div').attr('class', 'sb-tiny').text(s.title || '');
+        return;
+      }
       if (height < 8) {
         block.append('div').attr('class', 'sb-tiny').text(s.title || '');
         return;
