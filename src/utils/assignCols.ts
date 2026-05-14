@@ -4,7 +4,7 @@ const VENUE_ORDER: Record<string, number> = { 'main-stage': 0, 'll-a': 1, 'll-b'
 
 export function isBg(s: TimeSlot): boolean {
   return s.type === 'break' ||
-    (s.type === 'event' && /doors|registration|lunch/i.test(s.title || ''));
+    (s.type === 'event' && /doors|lunch/i.test(s.title || ''));
 }
 
 export interface SlotWithCol extends TimeSlot {

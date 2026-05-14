@@ -292,7 +292,7 @@ function venueClass(v) {
 }
 
 function isBg(s) {
-  return s.type === 'break' || (s.type === 'event' && /doors|registration|lunch/i.test(s.title || ''));
+  return s.type === 'break' || (s.type === 'event' && /doors|lunch/i.test(s.title || ''));
 }
 
 function assignCols(slots) {
