@@ -400,7 +400,7 @@ function renderAgenda(state) {
         return;
       }
       if (isBg(s)) {
-        if (height >= 50) block.append('div').attr('class', 'sb-break-lbl').text(s.title || '');
+        if (height >= 50) block.append('div').attr('class', 'sb-title').text(s.title || '');
         return;
       }
       if (height < 8) {
