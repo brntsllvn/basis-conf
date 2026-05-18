@@ -102,6 +102,7 @@
     .sb-tiny     { font-size: 5.5px; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1; padding-top: 2px; }
     .sb--compact { padding: 1px 3px 0 4px !important; gap: 0 !important; }
     .sb--compact .sb-tiny { padding-top: 0; color: var(--text); }
+    .sb-emcee { position: absolute; top: 2px; right: 3px; font-size: 4.5px; font-weight: 700; letter-spacing: 0.04em; color: rgba(0,0,0,0.38); line-height: 1; pointer-events: none; }
 
     .eve-block {
       background: var(--cedar); padding: 9px 12px; margin-top: 8px;
@@ -267,6 +268,36 @@
 const STAMP      = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 const DAY_ORIGIN = 420;
 const PX_PER_MIN = 1.8;
+
+// Emcee assignments: intro letter + outro letter
+// B=Brent  S=Shang  D=Dave Nadig  H=Generic host
+// Thu AM: Brent  Thu PM: Shang  Fri AM: Brent  Fri PM: Shang
+const EMCEE = {
+  'thu-main-opening-remarks':               'BB',
+  'thu-main-keynote1':                      'HB', // Chris Loveless intros Ehren
+  'thu-main-arnott':                        'BB',
+  'thu-main-ryan':                          'BB',
+  'thu-main-jeff':                          'BB',
+  'thu-main-open1':                         'DD', // Dave moderates
+  'thu-main-alex':                          'BS', // Brent intros, Shang takes PM
+  'thu-main-bunn':                          'BB',
+  'thu-main-aqr':                           'SS',
+  'thu-main-aqr-fort':                      'SS',
+  'thu-main-nuveen':                        'SS',
+  'thu-main-alliance':                      'SB', // Shang intro, Brent closes day
+  'thu-main-ft-closer':                     'BB',
+  'fri-main-panel8':                        'BB', // Brent moderating AMA
+  'fri-main-savina':                        'BB',
+  'fri-main-open1':                         'BB', // SyntheticFi
+  'fri-main-firsttrust':                    'BB',
+  'fri-main-vise':                          'BB',
+  'fri-main-practitioner':                  'SS',
+  'fri-main-paul-ms':                       'SS',
+  'fri-main-beer':                          'BB',
+  'ab3e3540-59e3-4372-a3a2-94bb88965074':   'BB', // Family Office
+  'fri-main-meb':                           'DD', // Dave moderates Meb interview
+  'fri-main-closing':                       'SB', // Shang intro, Brent closes
+};
 const GRID_START = 0;    // slot 0 = 7:00 AM
 const GRID_END   = 120;  // slot 120 = 5:00 PM
 
@@ -396,6 +427,8 @@ function renderAgenda(state) {
         .style('width',   (1 / s.totalCols * 100) + '%')
         .style('z-index', (isBreak || isUtil) ? '0' : '1');
       if (s.color) block.style('background', s.color).style('border-left-color', s.color);
+      const emceeTag = EMCEE[s.id];
+      if (emceeTag) block.append('div').attr('class', 'sb-emcee').text(emceeTag);
 
       if (isBreak) {
         if (height >= 10) block.append('div').attr('class', 'sb-break-lbl').text('Break');
