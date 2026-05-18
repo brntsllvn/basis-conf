@@ -102,7 +102,8 @@
     .sb-tiny     { font-size: 5.5px; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1; padding-top: 2px; }
     .sb--compact { padding: 1px 3px 0 4px !important; gap: 0 !important; }
     .sb--compact .sb-tiny { padding-top: 0; color: var(--text); }
-    .sb-emcee { position: absolute; top: 2px; right: 3px; font-size: 4.5px; font-weight: 700; letter-spacing: 0.04em; color: rgba(0,0,0,0.38); line-height: 1; pointer-events: none; }
+    .sb-emcee-intro { position: absolute; top: 2px; right: 3px; font-size: 4.5px; font-weight: 700; color: rgba(0,0,0,0.38); line-height: 1; pointer-events: none; }
+    .sb-emcee-outro { position: absolute; bottom: 2px; right: 3px; font-size: 4.5px; font-weight: 700; color: rgba(0,0,0,0.38); line-height: 1; pointer-events: none; }
 
     .eve-block {
       background: var(--cedar); padding: 9px 12px; margin-top: 8px;
@@ -428,7 +429,10 @@ function renderAgenda(state) {
         .style('z-index', (isBreak || isUtil) ? '0' : '1');
       if (s.color) block.style('background', s.color).style('border-left-color', s.color);
       const emceeTag = EMCEE[s.id];
-      if (emceeTag) block.append('div').attr('class', 'sb-emcee').text(emceeTag);
+      if (emceeTag) {
+        block.append('div').attr('class', 'sb-emcee-intro').text(emceeTag[0]);
+        block.append('div').attr('class', 'sb-emcee-outro').text(emceeTag[1]);
+      }
 
       if (isBreak) {
         if (height >= 10) block.append('div').attr('class', 'sb-break-lbl').text('Break');
