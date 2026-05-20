@@ -13,6 +13,7 @@ const VENUE: Record<string, { label: string; short: string; accent: string; dim:
 };
 
 const CONF_DAYS: { id: DayId; short: string }[] = [
+  { id: 'wed', short: 'Wed 5/27' },
   { id: 'thu', short: 'Thu 5/28' },
   { id: 'fri', short: 'Fri 5/29' },
 ];
@@ -30,7 +31,9 @@ function clockStr(d: Date): string {
 
 function activeDayId(pt: Date): DayId {
   const iso = pt.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
-  return iso === '2026-05-29' ? 'fri' : 'thu';
+  if (iso === '2026-05-27') return 'wed';
+  if (iso === '2026-05-29') return 'fri';
+  return 'thu';
 }
 
 export function AttendeePage() {
