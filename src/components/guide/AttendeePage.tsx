@@ -38,23 +38,23 @@ export function AttendeePage() {
   const [now, setNow] = useState(() => getPT());
   const [dayId, setDayId] = useState<DayId>(() => activeDayId(getPT()));
   const nowRef = useRef<HTMLDivElement>(null);
+  const didInitialScroll = useRef(false);
 
+  // Clock ticks every second — never auto-override the user's day selection
   useEffect(() => {
-    const id = setInterval(() => {
-      const pt = getPT();
-      setNow(pt);
-      setDayId(activeDayId(pt));
-    }, 1000);
+    const id = setInterval(() => setNow(getPT()), 1000);
     return () => clearInterval(id);
   }, []);
 
-  // Scroll to NOW line whenever the day tab changes
+  // Scroll to NOW once on initial mount only
   useEffect(() => {
+    if (didInitialScroll.current) return;
+    didInitialScroll.current = true;
     const t = setTimeout(() => {
       nowRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 120);
+    }, 150);
     return () => clearTimeout(t);
-  }, [dayId]);
+  }, []);
 
   const currentSlot = timeToSlot(now.getHours(), now.getMinutes());
 
