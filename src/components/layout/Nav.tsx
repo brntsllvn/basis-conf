@@ -38,7 +38,7 @@ export function Nav() {
         <NavLink to="/people" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
           People
         </NavLink>
-        <a href="/guide" className="nav-link" target="_blank" rel="noreferrer">
+        <a href="/northwest-2026" className="nav-link" target="_blank" rel="noreferrer">
           Guide ↗
         </a>
       </div>

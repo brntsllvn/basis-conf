@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/guide',
+    path: '/northwest-2026',
     element: (
       <ScheduleProvider>
         <AttendeePage />
