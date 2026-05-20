@@ -3,6 +3,8 @@ import { AppShell } from './components/layout/AppShell';
 import { GridPage } from './components/grid/GridPage';
 import { LinearSchedulePage } from './components/schedule/LinearSchedulePage';
 import { PeoplePage } from './components/people/PeoplePage';
+import { ScheduleProvider } from './state/ScheduleContext';
+import { AttendeePage } from './components/guide/AttendeePage';
 
 export const router = createBrowserRouter([
   {
@@ -14,5 +16,13 @@ export const router = createBrowserRouter([
       { path: 'schedule', element: <LinearSchedulePage /> },
       { path: 'people', element: <PeoplePage /> },
     ],
+  },
+  {
+    path: '/guide',
+    element: (
+      <ScheduleProvider>
+        <AttendeePage />
+      </ScheduleProvider>
+    ),
   },
 ]);

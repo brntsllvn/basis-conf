@@ -37,6 +37,9 @@ export function Nav() {
         <NavLink to="/people" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
           People
         </NavLink>
+        <a href="/guide" className="nav-link" target="_blank" rel="noreferrer">
+          Guide ↗
+        </a>
       </div>
       <div className="nav-actions">
         <button className="nav-btn" onClick={() => downloadJson(state)} title="Export JSON">
