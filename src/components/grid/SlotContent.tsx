@@ -37,7 +37,7 @@ export function SlotContent({ slot, hasConflict }: Props) {
   if (slot.company) parts.push(slot.company);
   if (people.length > 0) parts.push(people.map((p) => p.name).join(', '));
   if (slot.title) parts.push(slot.title);
-  const label = parts.join(' — ');
+  const label = parts.join(' · ');
 
   const venue = state.venues.find(v => v.id === slot.venueId);
 
@@ -60,7 +60,7 @@ export function SlotContent({ slot, hasConflict }: Props) {
           <div className="tooltip-row"><strong>{slot.title || 'Untitled'}</strong></div>
           {slot.company && <div className="tooltip-row">{slot.company}</div>}
           {venue && <div className="tooltip-row tooltip-venue">{venue.label}</div>}
-          <div className="tooltip-row">{startTime} – {endTime} ({duration}m)</div>
+          <div className="tooltip-row">{startTime} · {endTime} ({duration}m)</div>
           <div className="tooltip-row tooltip-type">{slot.type}{slot.isTbd ? ' · TBD' : ''}{slot.isSponsored ? ' · Sponsored' : ''}</div>
           {people.length > 0 && (
             <div className="tooltip-people">

@@ -112,14 +112,14 @@ export function PeoplePage() {
             ) : (
               <tr key={contact.id}>
                 <td className="person-name">{contact.name}</td>
-                <td>{contact.company || '\u2014'}</td>
-                <td>{contact.title || '\u2014'}</td>
-                <td>{contact.email || '\u2014'}</td>
-                <td>{contact.phone || '\u2014'}</td>
+                <td>{contact.company || '\u00b7'}</td>
+                <td>{contact.title || '\u00b7'}</td>
+                <td>{contact.email || '\u00b7'}</td>
+                <td>{contact.phone || '\u00b7'}</td>
                 <td className="support-cell">
                   {contact.supportName ? (
                     <span>{contact.supportName}{contact.supportEmail ? ` (${contact.supportEmail})` : ''}{contact.supportPhone ? ` ${contact.supportPhone}` : ''}</span>
-                  ) : '\u2014'}
+                  ) : '\u00b7'}
                 </td>
                 <td className="sessions-cell">
                   {(() => {
@@ -139,7 +139,7 @@ export function PeoplePage() {
                     );
                   })()}
                 </td>
-                <td className="notes-cell">{contact.notes || '\u2014'}</td>
+                <td className="notes-cell">{contact.notes || '\u00b7'}</td>
                 <td className="actions-cell">
                   <button className="btn btn-sm" onClick={() => setEditingId(contact.id)}>Edit</button>
                   <button className="btn btn-sm btn-danger" onClick={() => handleDelete(contact.id)}>Del</button>

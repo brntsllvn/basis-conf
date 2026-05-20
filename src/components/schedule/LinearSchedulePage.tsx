@@ -76,10 +76,10 @@ export function LinearSchedulePage() {
                     return (
                       <tr key={slot.id} className={`schedule-row type-${slot.type}`}>
                         <td className="schedule-time">
-                          {slotToTime(slot.startSlot)} – {slotToTime(slot.startSlot + slot.durationSlots)}
+                          {slotToTime(slot.startSlot)} · {slotToTime(slot.startSlot + slot.durationSlots)}
                         </td>
                         <td className="schedule-duration">{slotsToDuration(slot.durationSlots)}m</td>
-                        <td className="schedule-company">{slot.company || '\u2014'}</td>
+                        <td className="schedule-company">{slot.company || '\u00b7'}</td>
                         <td className="schedule-title">
                           <span
                             className="type-dot"

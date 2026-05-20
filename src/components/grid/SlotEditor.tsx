@@ -83,7 +83,7 @@ export function SlotEditor({ slot, onClose }: Props) {
         </div>
 
         <div className="editor-info">
-          {startTime} – {endTime} ({duration}m)
+          {startTime} · {endTime} ({duration}m)
         </div>
 
         <div className="editor-field">
