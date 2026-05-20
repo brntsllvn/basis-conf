@@ -4,19 +4,18 @@
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  background: #F5F3EF;
+  background: #f8f8f0;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color: #1C1917;
+  color: #000;
   overflow: hidden;
 }
 
 /* Header */
 .guide-header {
-  background: #1E1B4B;
-  color: #fff;
+  background: #000;
+  color: #f8f8f0;
   padding: 16px 20px 0;
   flex-shrink: 0;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
   z-index: 10;
 }
 
@@ -31,7 +30,7 @@
   font-size: 17px;
   font-weight: 700;
   letter-spacing: -0.2px;
-  opacity: 0.92;
+  opacity: 0.85;
 }
 
 .guide-clock {
@@ -39,6 +38,7 @@
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.5px;
+  color: #e6db74;
 }
 
 /* Day tabs */
@@ -52,7 +52,7 @@
   padding: 10px 0;
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(248, 248, 240, 0.4);
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -62,8 +62,8 @@
 }
 
 .guide-day-tab.active {
-  color: #fff;
-  border-bottom-color: #818CF8;
+  color: #f8f8f0;
+  border-bottom-color: #e6db74;
 }
 
 /* Scrollable timeline */
@@ -78,22 +78,25 @@
 .guide-now-line {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  margin: 4px 0;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 6px 0;
 }
 
 .guide-now-rule {
   flex: 1;
   height: 2px;
-  background: #EF4444;
+  background: #e6db74;
 }
 
 .guide-now-label {
-  font-size: 13px;
-  font-weight: 800;
-  color: #DC2626;
-  letter-spacing: 0.6px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #000;
+  background: #e6db74;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -107,7 +110,7 @@
 }
 
 .guide-block--past {
-  opacity: 0.38;
+  opacity: 0.32;
 }
 
 /* Time column */
@@ -118,16 +121,17 @@
 }
 
 .guide-time-label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  color: #78716C;
+  color: rgba(0, 0, 0, 0.4);
   white-space: nowrap;
   letter-spacing: -0.3px;
   display: block;
 }
 
-.guide-block--active .guide-time-label {
-  color: #DC2626;
+.guide-block--active .guide-time-label,
+.guide-block--upcoming .guide-time-label {
+  color: #000;
   font-weight: 800;
 }
 
@@ -143,10 +147,10 @@
 /* Session card */
 .guide-card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 14px 16px;
-  border-left: 5px solid #D97706;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
   position: relative;
 }
 
@@ -155,10 +159,12 @@
 }
 
 .guide-card--active {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+  outline: 2px solid #e6db74;
+  outline-offset: 0;
 }
 
-/* Venue badge */
+/* Venue badge — keeps distinct room colors */
 .guide-venue-badge {
   display: inline-block;
   font-size: 10px;
@@ -166,29 +172,29 @@
   letter-spacing: 0.7px;
   text-transform: uppercase;
   padding: 3px 8px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-bottom: 8px;
 }
 
 /* Card content */
 .guide-card-company {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 800;
-  color: #1C1917;
-  line-height: 1.25;
+  color: #000;
+  line-height: 1.2;
   margin-bottom: 4px;
 }
 
 .guide-card-title {
   font-size: 14px;
-  color: #57534E;
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.45;
   margin-bottom: 5px;
 }
 
 .guide-card-speakers {
   font-size: 13px;
-  color: #78716C;
+  color: rgba(0, 0, 0, 0.45);
   font-weight: 500;
 }
 
@@ -196,34 +202,34 @@
   display: inline-block;
   margin-top: 10px;
   padding: 4px 10px;
-  background: #FEF2F2;
-  color: #DC2626;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  background: #e6db74;
+  color: #000;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
   border-radius: 100px;
 }
 
 /* Break row */
 .guide-break {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  color: #A8A29E;
-  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   padding: 8px 0 4px;
 }
 
 .guide-break--active {
-  color: #DC2626;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /* Footer */
 .guide-footer {
   text-align: center;
   font-size: 12px;
-  color: #A8A29E;
+  color: rgba(0, 0, 0, 0.28);
   letter-spacing: 0.3px;
   padding: 24px 20px;
 }
