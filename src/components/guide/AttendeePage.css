@@ -41,6 +41,18 @@
   color: #e6db74;
 }
 
+/* Header logo */
+.guide-header-logo {
+  padding: 10px 20px 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.guide-logo {
+  height: 28px;
+  width: auto;
+}
+
 /* Day tabs */
 .guide-day-tabs {
   display: flex;
@@ -242,11 +254,60 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* WiFi card */
+.guide-wifi {
+  margin: 8px 16px 4px;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 10px;
+  border-left: 5px solid #e6db74;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+.guide-wifi-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 2px;
+}
+
+.guide-wifi-field {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  font-family: ui-monospace, monospace;
+}
+
+.guide-wifi-key {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+
 /* Footer */
 .guide-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   text-align: center;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.28);
   letter-spacing: 0.3px;
-  padding: 24px 20px;
+  padding: 24px 20px 32px;
+}
+
+.guide-footer-logo {
+  height: 22px;
+  width: auto;
+  opacity: 0.7;
 }

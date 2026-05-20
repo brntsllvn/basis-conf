@@ -115,6 +115,9 @@ export function AttendeePage() {
           <span className="guide-conf-name">Basis Northwest 2026</span>
           <span className="guide-clock">{clockStr(now)}</span>
         </div>
+        <div className="guide-header-logo">
+          <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="guide-logo" />
+        </div>
         <div className="guide-day-tabs">
           {CONF_DAYS.map(d => (
             <button
@@ -219,7 +222,15 @@ export function AttendeePage() {
             </div>
           );
         })}
-        <div className="guide-footer">Basis Northwest 2026 · Seattle, WA</div>
+        <div className="guide-wifi">
+          <span className="guide-wifi-label">WiFi</span>
+          <span className="guide-wifi-field"><span className="guide-wifi-key">Network</span> basis_northwest_2026</span>
+          <span className="guide-wifi-field"><span className="guide-wifi-key">Password</span> tax_alpha_insider</span>
+        </div>
+        <div className="guide-footer">
+          <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="guide-footer-logo" />
+          <span>Basis Northwest 2026 · Seattle, WA</span>
+        </div>
       </div>
     </div>
   );
