@@ -185,6 +185,12 @@
   margin-bottom: 4px;
 }
 
+.guide-card-hosted {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 4px;
+}
+
 .guide-card-title {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);

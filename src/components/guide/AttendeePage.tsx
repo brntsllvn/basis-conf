@@ -179,15 +179,24 @@ export function AttendeePage() {
                             {BADGE_OVERRIDES[slot.id] ?? venue.short}
                           </span>
                         )}
-                        {slot.company && (
-                          <div className="guide-card-company">{slot.company}</div>
-                        )}
-                        {slot.title && (
-                          <div className="guide-card-title">{slot.title}</div>
-                        )}
-                        {speakers.length > 0 && (
-                          <div className="guide-card-speakers">{speakers.join(', ')}</div>
-                        )}
+                        {slot.type === 'event' ? (<>
+                          {slot.title && (
+                            <div className="guide-card-company">{slot.title}</div>
+                          )}
+                          {slot.company && (
+                            <div className="guide-card-hosted">Hosted by {slot.company}</div>
+                          )}
+                        </>) : (<>
+                          {slot.company && (
+                            <div className="guide-card-company">{slot.company}</div>
+                          )}
+                          {slot.title && (
+                            <div className="guide-card-title">{slot.title}</div>
+                          )}
+                          {speakers.length > 0 && (
+                            <div className="guide-card-speakers">{speakers.join(', ')}</div>
+                          )}
+                        </>)}
                         {SHOW_LOCATION.has(slot.id) && slot.notes && (
                           <a
                             className="guide-card-location"
