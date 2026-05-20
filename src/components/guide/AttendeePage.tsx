@@ -118,6 +118,16 @@ export function AttendeePage() {
         <div className="guide-header-logo">
           <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="guide-logo" />
         </div>
+        <div className="guide-header-wifi">
+          <svg className="guide-wifi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+            <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+            <circle cx="12" cy="20" r="1" fill="currentColor"/>
+          </svg>
+          <span className="guide-header-wifi-row"><span className="guide-header-wifi-key">Network</span> basis_northwest_2026</span>
+          <span className="guide-header-wifi-row"><span className="guide-header-wifi-key">Password</span> tax_alpha_insider</span>
+        </div>
         <div className="guide-day-tabs">
           {CONF_DAYS.map(d => (
             <button
@@ -222,11 +232,6 @@ export function AttendeePage() {
             </div>
           );
         })}
-        <div className="guide-wifi">
-          <span className="guide-wifi-label">WiFi</span>
-          <span className="guide-wifi-field"><span className="guide-wifi-key">Network</span> basis_northwest_2026</span>
-          <span className="guide-wifi-field"><span className="guide-wifi-key">Password</span> tax_alpha_insider</span>
-        </div>
         <div className="guide-footer">
           <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="guide-footer-logo" />
           <span>Basis Northwest 2026 · Seattle, WA</span>
