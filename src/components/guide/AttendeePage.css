@@ -198,6 +198,17 @@
   font-weight: 500;
 }
 
+.guide-card-location {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  opacity: 0.65;
+}
+
 .guide-active-pill {
   display: inline-block;
   margin-top: 10px;

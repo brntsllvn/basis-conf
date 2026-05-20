@@ -12,6 +12,12 @@ const VENUE: Record<string, { label: string; short: string; accent: string; dim:
   'll-b':       { label: 'Cove',       short: 'COVE',       accent: '#1E3A8A', dim: '#DBEAFE' },
 };
 
+const BADGE_OVERRIDES: Record<string, string> = {
+  'fri-main-vip-breakfast': 'INVITE ONLY',
+};
+
+const SHOW_LOCATION = new Set(['wed-welcome-reception', 'fri-main-vip-breakfast']);
+
 const CONF_DAYS: { id: DayId; short: string }[] = [
   { id: 'wed', short: 'Wed 5/27' },
   { id: 'thu', short: 'Thu 5/28' },
@@ -170,7 +176,7 @@ export function AttendeePage() {
                             className="guide-venue-badge"
                             style={{ color: venue.accent, background: venue.dim }}
                           >
-                            {venue.short}
+                            {BADGE_OVERRIDES[slot.id] ?? venue.short}
                           </span>
                         )}
                         {slot.company && (
@@ -181,6 +187,17 @@ export function AttendeePage() {
                         )}
                         {speakers.length > 0 && (
                           <div className="guide-card-speakers">{speakers.join(', ')}</div>
+                        )}
+                        {SHOW_LOCATION.has(slot.id) && slot.notes && (
+                          <a
+                            className="guide-card-location"
+                            href={`https://maps.google.com/?q=${encodeURIComponent(slot.notes)}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={e => e.stopPropagation()}
+                          >
+                            📍 {slot.notes}
+                          </a>
                         )}
                         {status === 'active' && (
                           <div className="guide-active-pill">Happening now</div>
