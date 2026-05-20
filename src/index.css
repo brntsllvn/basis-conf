@@ -74,15 +74,22 @@ body {
 }
 
 .nav-btn {
-  padding: 5px 10px;
+  padding: 5px 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--surface);
   cursor: pointer;
   font-size: 12px;
+  font-weight: 500;
   color: var(--text-muted);
 }
-.nav-btn:hover { background: #f3f4f6; }
+.nav-btn:hover { background: #f3f4f6; color: var(--text); }
+.nav-btn--primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+.nav-btn--primary:hover { background: var(--primary-hover); color: white; }
 
 /* ===== App Shell ===== */
 .app-shell { display: flex; flex-direction: column; min-height: 100vh; }

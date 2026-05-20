@@ -42,11 +42,11 @@ export function Nav() {
         </a>
       </div>
       <div className="nav-actions">
-        <button className="nav-btn" onClick={() => downloadJson(state)} title="Export JSON">
-          Export
+        <button className="nav-btn" onClick={() => downloadJson(state)} title="Download schedule as JSON backup">
+          ↓ Download Backup
         </button>
-        <button className="nav-btn" onClick={() => fileInputRef.current?.click()} title="Import JSON">
-          Import
+        <button className="nav-btn nav-btn--primary" onClick={() => fileInputRef.current?.click()} title="Load schedule from a JSON backup file">
+          ↑ Load from File
         </button>
 <input
           ref={fileInputRef}
