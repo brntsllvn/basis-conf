@@ -43,6 +43,14 @@ body {
   z-index: 50;
 }
 
+.nav-canvas-logo {
+  height: 22px;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .nav-brand {
   font-weight: 700;
   font-size: 16px;
