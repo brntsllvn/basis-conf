@@ -193,7 +193,6 @@ export function AttendeePage() {
             </div>
           );
         })}
-        <div className="guide-footer">Basis Northwest 2026 · Seattle, WA</div>
       </div>
     </div>
   );
