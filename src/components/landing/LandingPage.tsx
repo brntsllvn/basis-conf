@@ -271,16 +271,14 @@ export function LandingPage() {
       <section className="lp-section lp-about">
         <SectionTitle>About</SectionTitle>
         <p className="lp-about-text">
-          Basis Northwest brings together the finest minds in taxable wealth management for two days
-          of concentrated inquiry, frank conversation, and considered innovation. The gathering is
-          built on a single conviction: that tax planning is not peripheral to the value great
-          advisors provide. It is the foundation upon which lasting wealth is built.
+          Basis Northwest is a conference about tax. Not tax as a line item — tax as the central
+          variable in every investment decision worth making. The advisors who come here have built
+          practices around that idea, and they spend two days in Seattle each spring talking about it.
         </p>
         <p className="lp-about-text lp-about-text--second">
-          Sessions span the full terrain of after-tax strategy — ETF innovation, custom indexing,
-          concentrated asset divesting, real assets, estate and gift planning, and the broader
-          science of preserving wealth across generations. Large presentations give way to intimate
-          group discussions. Every conversation is designed to be worth the trip.
+          Sessions cover ETF structure, custom indexing, concentrated positions, real assets, and
+          estate planning. Some are presentations. Some turn into debates. The conversations tend
+          to go long.
         </p>
       </section>
 
