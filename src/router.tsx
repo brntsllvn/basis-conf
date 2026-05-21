@@ -6,6 +6,7 @@ import { PeoplePage } from './components/people/PeoplePage';
 import { ScheduleProvider } from './state/ScheduleContext';
 import { AttendeePage } from './components/guide/AttendeePage';
 import { LandingPage } from './components/landing/LandingPage';
+import { TermsPage } from './components/terms/TermsPage';
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
   {
     path: '/northwest-2026',
     element: <LandingPage />,
+  },
+  {
+    path: '/northwest-2026/terms',
+    element: <TermsPage />,
   },
   {
     path: '/northwest-2026/agenda',

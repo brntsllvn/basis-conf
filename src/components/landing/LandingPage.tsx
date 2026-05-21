@@ -376,6 +376,10 @@ export function LandingPage() {
         >
           Open in Google Maps →
         </a>
+        <div className="lp-footer-legal">
+          <a href="/northwest-2026/terms" className="lp-footer-terms">Terms of Attendance</a>
+          <span className="lp-footer-copyright">© 2026 Basis Live, LLC</span>
+        </div>
       </footer>
 
       {lightbox && (

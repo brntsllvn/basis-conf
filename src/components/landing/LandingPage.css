@@ -785,6 +785,37 @@
 
 .lp-footer-map:hover { color: var(--cream); }
 
+.lp-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lp-footer-terms {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(248, 248, 240, 0.45);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(248, 248, 240, 0.2);
+  transition: color 0.15s;
+}
+
+.lp-footer-terms:hover { color: var(--cream); }
+
+.lp-footer-copyright {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgba(248, 248, 240, 0.35);
+}
+
 /* ── Mobile ─────────────────────────────── */
 @media (max-width: 640px) {
   .lp-header { padding: 0 20px 80px; }

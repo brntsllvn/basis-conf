@@ -1,0 +1,108 @@
+/* ===== Terms of Attendance ===== */
+
+.terms-root {
+  background: #f8f8f0;
+  color: #000;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.terms-header {
+  background: #000;
+  color: #f8f8f0;
+  border-top: 4px solid #e6db74;
+  padding: 40px 48px 48px;
+}
+
+.terms-back {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: rgba(248, 248, 240, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 24px;
+  transition: color 0.15s;
+}
+
+.terms-back:hover { color: #f8f8f0; }
+
+.terms-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 52px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #f8f8f0;
+  margin: 0 0 10px;
+}
+
+.terms-subtitle {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(248, 248, 240, 0.5);
+  margin: 0;
+}
+
+.terms-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 48px 80px;
+  flex: 1;
+}
+
+.terms-section {
+  margin-bottom: 48px;
+}
+
+.terms-heading {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 0 14px;
+}
+
+.terms-section p {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0;
+}
+
+.terms-footer-note {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.terms-footer-note a {
+  color: rgba(0, 0, 0, 0.65);
+  text-underline-offset: 3px;
+}
+
+.terms-page-footer {
+  background: #000;
+  color: rgba(248, 248, 240, 0.5);
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  padding: 24px 40px;
+}
+
+@media (max-width: 640px) {
+  .terms-header { padding: 28px 24px 36px; }
+  .terms-title { font-size: 36px; }
+  .terms-body { padding: 48px 24px 60px; }
+  .terms-section p { font-size: 19px; }
+}
