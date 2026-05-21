@@ -592,7 +592,7 @@
 /* ── Speakers ───────────────────────────── */
 .lp-speakers-section {
   max-width: none;
-  padding: 48px 2px 80px;
+  padding: 48px 40px 80px;
   background: #fff;
 }
 
@@ -600,7 +600,6 @@
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 38px;
 }
 
 .lp-speaker-mosaic {
@@ -831,8 +830,7 @@
   .lp-attire-text { font-size: 22px; }
   .lp-hosts-section { padding: 52px 20px 0; }
   .lp-hosts-grid { flex-direction: row; }
-  .lp-speakers-section { padding: 40px 2px 60px; }
-  .lp-speakers-section .lp-section-title-row { padding: 0 22px; }
+  .lp-speakers-section { padding: 40px 20px 60px; }
   .lp-sponsors-section { padding: 60px 24px 72px; }
   .lp-footer { font-size: 17px; padding: 48px 24px 60px; }
   .lp-footer-map { font-size: 14px; }
