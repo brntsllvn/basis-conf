@@ -12,11 +12,6 @@ const VENUE: Record<string, { label: string; short: string; accent: string; dim:
   'll-b':       { label: 'Cove',       short: 'COVE',       accent: '#1E3A8A', dim: '#DBEAFE' },
 };
 
-const BADGE_OVERRIDES: Record<string, string> = {
-  'fri-main-vip-breakfast': 'INVITE ONLY',
-};
-
-const SHOW_LOCATION = new Set(['wed-welcome-reception', 'fri-main-vip-breakfast']);
 
 const CONF_DAYS: { id: DayId; short: string }[] = [
   { id: 'wed', short: 'Wed 5/27' },
@@ -187,12 +182,12 @@ export function AttendeePage() {
                         className={`guide-card guide-card--${status}`}
                         style={{ borderLeftColor: venue?.accent ?? '#6B7280' }}
                       >
-                        {venue && (
+                        {(slot.badge || venue) && (
                           <span
                             className="guide-venue-badge"
-                            style={{ color: venue.accent, background: venue.dim }}
+                            style={{ color: venue?.accent ?? '#6B7280', background: venue?.dim ?? '#F3F4F6' }}
                           >
-                            {BADGE_OVERRIDES[slot.id] ?? venue.short}
+                            {slot.badge ?? venue!.short}
                           </span>
                         )}
                         {slot.type === 'event' ? (<>
@@ -213,15 +208,15 @@ export function AttendeePage() {
                             <div className="guide-card-speakers">{speakers.join(', ')}</div>
                           )}
                         </>)}
-                        {SHOW_LOCATION.has(slot.id) && slot.notes && (
+                        {slot.location && (
                           <a
                             className="guide-card-location"
-                            href={`https://maps.google.com/?q=${encodeURIComponent(slot.notes)}`}
+                            href={`https://maps.google.com/?q=${encodeURIComponent(slot.location)}`}
                             target="_blank"
                             rel="noreferrer"
                             onClick={e => e.stopPropagation()}
                           >
-                            📍 {slot.notes}
+                            📍 {slot.location}
                           </a>
                         )}
                         {status === 'active' && (

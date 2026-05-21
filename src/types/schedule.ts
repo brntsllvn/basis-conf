@@ -35,6 +35,8 @@ export interface TimeSlot {
   isSponsored: boolean;
   isTbd: boolean;
   notes: string;
+  location?: string;
+  badge?: string;
   color?: string;
   pinned?: boolean;
 }
