@@ -1,4 +1,4 @@
-import { put, list } from '@vercel/blob';
+import { put, get } from '@vercel/blob';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const BLOB_NAME = 'conf-state.json';
@@ -12,10 +12,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (req.method === 'GET') {
     res.setHeader('Cache-Control', 'no-store');
-    const { blobs } = await list({ prefix: BLOB_NAME });
-    if (!blobs.length) return res.json(null);
-    const r = await fetch(blobs[0].downloadUrl, { cache: 'no-store' });
-    return res.json(await r.json());
+    const result = await get(BLOB_NAME, { access: 'private', useCache: false });
+    if (!result || result.statusCode !== 200) return res.json(null);
+    const text = await new Response(result.stream).text();
+    return res.json(JSON.parse(text));
   }
 
   if (req.method === 'PUT') {
