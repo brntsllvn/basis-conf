@@ -44,7 +44,7 @@
 
 .lp-presenting-label {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.2em;
   color: rgba(248, 248, 240, 0.6);
@@ -125,7 +125,7 @@
 
 .lp-dateline-days {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--cream);
@@ -143,7 +143,7 @@
 
 .lp-dateline-city {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 300;
   letter-spacing: 0.2em;
   color: rgba(248, 248, 240, 0.6);
@@ -159,7 +159,7 @@
 
 .lp-venue {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   letter-spacing: 0.1em;
   color: rgba(248, 248, 240, 0.55);
@@ -176,7 +176,7 @@
   background: var(--gold);
   color: var(--ink);
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: 0.2em;
   padding: 18px 48px;
@@ -265,7 +265,7 @@
 
 .lp-section-title {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.22em;
   color: rgba(0, 0, 0, 0.45);
@@ -293,6 +293,27 @@
   margin: 0 auto;
 }
 
+/* ── About ──────────────────────────────── */
+.lp-about {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  padding-bottom: 64px;
+}
+
+.lp-about-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0;
+  max-width: 680px;
+}
+
+.lp-about-text--second {
+  margin-top: 28px;
+  color: rgba(26, 26, 13, 0.72);
+}
+
 /* ── Attire ─────────────────────────────── */
 .lp-attire {
   border-left: 1px solid var(--gold);
@@ -301,7 +322,7 @@
 
 .lp-attire-text {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 26px;
+  font-size: 28px;
   line-height: 1.7;
   color: var(--ink);
   margin: 0;
@@ -354,7 +375,7 @@
 
 .lp-weather-label {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.12em;
   color: rgba(0, 0, 0, 0.35);
@@ -388,7 +409,7 @@
 
 .lp-weather-period-label {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.12em;
   color: rgba(0, 0, 0, 0.3);
@@ -396,7 +417,7 @@
 
 .lp-weather-period-desc {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--ink);
   white-space: nowrap;
@@ -406,7 +427,7 @@
 
 .lp-weather-temp {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 300;
   flex-shrink: 0;
 }
@@ -422,7 +443,7 @@
 
 .lp-weather-precip {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   color: rgba(0, 0, 0, 0.35);
   margin-top: 10px;
@@ -522,7 +543,7 @@
   background: rgba(26, 26, 13, 0.82);
   color: var(--cream);
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.18em;
   padding: 11px 12px;
@@ -623,7 +644,7 @@
   gap: 14px;
   text-align: center;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.7;
@@ -642,7 +663,7 @@
 
 .lp-footer-map {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.12em;
   color: rgba(248, 248, 240, 0.45);

@@ -268,6 +268,22 @@ export function LandingPage() {
         <div className="lp-parallax-overlay" />
       </div>
 
+      <section className="lp-section lp-about">
+        <SectionTitle>About</SectionTitle>
+        <p className="lp-about-text">
+          Basis Northwest brings together the finest minds in taxable wealth management for two days
+          of concentrated inquiry, frank conversation, and considered innovation. The gathering is
+          built on a single conviction: that tax planning is not peripheral to the value great
+          advisors provide. It is the foundation upon which lasting wealth is built.
+        </p>
+        <p className="lp-about-text lp-about-text--second">
+          Sessions span the full terrain of after-tax strategy — ETF innovation, custom indexing,
+          concentrated asset divesting, real assets, estate and gift planning, and the broader
+          science of preserving wealth across generations. Large presentations give way to intimate
+          group discussions. Every conversation is designed to be worth the trip.
+        </p>
+      </section>
+
       <section className="lp-section lp-attire">
         <SectionTitle>Attire</SectionTitle>
         <p className="lp-attire-text">
