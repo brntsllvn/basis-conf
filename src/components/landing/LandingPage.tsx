@@ -284,12 +284,12 @@ export function LandingPage() {
             </p>
           </div>
           <div className="lp-about-host">
-            <img src="/brent-sullivan.webp" alt="Brent Sullivan" className="lp-about-avatar" />
+            <img src="/brent-sullivan.webp" alt="" className="lp-about-avatar" />
             <p className="lp-about-host-name">Brent Sullivan</p>
             <p className="lp-about-host-bio">
-              Brent is the founder of Basis Northwest and the author of Tax Alpha Insider, a newsletter
-              for advisors focused on tax-efficient portfolio management. He is a CPA who has spent his
-              career at the intersection of tax planning and investment strategy.
+              Brent is the author of Tax Alpha Insider, a newsletter covering taxable portfolio
+              strategy — ETF taxation, direct indexing, tax-aware long-short, and single-stock
+              de-risking. He started Basis Northwest to bring those conversations into a room.
             </p>
           </div>
         </div>
