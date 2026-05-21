@@ -286,6 +286,13 @@
   letter-spacing: 0.05em;
 }
 
+.guide-card-notes {
+  margin-top: 6px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(26, 26, 13, 0.5);
+}
+
 .guide-card-location {
   display: inline-block;
   margin-top: 10px;

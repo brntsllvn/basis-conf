@@ -856,15 +856,15 @@
       "id": "fri-main-mariners",
       "dayId": "fri",
       "venueId": "main-stage",
-      "startSlot": 120,
-      "durationSlots": 33,
+      "startSlot": 146,
+      "durationSlots": 36,
       "type": "event",
-      "company": "",
+      "company": "Basis Northwest",
       "title": "Mariners vs. Diamondbacks @ T-Mobile Park",
       "assignments": [],
       "isSponsored": false,
       "isTbd": false,
-      "notes": "First pitch 7:10 PM PT. Group outing.",
+      "notes": "Ticket required \u00b7 First pitch 7:10 PM PT",
       "badge": "",
       "location": "T-Mobile Park \u00b7 1250 1st Ave S, Seattle"
     },
@@ -932,6 +932,10 @@
       "company": "Income Research + Management / BondBloxx",
       "title": "Beyond Municipals: Expanding the Fixed Income Playbook for Tax-Aware Investors",
       "assignments": [
+        {
+          "contactId": "c-carolyn-barnette",
+          "slotRole": "Moderator"
+        },
         {
           "contactId": "c-graham-hopper",
           "slotRole": "Speaker"
@@ -1834,9 +1838,9 @@
     },
     {
       "id": "c-taotao",
-      "name": "TaoTao",
+      "name": "TaoTao Cai",
       "firstName": "TaoTao",
-      "lastName": "",
+      "lastName": "Cai",
       "company": "BlackRock",
       "title": "",
       "email": "",
