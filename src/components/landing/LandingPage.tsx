@@ -240,7 +240,7 @@ export function LandingPage() {
           <div className="lp-header-rule" />
 
           <div className="lp-dateline">
-            <span className="lp-dateline-days">May 28 – 29</span>
+            <span className="lp-dateline-days">May 28 · 29</span>
             <span className="lp-dateline-city">Seattle, Washington</span>
           </div>
 
@@ -273,7 +273,7 @@ export function LandingPage() {
         <div className="lp-about-body">
           <div className="lp-about-text-wrap">
             <p className="lp-about-text">
-              Basis Northwest is a conference about tax. Not tax as a line item — tax as the central
+              Basis Northwest is a conference about tax. Not tax as a line item: tax as the central
               variable in every investment decision worth making. The advisors who come here have built
               practices around that idea, and they spend two days in Seattle each spring talking about it.
             </p>
@@ -288,7 +288,7 @@ export function LandingPage() {
             <p className="lp-about-host-name">Brent Sullivan</p>
             <p className="lp-about-host-bio">
               Brent is the author of Tax Alpha Insider, a newsletter covering taxable portfolio
-              strategy — ETF taxation, direct indexing, tax-aware long-short, and single-stock
+              strategy: ETF taxation, direct indexing, tax-aware long-short, and single-stock
               de-risking. He started Basis Northwest to bring those conversations into a room.
             </p>
           </div>
