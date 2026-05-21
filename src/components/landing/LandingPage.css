@@ -333,8 +333,6 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  border-left: 3px solid var(--gold);
-  padding-left: 24px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -424,8 +422,7 @@
 
 /* ── Attire ─────────────────────────────── */
 .lp-attire {
-  border-left: 3px solid var(--ink);
-  padding-left: 36px;
+  padding-left: 0;
 }
 
 .lp-attire-text {
