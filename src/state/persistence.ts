@@ -18,7 +18,10 @@ export async function loadState(): Promise<AppState> {
       const res = await fetch(API_URL, { cache: 'no-store' });
       if (!res.ok) throw new Error(`API ${res.status}`);
       const data = await res.json();
-      if (data) return data as AppState;
+      if (data) {
+        try { localStorage.setItem(LS_KEY, JSON.stringify(data)); } catch { /* ignore */ }
+        return data as AppState;
+      }
     } catch {
       serverReachable = false;
       console.warn('Server unavailable, falling back to localStorage');
