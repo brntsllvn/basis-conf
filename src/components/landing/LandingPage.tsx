@@ -289,10 +289,12 @@ export function LandingPage() {
           <div className="lp-about-host">
             <img src="/brent-sullivan.webp" alt="" className="lp-about-avatar" />
             <p className="lp-about-host-name">Brent Sullivan</p>
-            <p className="lp-about-host-bio">
-              Brent writes Tax Alpha Insider, a newsletter read by thousands of advisors on taxable
-              portfolio strategy. He started Basis Northwest because the conversation deserved a room.
-            </p>
+            <p className="lp-about-host-bio">Hosted by Brent Sullivan</p>
+            <div className="lp-about-host-links">
+              <a href="https://www.linkedin.com/in/brntsllvn/" target="_blank" rel="noreferrer" className="lp-about-host-link">LinkedIn</a>
+              <a href="https://x.com/TaxAlphaInsider" target="_blank" rel="noreferrer" className="lp-about-host-link">X</a>
+              <a href="https://www.taxalphainsider.com/" target="_blank" rel="noreferrer" className="lp-about-host-link">Tax Alpha Insider</a>
+            </div>
           </div>
         </div>
       </section>
