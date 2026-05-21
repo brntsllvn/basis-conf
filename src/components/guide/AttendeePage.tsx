@@ -153,7 +153,7 @@ export function AttendeePage() {
               {isNowAnchor && (
                 <div className="guide-now-line" ref={nowRef}>
                   <div className="guide-now-rule" />
-                  <span className="guide-now-label">NOW · {clockStr(now)}</span>
+                  <span className="guide-now-label">NOW</span>
                   <div className="guide-now-rule" />
                 </div>
               )}
