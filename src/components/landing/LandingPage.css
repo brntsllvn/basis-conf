@@ -1,7 +1,7 @@
 /* ===== Northwest 2026 Landing Page ===== */
 
 :root {
-  --ink:    #1a1a0d;
+  --ink:    #000;
   --cream:  #f8f8f0;
   --gold:   #e6db74;
   --forest: #0d2118;
@@ -279,7 +279,7 @@
 .lp-title-rule {
   flex: 1;
   height: 1px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .lp-section-title-row--light .lp-title-rule {
@@ -295,8 +295,20 @@
 
 /* ── About ──────────────────────────────── */
 .lp-about {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding-bottom: 64px;
+  max-width: 900px;
+}
+
+.lp-about-body {
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+}
+
+.lp-about-text-wrap {
+  flex: 1;
+  min-width: 0;
 }
 
 .lp-about-text {
@@ -306,12 +318,66 @@
   line-height: 1.75;
   color: var(--ink);
   margin: 0;
-  max-width: 680px;
 }
 
 .lp-about-text--second {
   margin-top: 28px;
-  color: rgba(26, 26, 13, 0.72);
+  color: rgba(0, 0, 0, 0.62);
+}
+
+.lp-about-host {
+  flex-shrink: 0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.lp-about-avatar {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.lp-about-host-name {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.lp-about-host-bio {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .lp-about-body {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+  .lp-about-host {
+    width: 100%;
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+  }
+  .lp-about-avatar {
+    width: 100px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .lp-about-host-name, .lp-about-host-bio {
+    text-align: left;
+  }
 }
 
 /* ── Attire ─────────────────────────────── */
@@ -506,7 +572,11 @@
   background: rgba(26, 26, 13, 0.08);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
+  .lp-speaker-mosaic { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 560px) {
   .lp-speaker-mosaic { grid-template-columns: repeat(2, 1fr); }
 }
 

@@ -270,16 +270,29 @@ export function LandingPage() {
 
       <section className="lp-section lp-about">
         <SectionTitle>About</SectionTitle>
-        <p className="lp-about-text">
-          Basis Northwest is a conference about tax. Not tax as a line item — tax as the central
-          variable in every investment decision worth making. The advisors who come here have built
-          practices around that idea, and they spend two days in Seattle each spring talking about it.
-        </p>
-        <p className="lp-about-text lp-about-text--second">
-          Sessions cover ETF structure, custom indexing, concentrated positions, real assets, and
-          estate planning. Some are presentations. Some turn into debates. The conversations tend
-          to go long.
-        </p>
+        <div className="lp-about-body">
+          <div className="lp-about-text-wrap">
+            <p className="lp-about-text">
+              Basis Northwest is a conference about tax. Not tax as a line item — tax as the central
+              variable in every investment decision worth making. The advisors who come here have built
+              practices around that idea, and they spend two days in Seattle each spring talking about it.
+            </p>
+            <p className="lp-about-text lp-about-text--second">
+              Sessions cover ETF structure, custom indexing, concentrated positions, real assets, and
+              estate planning. Some are presentations. Some turn into debates. The conversations tend
+              to go long.
+            </p>
+          </div>
+          <div className="lp-about-host">
+            <img src="/brent-sullivan.webp" alt="Brent Sullivan" className="lp-about-avatar" />
+            <p className="lp-about-host-name">Brent Sullivan</p>
+            <p className="lp-about-host-bio">
+              Brent is the founder of Basis Northwest and the author of Tax Alpha Insider, a newsletter
+              for advisors focused on tax-efficient portfolio management. He is a CPA who has spent his
+              career at the intersection of tax planning and investment strategy.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="lp-section lp-attire">
