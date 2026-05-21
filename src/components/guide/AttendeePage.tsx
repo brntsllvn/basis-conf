@@ -182,14 +182,18 @@ export function AttendeePage() {
                         className={`guide-card guide-card--${status}`}
                         style={{ borderLeftColor: venue?.accent ?? '#6B7280' }}
                       >
-                        {(slot.badge || venue) && (
-                          <span
-                            className="guide-venue-badge"
-                            style={{ color: venue?.accent ?? '#6B7280', background: venue?.dim ?? '#F3F4F6' }}
-                          >
-                            {slot.badge ?? venue!.short}
-                          </span>
-                        )}
+                        {(() => {
+                          const badgeText = 'badge' in slot ? slot.badge : venue?.short;
+                          if (!badgeText) return null;
+                          return (
+                            <span
+                              className="guide-venue-badge"
+                              style={{ color: venue?.accent ?? '#6B7280', background: venue?.dim ?? '#F3F4F6' }}
+                            >
+                              {badgeText}
+                            </span>
+                          );
+                        })()}
                         {slot.type === 'event' ? (<>
                           {slot.title && (
                             <div className="guide-card-company">{slot.title}</div>

@@ -3,7 +3,7 @@
   "days": [
     {
       "id": "wed",
-      "label": "Wed 5/27 \u00b7 Load-In",
+      "label": "Wed 5/27 · Load-In",
       "date": "2025-05-27"
     },
     {
@@ -73,7 +73,8 @@
       "isSponsored": true,
       "isTbd": false,
       "notes": "",
-      "location": "Aerlume \u00b7 2003 Western Ave, Seattle"
+      "location": "Aerlume · 2003 Western Ave, Seattle",
+      "badge": ""
     },
     {
       "id": "thu-main-breakfast",
@@ -97,7 +98,7 @@
       "durationSlots": 1,
       "type": "event",
       "company": "Canvas",
-      "title": "Welcome Remarks \u00b7 Chris Loveless \u00b7 Canvas",
+      "title": "Welcome Remarks · Chris Loveless · Canvas",
       "assignments": [
         {
           "contactId": "c-chris-loveless",
@@ -394,7 +395,7 @@
       "durationSlots": 5,
       "type": "solo",
       "company": "AllianceBernstein",
-      "title": "Three Tax Alphas You're Probably Only Capturing One Of \u00b7 How Equities, Munis & Rebalancing Compound in One Taxable Account",
+      "title": "Three Tax Alphas You're Probably Only Capturing One Of · How Equities, Munis & Rebalancing Compound in One Taxable Account",
       "assignments": [
         {
           "contactId": "c-gavin-romm",
@@ -403,7 +404,7 @@
       ],
       "isSponsored": false,
       "isTbd": false,
-      "notes": "How Equity TLH, Municipal Bond TLH, and Intelligent Rebalancing Compound in a Balanced Portfolio. The taxable wealth industry has sophisticated equity tax-loss harvesting tools \u00b7 but that's only one of three distinct sources of tax alpha available in a balanced portfolio. Municipal bond loss harvesting and Intelligent Rebalancing are two additional, independent levers that most advisors are leaving on the table. When combined in a single account, these three alphas interact and compound in ways that separate portfolios can't replicate.",
+      "notes": "How Equity TLH, Municipal Bond TLH, and Intelligent Rebalancing Compound in a Balanced Portfolio. The taxable wealth industry has sophisticated equity tax-loss harvesting tools · but that's only one of three distinct sources of tax alpha available in a balanced portfolio. Municipal bond loss harvesting and Intelligent Rebalancing are two additional, independent levers that most advisors are leaving on the table. When combined in a single account, these three alphas interact and compound in ways that separate portfolios can't replicate.",
       "pinned": true
     },
     {
@@ -414,7 +415,7 @@
       "durationSlots": 1,
       "type": "event",
       "company": "First Trust",
-      "title": "Closing Remarks \u00b7 Jon DiGiovanni \u00b7 First Trust",
+      "title": "Closing Remarks · Jon DiGiovanni · First Trust",
       "assignments": [
         {
           "contactId": "c-jon-ft",
@@ -594,7 +595,7 @@
       "isTbd": false,
       "notes": "",
       "color": "#A8B8B0",
-      "location": "World Trade Center \u00b7 2200 Alaskan Way, Seattle",
+      "location": "World Trade Center · 2200 Alaskan Way, Seattle",
       "badge": "INVITE ONLY"
     },
     {
@@ -646,7 +647,7 @@
       "durationSlots": 5,
       "type": "solo",
       "company": "Dimensional Fund Advisors",
-      "title": "Long-Only and Long-Short SMAs \u00b7 The Dimensional Perspective",
+      "title": "Long-Only and Long-Short SMAs · The Dimensional Perspective",
       "assignments": [
         {
           "contactId": "c-savina-rizova",
@@ -688,7 +689,7 @@
       ],
       "isSponsored": true,
       "isTbd": false,
-      "notes": "First Trust Panel \u00b7 Christian + who else? TBD"
+      "notes": "First Trust Panel · Christian + who else? TBD"
     },
     {
       "id": "fri-main-lunch",
@@ -731,7 +732,7 @@
       "durationSlots": 5,
       "type": "solo",
       "company": "Gemifi",
-      "title": "Gemifi Presents: The Equity Comp Playbook \u00b7 ISOs, NSOs, and Creating Taxable Wealth",
+      "title": "Gemifi Presents: The Equity Comp Playbook · ISOs, NSOs, and Creating Taxable Wealth",
       "assignments": [
         {
           "contactId": "d5a070bc-60c6-42b3-a732-850374d07c51",
@@ -740,7 +741,7 @@
       ],
       "isSponsored": false,
       "isTbd": false,
-      "notes": "Concurrent with second half of practitioner group (2:25\u00b72:45 PM)"
+      "notes": "Concurrent with second half of practitioner group (2:25·2:45 PM)"
     },
     {
       "id": "fri-main-paul-ms",
@@ -844,7 +845,7 @@
       "durationSlots": 1,
       "type": "event",
       "company": "",
-      "title": "Thanks for Coming \u00b7 Brent Sullivan \u00b7 Basis Northwest",
+      "title": "Thanks for Coming · Brent Sullivan · Basis Northwest",
       "assignments": [],
       "isSponsored": false,
       "isTbd": false,
@@ -970,7 +971,7 @@
       ],
       "isSponsored": false,
       "isTbd": false,
-      "notes": "Moderator: Dave Reynolds (Spearhead). Michael Liebeskind (Golconda) \u00b7 power of PPLI structure. Jim Carroll \u00b7 investment flexibility of SMAs for PPLI. Mohsen Ghazi \u00b7 family office use cases."
+      "notes": "Moderator: Dave Reynolds (Spearhead). Michael Liebeskind (Golconda) · power of PPLI structure. Jim Carroll · investment flexibility of SMAs for PPLI. Mohsen Ghazi · family office use cases."
     },
     {
       "id": "fri-lla-private-markets",
@@ -1076,7 +1077,7 @@
       "assignments": [],
       "isSponsored": false,
       "isTbd": false,
-      "notes": "5:00\u00b76:00 PM \u00b7 Farewell Reception"
+      "notes": "5:00·6:00 PM · Farewell Reception"
     },
     {
       "id": "fri-main-open1",
@@ -1411,7 +1412,7 @@
       "id": "c-jim-dubeck",
       "name": "Jim Dubeck",
       "company": "Moss Adams LLP",
-      "title": "Director, National Tax \u00b7 Partnerships",
+      "title": "Director, National Tax · Partnerships",
       "email": "jim.dubeck@mossadams.com",
       "phone": "(206) 302-6416",
       "supportName": "",

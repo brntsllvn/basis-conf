@@ -15,7 +15,7 @@ let serverReachable = true;
 export async function loadState(): Promise<AppState> {
   if (serverReachable) {
     try {
-      const res = await fetch(API_URL);
+      const res = await fetch(API_URL, { cache: 'no-store' });
       const data = await res.json();
       return data as AppState;
     } catch {

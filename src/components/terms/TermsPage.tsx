@@ -50,7 +50,6 @@ export function TermsPage() {
           <p>These terms are governed by the laws of the State of Washington. Any disputes shall be resolved under the jurisdiction of King County, Washington.</p>
         </section>
 
-        <p className="terms-footer-note">Questions? Contact <a href="/northwest-2026">Basis Live, LLC</a> through the event website.</p>
       </main>
 
       <footer className="terms-page-footer">
