@@ -268,7 +268,7 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.22em;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.7);
   white-space: nowrap;
 }
 
@@ -279,7 +279,7 @@
 .lp-title-rule {
   flex: 1;
   height: 1px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .lp-section-title-row--light .lp-title-rule {
