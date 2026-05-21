@@ -268,7 +268,7 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.22em;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.85);
   white-space: nowrap;
 }
 
@@ -279,7 +279,7 @@
 .lp-title-rule {
   flex: 1;
   height: 1px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .lp-section-title-row--light .lp-title-rule {
@@ -288,21 +288,21 @@
 
 /* ── Sections ───────────────────────────── */
 .lp-section {
-  padding: 72px 40px;
-  max-width: 800px;
+  padding: 88px 48px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
 /* ── About ──────────────────────────────── */
 .lp-about {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding-bottom: 64px;
-  max-width: 900px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding-bottom: 80px;
+  max-width: 960px;
 }
 
 .lp-about-body {
   display: flex;
-  gap: 56px;
+  gap: 72px;
   align-items: flex-start;
 }
 
@@ -311,23 +311,46 @@
   min-width: 0;
 }
 
+.lp-about-lead {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+
 .lp-about-text {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 26px;
   font-weight: 300;
   line-height: 1.75;
-  color: var(--ink);
-  margin: 0;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0 0 32px;
 }
 
-.lp-about-text--second {
-  margin-top: 28px;
-  color: rgba(0, 0, 0, 0.62);
+.lp-about-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 3px solid var(--gold);
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lp-about-topics li {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .lp-about-host {
   flex-shrink: 0;
-  width: 200px;
+  width: 210px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -335,49 +358,49 @@
 }
 
 .lp-about-avatar {
-  width: 180px;
+  width: 190px;
   height: auto;
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .lp-about-host-name {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--ink);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
 .lp-about-host-bio {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.65);
   margin: 0;
 }
 
 @media (max-width: 640px) {
   .lp-about-body {
     flex-direction: column-reverse;
-    gap: 32px;
+    gap: 40px;
   }
   .lp-about-host {
     width: 100%;
     flex-direction: row;
     text-align: left;
-    gap: 20px;
+    gap: 24px;
+    align-items: flex-start;
   }
   .lp-about-avatar {
-    width: 100px;
+    width: 110px;
     margin-bottom: 0;
     flex-shrink: 0;
   }
-  .lp-about-host-name, .lp-about-host-bio {
-    text-align: left;
-  }
+  .lp-about-host-name, .lp-about-host-bio { text-align: left; }
+  .lp-about-lead { font-size: 28px; }
 }
 
 /* ── Attire ─────────────────────────────── */
@@ -407,7 +430,7 @@
 
 .lp-attire-pull {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /* ── Weather ────────────────────────────── */
@@ -500,7 +523,7 @@
 }
 
 .lp-weather-high { color: var(--ink); }
-.lp-weather-low  { color: rgba(0, 0, 0, 0.45); }
+.lp-weather-low  { color: rgba(0, 0, 0, 0.6); }
 
 .lp-weather-divider {
   height: 1px;
@@ -719,9 +742,9 @@
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.7;
-  padding: 60px 32px 72px;
+  padding: 80px 40px 88px;
   background: var(--ink);
-  color: rgba(248, 248, 240, 0.65);
+  color: rgba(248, 248, 240, 0.82);
 }
 
 .lp-footer-logo {
@@ -737,7 +760,7 @@
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.12em;
-  color: rgba(248, 248, 240, 0.45);
+  color: rgba(248, 248, 240, 0.65);
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-color: rgba(248, 248, 240, 0.2);

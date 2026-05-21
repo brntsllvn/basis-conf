@@ -272,24 +272,26 @@ export function LandingPage() {
         <SectionTitle>About</SectionTitle>
         <div className="lp-about-body">
           <div className="lp-about-text-wrap">
+            <p className="lp-about-lead">Taxable wealth takes center stage.</p>
             <p className="lp-about-text">
-              Basis Northwest is a conference about tax. Not tax as a line item: tax as the central
-              variable in every investment decision worth making. The advisors who come here have built
-              practices around that idea, and they spend two days in Seattle each spring talking about it.
+              Two days of big-stage presentations and small-group conversations for advisors who
+              know that tax planning is central to the value they provide.
             </p>
-            <p className="lp-about-text lp-about-text--second">
-              Sessions cover ETF structure, custom indexing, concentrated positions, real assets, and
-              estate planning. Some are presentations. Some turn into debates. The conversations tend
-              to go long.
-            </p>
+            <ul className="lp-about-topics">
+              <li>ETF innovation and tax efficiency</li>
+              <li>Custom indexing and leveraged strategies</li>
+              <li>Concentrated asset divesting</li>
+              <li>Real assets</li>
+              <li>Estate and gift planning</li>
+              <li>Comprehensive wealth</li>
+            </ul>
           </div>
           <div className="lp-about-host">
             <img src="/brent-sullivan.webp" alt="" className="lp-about-avatar" />
             <p className="lp-about-host-name">Brent Sullivan</p>
             <p className="lp-about-host-bio">
-              Brent is the author of Tax Alpha Insider, a newsletter covering taxable portfolio
-              strategy: ETF taxation, direct indexing, tax-aware long-short, and single-stock
-              de-risking. He started Basis Northwest to bring those conversations into a room.
+              Brent writes Tax Alpha Insider, a newsletter read by thousands of advisors on taxable
+              portfolio strategy. He started Basis Northwest because the conversation deserved a room.
             </p>
           </div>
         </div>
