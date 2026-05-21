@@ -39,7 +39,7 @@ export function Nav() {
           People
         </NavLink>
         <a href="/northwest-2026" className="nav-link" target="_blank" rel="noreferrer">
-          Guide ↗
+          Site ↗
         </a>
       </div>
       <div className="nav-actions">

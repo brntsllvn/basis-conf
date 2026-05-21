@@ -128,6 +128,9 @@ export function AttendeePage() {
           <span className="guide-header-wifi-row"><span className="guide-header-wifi-key">Network</span> basis_northwest_2026</span>
           <span className="guide-header-wifi-row"><span className="guide-header-wifi-key">Password</span> tax_alpha_insider</span>
         </div>
+        <div className="guide-header-back">
+          <a href="/northwest-2026" className="guide-back-link">← Event Info</a>
+        </div>
         <div className="guide-day-tabs">
           {CONF_DAYS.map(d => (
             <button

@@ -17,6 +17,7 @@
   padding: 16px 20px 0;
   flex-shrink: 0;
   z-index: 10;
+  border-top: 4px solid #e6db74;
 }
 
 .guide-header-top {
@@ -27,10 +28,11 @@
 }
 
 .guide-conf-name {
-  font-size: 17px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.2px;
-  opacity: 0.85;
+  color: #f8f8f0;
 }
 
 .guide-clock {
@@ -53,7 +55,30 @@
   width: auto;
   background: #fff;
   padding: 10px 28px;
-  border-radius: 8px;
+}
+
+/* Back link */
+.guide-header-back {
+  padding: 0 0 12px;
+}
+
+.guide-back-link {
+  display: inline-block;
+  background: #e6db74;
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 18px;
+  font-family: system-ui, sans-serif;
+  transition: background 0.15s, color 0.15s;
+}
+
+.guide-back-link:hover {
+  background: #f8f8f0;
+  color: #000;
 }
 
 /* Day tabs */
@@ -67,7 +92,7 @@
   padding: 10px 0;
   border: none;
   background: transparent;
-  color: rgba(248, 248, 240, 0.4);
+  color: rgba(248, 248, 240, 0.6);
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
