@@ -14,7 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.setHeader('Cache-Control', 'no-store');
     const { blobs } = await list({ prefix: BLOB_NAME });
     if (!blobs.length) return res.json(null);
-    const r = await fetch(blobs[0].url, { cache: 'no-store' });
+    const r = await fetch(blobs[0].downloadUrl, { cache: 'no-store' });
     return res.json(await r.json());
   }
 
