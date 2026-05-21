@@ -344,7 +344,6 @@ export function LandingPage() {
                 className="lp-speaker-img"
                 loading="lazy"
               />
-              <div className="lp-speaker-name">{slugToName(slug)}</div>
             </div>
           ))}
         </div>
