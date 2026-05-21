@@ -1,84 +1,124 @@
 /* ===== Attendee Guide ===== */
 
+:root {
+  --ink:    #1a1a0d;
+  --cream:  #f8f8f0;
+  --gold:   #e6db74;
+  --forest: #0d2118;
+}
+
 .guide-root {
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  background: #f8f8f0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color: #000;
+  background: var(--cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--ink);
   overflow: hidden;
 }
 
-/* Header */
+/* ── Header ─────────────────────────────── */
 .guide-header {
-  background: #000;
-  color: #f8f8f0;
-  padding: 16px 20px 0;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 16px 24px 0;
   flex-shrink: 0;
   z-index: 10;
-  border-top: 4px solid #e6db74;
+  border-top: 4px solid var(--gold);
 }
 
 .guide-header-top {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .guide-conf-name {
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-  color: #f8f8f0;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--cream);
 }
 
 .guide-clock {
-  font-size: 22px;
-  font-weight: 700;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  font-weight: 300;
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.5px;
-  color: #e6db74;
+  letter-spacing: 0.02em;
+  color: var(--gold);
 }
 
-/* Header logo */
+/* Logo */
 .guide-header-logo {
-  padding: 12px 20px 6px;
+  padding: 12px 0 8px;
   display: flex;
   justify-content: center;
 }
 
 .guide-logo {
-  height: 80px;
+  height: 72px;
   width: auto;
   background: #fff;
   padding: 10px 28px;
 }
 
+/* WiFi */
+.guide-header-wifi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 0 8px;
+}
+
+.guide-wifi-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--gold);
+  margin-bottom: 2px;
+}
+
+.guide-header-wifi-row {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--cream);
+  text-align: center;
+}
+
+.guide-header-wifi-key {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(248, 248, 240, 0.5);
+  letter-spacing: 0.15em;
+  margin-right: 10px;
+}
+
 /* Back link */
 .guide-header-back {
-  padding: 0 0 12px;
+  padding: 10px 0 12px;
 }
 
 .guide-back-link {
   display: inline-block;
-  background: #e6db74;
-  color: #000;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-decoration: none;
-  padding: 8px 18px;
-  font-family: system-ui, sans-serif;
+  padding: 10px 22px;
   transition: background 0.15s, color 0.15s;
 }
 
 .guide-back-link:hover {
-  background: #f8f8f0;
-  color: #000;
+  background: var(--cream);
+  color: var(--ink);
 }
 
 /* Day tabs */
@@ -89,24 +129,25 @@
 
 .guide-day-tab {
   flex: 1;
-  padding: 10px 0;
+  padding: 12px 0;
   border: none;
   background: transparent;
-  color: rgba(248, 248, 240, 0.6);
-  font-size: 15px;
-  font-weight: 700;
+  color: rgba(248, 248, 240, 0.5);
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   cursor: pointer;
   border-bottom: 3px solid transparent;
   transition: color 0.15s, border-color 0.15s;
-  letter-spacing: 0.2px;
 }
 
 .guide-day-tab.active {
-  color: #f8f8f0;
-  border-bottom-color: #e6db74;
+  color: var(--cream);
+  border-bottom-color: var(--gold);
 }
 
-/* Scrollable timeline */
+/* ── Scrollable timeline ────────────────── */
 .guide-scroll {
   flex: 1;
   overflow-y: auto;
@@ -118,34 +159,33 @@
 .guide-now-line {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  margin: 6px 0;
+  gap: 14px;
+  padding: 14px 20px;
+  margin: 8px 0;
 }
 
 .guide-now-rule {
   flex: 1;
   height: 2px;
-  background: #e6db74;
+  background: var(--gold);
 }
 
 .guide-now-label {
-  font-size: 12px;
-  font-weight: 900;
-  color: #000;
-  background: #e6db74;
-  padding: 3px 10px;
-  border-radius: 100px;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 4px 12px;
+  letter-spacing: 0.12em;
   white-space: nowrap;
 }
 
-/* Time blocks */
+/* ── Time blocks ────────────────────────── */
 .guide-block {
   display: flex;
   gap: 0;
-  padding: 10px 16px 6px;
+  padding: 12px 20px 8px;
   transition: opacity 0.25s ease;
 }
 
@@ -155,24 +195,24 @@
 
 /* Time column */
 .guide-time-col {
-  width: 72px;
+  width: 80px;
   flex-shrink: 0;
-  padding-top: 4px;
+  padding-top: 5px;
 }
 
 .guide-time-label {
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.4);
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(26, 26, 13, 0.38);
   white-space: nowrap;
-  letter-spacing: -0.3px;
+  letter-spacing: 0.05em;
   display: block;
 }
 
 .guide-block--active .guide-time-label,
 .guide-block--upcoming .guide-time-label {
-  color: #000;
-  font-weight: 800;
+  color: var(--ink);
 }
 
 /* Sessions column */
@@ -180,17 +220,16 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   min-width: 0;
 }
 
-/* Session card */
+/* ── Session card ───────────────────────── */
 .guide-card {
   background: #fff;
-  border-radius: 10px;
-  padding: 14px 16px;
+  padding: 16px 18px;
   border-left: 5px solid #ccc;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
@@ -199,134 +238,104 @@
 }
 
 .guide-card--active {
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
-  outline: 2px solid #e6db74;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.11);
+  outline: 2px solid var(--gold);
   outline-offset: 0;
 }
 
-/* Venue badge — keeps distinct room colors */
+/* Venue badge */
 .guide-venue-badge {
   display: inline-block;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  margin-bottom: 10px;
 }
 
 /* Card content */
 .guide-card-company {
-  font-size: 19px;
-  font-weight: 800;
-  color: #000;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
   line-height: 1.2;
-  margin-bottom: 4px;
-}
-
-.guide-card-hosted {
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 4px;
-}
-
-.guide-card-title {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
-  line-height: 1.45;
   margin-bottom: 5px;
 }
 
+.guide-card-hosted {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  color: rgba(26, 26, 13, 0.5);
+  margin-bottom: 5px;
+}
+
+.guide-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  color: rgba(26, 26, 13, 0.65);
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
 .guide-card-speakers {
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.45);
-  font-weight: 500;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 15px;
+  color: rgba(26, 26, 13, 0.45);
+  letter-spacing: 0.05em;
 }
 
 .guide-card-location {
   display: inline-block;
-  margin-top: 8px;
-  font-size: 13px;
+  margin-top: 10px;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 14px;
   font-weight: 600;
-  color: #000;
+  color: var(--ink);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
   opacity: 0.65;
 }
 
 .guide-active-pill {
   display: inline-block;
   margin-top: 10px;
-  padding: 4px 10px;
-  background: #e6db74;
-  color: #000;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-  border-radius: 100px;
+  padding: 5px 12px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
 }
 
 /* Break row */
 .guide-break {
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.3);
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(26, 26, 13, 0.3);
+  letter-spacing: 0.15em;
   padding: 8px 0 4px;
 }
 
 .guide-break--active {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(26, 26, 13, 0.7);
 }
 
-/* Header WiFi */
-.guide-header-wifi {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  padding: 10px 20px 6px;
-}
-
-.guide-wifi-icon {
-  width: 22px;
-  height: 22px;
-  color: #e6db74;
-  margin-bottom: 2px;
-}
-
-.guide-header-wifi-row {
-  font-size: 15px;
-  font-weight: 600;
-  color: #f8f8f0;
-  font-family: ui-monospace, monospace;
-  text-align: center;
-}
-
-.guide-header-wifi-key {
-  font-size: 10px;
-  font-weight: 700;
-  color: rgba(248, 248, 240, 0.45);
-  font-family: system-ui, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  margin-right: 8px;
-}
-
-/* Footer */
+/* ── Footer ─────────────────────────────── */
 .guide-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-align: center;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.28);
-  letter-spacing: 0.3px;
-  padding: 24px 20px 32px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  color: rgba(26, 26, 13, 0.3);
+  letter-spacing: 0.03em;
+  padding: 28px 24px 40px;
 }
 
 .guide-footer-logo {
@@ -334,5 +343,17 @@
   width: auto;
   background: #fff;
   padding: 8px 24px;
-  border-radius: 8px;
+}
+
+/* ── Mobile ─────────────────────────────── */
+@media (max-width: 480px) {
+  .guide-conf-name { font-size: 18px; }
+  .guide-clock { font-size: 22px; }
+  .guide-header-wifi-row { font-size: 16px; }
+  .guide-time-col { width: 64px; }
+  .guide-time-label { font-size: 13px; }
+  .guide-card-company { font-size: 20px; }
+  .guide-card-title { font-size: 16px; }
+  .guide-card-speakers { font-size: 14px; }
+  .guide-block { padding: 10px 14px 6px; }
 }

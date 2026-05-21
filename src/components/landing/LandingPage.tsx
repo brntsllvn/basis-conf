@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import './LandingPage.css';
 
 const HOSTS = [
@@ -69,60 +69,6 @@ function SectionTitle({ children, light }: { children: React.ReactNode; light?: 
   );
 }
 
-function BellHarborEtching() {
-  const ink = 'rgba(26,26,13,';
-  return (
-    <svg viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" className="lp-etching-svg" aria-hidden="true">
-      {/* Olympic Mountains — filled silhouette */}
-      <path
-        d="M0,195 L60,178 L130,185 L200,162 L270,172 L350,145 L410,158 L470,132 L530,148 L590,136 L650,150 L710,138 L780,154 L860,164 L960,170 L1060,163 L1160,172 L1280,176 L1440,180 L1440,300 L0,300Z"
-        fill={`${ink}0.06)`}
-      />
-      <path
-        d="M0,195 L60,178 L130,185 L200,162 L270,172 L350,145 L410,158 L470,132 L530,148 L590,136 L650,150 L710,138 L780,154 L860,164 L960,170 L1060,163 L1160,172 L1280,176 L1440,180"
-        fill="none" stroke={`${ink}0.3)`} strokeWidth="1.2"
-      />
-      {/* Bell Harbor — main hall silhouette */}
-      <path
-        d="M380,222 L380,174 L1060,174 L1060,222Z"
-        fill={`${ink}0.05)`} stroke={`${ink}0.45)`} strokeWidth="1.2"
-      />
-      {/* Upper setback */}
-      <path
-        d="M460,174 L460,154 L980,154 L980,174"
-        fill="none" stroke={`${ink}0.4)`} strokeWidth="1"
-      />
-      {/* Roof ridge */}
-      <path
-        d="M560,154 L560,140 L880,140 L880,154"
-        fill="none" stroke={`${ink}0.35)`} strokeWidth="0.9"
-      />
-      {/* Flagpole */}
-      <line x1="720" y1="140" x2="720" y2="108" stroke={`${ink}0.4)`} strokeWidth="0.8" />
-      <path d="M720,108 L748,116 L720,124Z" fill={`${ink}0.3)`} />
-      {/* Pier / seawall */}
-      <line x1="100" y1="222" x2="1340" y2="222" stroke={`${ink}0.55)`} strokeWidth="1.4" />
-      {/* Pilings */}
-      {Array.from({ length: 19 }, (_, i) => (
-        <line key={i} x1={140 + i * 60} y1={222} x2={140 + i * 60} y2={238} stroke={`${ink}0.3)`} strokeWidth="0.8" />
-      ))}
-      {/* Bollards */}
-      {Array.from({ length: 10 }, (_, i) => (
-        <circle key={i} cx={180 + i * 110} cy={222} r={2.5} fill={`${ink}0.35)`} />
-      ))}
-      {/* Water — parallel lines with gentle curve */}
-      {[232, 244, 256, 268, 280, 292].map((y, i) => (
-        <path
-          key={y}
-          d={`M${40},${y} Q360,${y + (i % 2 === 0 ? -1 : 1)} 720,${y} Q1080,${y + (i % 2 === 0 ? 1 : -1)} 1400,${y}`}
-          fill="none"
-          stroke={`${ink}${0.1 - i * 0.012})`}
-          strokeWidth="0.7"
-        />
-      ))}
-    </svg>
-  );
-}
 
 type DayForecast = {
   date: string; label: string; high: number; low: number;
@@ -242,6 +188,16 @@ function WeatherForecast() {
 
 export function LandingPage() {
   const mosaicRef = useRef<HTMLDivElement>(null);
+  const [lightbox, setLightbox] = useState<{ slug: string; name: string } | null>(null);
+
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeLightbox(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightbox, closeLightbox]);
 
   useEffect(() => {
     const container = mosaicRef.current;
@@ -285,7 +241,6 @@ export function LandingPage() {
 
           <div className="lp-dateline">
             <span className="lp-dateline-days">May 28 – 29</span>
-            <span className="lp-dateline-year">2026</span>
             <span className="lp-dateline-city">Seattle, Washington</span>
           </div>
 
@@ -308,9 +263,9 @@ export function LandingPage() {
 
       <div className="lp-chapter-rule" />
 
-      <div className="lp-etching-wrap">
-        <BellHarborEtching />
-        <p className="lp-epigraph">A gathering of minds at the edge of the continent.</p>
+      <div className="lp-parallax-hero">
+        <div className="lp-parallax-bg" />
+        <div className="lp-parallax-overlay" />
       </div>
 
       <section className="lp-section lp-attire">
@@ -345,7 +300,14 @@ export function LandingPage() {
         <SectionTitle>Speakers</SectionTitle>
         <div className="lp-speaker-mosaic" ref={mosaicRef}>
           {SPEAKERS.map(slug => (
-            <div key={slug} className="lp-speaker-tile">
+            <div
+              key={slug}
+              className="lp-speaker-tile"
+              onClick={() => setLightbox({ slug, name: slugToName(slug) })}
+              role="button"
+              tabIndex={0}
+              onKeyDown={e => { if (e.key === 'Enter') setLightbox({ slug, name: slugToName(slug) }); }}
+            >
               <img
                 src={`/speaker-cards/${slug}.png`}
                 alt={slugToName(slug)}
@@ -367,6 +329,11 @@ export function LandingPage() {
         />
       </section>
 
+      <div className="lp-parallax-stripe">
+        <div className="lp-parallax-stripe-bg" />
+        <div className="lp-parallax-overlay" />
+      </div>
+
       <footer className="lp-footer">
         <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="lp-footer-logo" />
         <span>Basis Northwest 2026 · Bell Harbor International Conference Center · 2211 Alaskan Way, Pier 66, Seattle, Washington</span>
@@ -379,6 +346,19 @@ export function LandingPage() {
           Open in Google Maps →
         </a>
       </footer>
+
+      {lightbox && (
+        <div className="lp-lightbox" onClick={closeLightbox} role="dialog" aria-modal="true">
+          <button className="lp-lightbox-close" onClick={closeLightbox} aria-label="Close">✕</button>
+          <img
+            src={`/speaker-cards/${lightbox.slug}.png`}
+            alt={lightbox.name}
+            className="lp-lightbox-img"
+            onClick={e => e.stopPropagation()}
+          />
+          <p className="lp-lightbox-name" onClick={e => e.stopPropagation()}>{lightbox.name}</p>
+        </div>
+      )}
     </div>
   );
 }

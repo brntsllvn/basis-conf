@@ -19,7 +19,7 @@
   background: var(--ink);
   color: var(--cream);
   border-top: 4px solid var(--gold);
-  padding: 0 32px 140px;
+  padding: 0 24px 100px;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 72px;
+  padding-top: 64px;
 }
 
 .lp-presenting {
@@ -44,7 +44,7 @@
 
 .lp-presenting-label {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.2em;
   color: rgba(248, 248, 240, 0.6);
@@ -95,10 +95,6 @@
   animation: lp-title-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@media (max-width: 600px) {
-  .lp-conf-name { font-size: 56px; }
-}
-
 .lp-conf-year {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 80px;
@@ -109,10 +105,6 @@
   color: var(--gold);
   margin: 0;
   animation: lp-year-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
-}
-
-@media (max-width: 600px) {
-  .lp-conf-year { font-size: 52px; }
 }
 
 .lp-header-rule {
@@ -127,13 +119,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 .lp-dateline-days {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--cream);
@@ -142,7 +134,7 @@
 
 .lp-dateline-year {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 300;
   font-style: italic;
   color: var(--gold);
@@ -151,25 +143,25 @@
 
 .lp-dateline-city {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 300;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   color: rgba(248, 248, 240, 0.6);
 }
 
 .lp-header-ornament {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(248, 248, 240, 0.3);
   letter-spacing: 0.4em;
-  margin: 16px 0 20px;
+  margin: 18px 0 22px;
 }
 
 .lp-venue {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 300;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: rgba(248, 248, 240, 0.55);
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -184,10 +176,10 @@
   background: var(--gold);
   color: var(--ink);
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.2em;
-  padding: 16px 44px;
+  padding: 18px 48px;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
@@ -201,30 +193,66 @@
   background: var(--gold);
 }
 
-/* ── Etching ────────────────────────────── */
-.lp-etching-wrap {
-  background: var(--cream);
-  padding: 0 0 8px;
+/* ── Parallax hero ──────────────────────── */
+.lp-parallax-hero {
+  position: relative;
+  height: 420px;
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lp-etching-svg {
-  width: 100%;
-  height: auto;
-  display: block;
+.lp-parallax-bg {
+  position: absolute;
+  inset: -80px 0;
+  background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center 60%;
+  background-attachment: fixed;
+  filter: sepia(0.45) saturate(0.6) brightness(0.45);
 }
 
-.lp-epigraph {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 22px;
-  font-weight: 300;
-  font-style: italic;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.4);
-  margin: 0;
-  padding: 16px 32px 40px;
-  letter-spacing: 0.01em;
+@media (max-width: 768px) {
+  .lp-parallax-bg {
+    background-attachment: scroll;
+    inset: 0;
+  }
+}
+
+.lp-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 33, 24, 0.35) 0%,
+    rgba(13, 33, 24, 0.2) 50%,
+    rgba(13, 33, 24, 0.5) 100%
+  );
+}
+
+/* ── Parallax stripe (pre-footer) ───────── */
+.lp-parallax-stripe {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.lp-parallax-stripe-bg {
+  position: absolute;
+  inset: -60px 0;
+  background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center 40%;
+  background-attachment: fixed;
+  filter: sepia(0.5) saturate(0.5) brightness(0.4);
+}
+
+@media (max-width: 768px) {
+  .lp-parallax-stripe-bg {
+    background-attachment: scroll;
+    inset: 0;
+  }
 }
 
 /* ── Section titles as running headers ──── */
@@ -232,14 +260,14 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .lp-section-title {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   color: rgba(0, 0, 0, 0.45);
   white-space: nowrap;
 }
@@ -273,7 +301,7 @@
 
 .lp-attire-text {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1.7;
   color: var(--ink);
   margin: 0;
@@ -302,7 +330,7 @@
 }
 
 .lp-weather-loading {
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(0, 0, 0, 0.4);
 }
 
@@ -313,22 +341,22 @@
   background: rgba(26, 26, 13, 0.07);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .lp-weather-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .lp-weather-card {
   background: #fff;
-  padding: 22px 18px 20px;
+  padding: 24px 20px 22px;
   display: flex;
   flex-direction: column;
 }
 
 .lp-weather-label {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: rgba(0, 0, 0, 0.35);
   margin-bottom: 16px;
 }
@@ -336,17 +364,17 @@
 .lp-weather-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 0;
+  gap: 10px;
+  padding: 7px 0;
 }
 
 .lp-weather-row--night { opacity: 0.55; }
 
 .lp-weather-period-icon {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
   flex-shrink: 0;
-  width: 24px;
+  width: 26px;
   text-align: center;
 }
 
@@ -354,21 +382,21 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 2px;
   min-width: 0;
 }
 
 .lp-weather-period-label {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: rgba(0, 0, 0, 0.3);
 }
 
 .lp-weather-period-desc {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--ink);
   white-space: nowrap;
@@ -378,7 +406,7 @@
 
 .lp-weather-temp {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 300;
   flex-shrink: 0;
 }
@@ -389,13 +417,13 @@
 .lp-weather-divider {
   height: 1px;
   background: rgba(0, 0, 0, 0.05);
-  margin: 3px 0;
+  margin: 4px 0;
 }
 
 .lp-weather-precip {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   color: rgba(0, 0, 0, 0.35);
   margin-top: 10px;
 }
@@ -426,7 +454,7 @@
 /* ── Ornamental separator ───────────────── */
 .lp-ornament {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   color: rgba(0, 0, 0, 0.2);
   letter-spacing: 0.5em;
@@ -457,7 +485,7 @@
   background: rgba(26, 26, 13, 0.08);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .lp-speaker-mosaic { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -491,19 +519,79 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(26, 26, 13, 0.78);
+  background: rgba(26, 26, 13, 0.82);
   color: var(--cream);
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.2em;
-  padding: 9px 10px;
+  letter-spacing: 0.18em;
+  padding: 11px 12px;
   transform: translateY(100%);
   transition: transform 0.3s ease;
 }
 
 .lp-speaker-tile:hover .lp-speaker-name {
   transform: translateY(0);
+}
+
+/* On touch devices: always show name, indicate tappable */
+@media (hover: none) {
+  .lp-speaker-name {
+    transform: translateY(0);
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+  .lp-speaker-tile { cursor: pointer; }
+}
+
+/* ── Lightbox ───────────────────────────── */
+.lp-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(13, 13, 6, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.lp-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: rgba(248, 248, 240, 0.7);
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 8px;
+  transition: color 0.15s;
+}
+
+.lp-lightbox-close:hover { color: var(--cream); }
+
+.lp-lightbox-img {
+  max-width: min(680px, 90vw);
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  cursor: default;
+}
+
+.lp-lightbox-name {
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: rgba(248, 248, 240, 0.75);
+  margin: 20px 0 0;
+  cursor: default;
 }
 
 /* ── Sponsors ───────────────────────────── */
@@ -535,11 +623,11 @@
   gap: 14px;
   text-align: center;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.7;
-  padding: 60px 40px 72px;
+  padding: 60px 32px 72px;
   background: var(--ink);
   color: rgba(248, 248, 240, 0.65);
 }
@@ -554,9 +642,9 @@
 
 .lp-footer-map {
   font-family: 'Cormorant SC', Georgia, serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: rgba(248, 248, 240, 0.45);
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -565,3 +653,27 @@
 }
 
 .lp-footer-map:hover { color: var(--cream); }
+
+/* ── Mobile ─────────────────────────────── */
+@media (max-width: 640px) {
+  .lp-header { padding: 0 20px 80px; }
+  .lp-header-inner { padding-top: 48px; }
+  .lp-conf-name { font-size: 58px; }
+  .lp-conf-year { font-size: 48px; }
+  .lp-dateline-days { font-size: 30px; }
+  .lp-dateline-city { font-size: 14px; letter-spacing: 0.12em; }
+  .lp-venue { font-size: 14px; }
+  .lp-cta { font-size: 15px; padding: 16px 36px; }
+  .lp-section { padding: 52px 24px; }
+  .lp-attire { padding-left: 24px; }
+  .lp-attire-text { font-size: 22px; }
+  .lp-hosts-section { padding: 52px 20px 0; }
+  .lp-hosts-grid { flex-direction: row; }
+  .lp-speakers-section { padding: 40px 2px 60px; }
+  .lp-speakers-section .lp-section-title-row { padding: 0 22px; }
+  .lp-sponsors-section { padding: 60px 24px 72px; }
+  .lp-footer { font-size: 17px; padding: 48px 24px 60px; }
+  .lp-footer-map { font-size: 14px; }
+  .lp-parallax-hero { height: 280px; }
+  .lp-parallax-stripe { height: 130px; }
+}
