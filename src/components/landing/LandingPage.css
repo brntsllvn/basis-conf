@@ -418,7 +418,14 @@
 
 /* ── Attire ─────────────────────────────── */
 .lp-attire {
-  padding-left: 0;
+  max-width: none;
+  padding: 88px 40px;
+}
+
+.lp-attire .lp-section-title-row {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .lp-attire-text {
@@ -426,7 +433,8 @@
   font-size: 28px;
   line-height: 1.7;
   color: var(--ink);
-  margin: 0;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .lp-attire-text::first-letter {
@@ -447,8 +455,15 @@
 
 /* ── Weather ────────────────────────────── */
 .lp-weather-section {
+  max-width: none;
+  padding: 72px 40px 88px;
   border-top: 1px solid rgba(0, 0, 0, 0.07);
-  padding-top: 72px;
+}
+
+.lp-weather-section .lp-section-title-row {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .lp-weather-loading {
@@ -461,7 +476,8 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2px;
   background: rgba(26, 26, 13, 0.07);
-  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 @media (max-width: 640px) {
@@ -822,8 +838,9 @@
   .lp-venue { font-size: 14px; }
   .lp-cta { font-size: 15px; padding: 16px 36px; }
   .lp-section { padding: 52px 24px; }
-  .lp-attire { padding-left: 24px; }
-  .lp-attire-text { font-size: 22px; }
+  .lp-attire { padding: 52px 24px; }
+  .lp-attire-text { font-size: 22px; max-width: none; margin: 0; }
+  .lp-weather-section { padding: 52px 24px; }
   .lp-hosts-section { padding: 52px 20px 0; }
   .lp-hosts-grid { flex-direction: row; }
   .lp-speakers-section { padding: 40px 20px 60px; }
