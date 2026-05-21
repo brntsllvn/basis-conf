@@ -389,7 +389,6 @@ export function LandingPage() {
             className="lp-lightbox-img"
             onClick={e => e.stopPropagation()}
           />
-          <p className="lp-lightbox-name" onClick={e => e.stopPropagation()}>{lightbox.name}</p>
         </div>
       )}
     </div>
