@@ -212,9 +212,6 @@ export function AttendeePage() {
                             <div className="guide-card-speakers">{speakers.join(', ')}</div>
                           )}
                         </>)}
-                        {slot.notes && (
-                          <div className="guide-card-notes">{slot.notes}</div>
-                        )}
                         {slot.location && (
                           <a
                             className="guide-card-location"
