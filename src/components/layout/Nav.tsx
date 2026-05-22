@@ -27,7 +27,7 @@ export function Nav() {
   return (
     <nav className="app-nav">
       <div className="nav-brand">Conf Planner</div>
-      <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="nav-canvas-logo" />
+      <img src="/canvas-logo-light.webp" alt="Canvas by Franklin Templeton" className="nav-canvas-logo" />
       <div className="nav-links">
         <NavLink to="/grid" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
           Grid
