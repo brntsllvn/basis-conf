@@ -378,7 +378,7 @@ function renderAgenda(state) {
   wb.append('div').attr('class', 'eve-sub').text('Hosted by Canvas (Franklin Templeton) · Aerlume · 2003 Western Ave, Seattle');
 
   const leg = page.append('div').attr('class', 'legend');
-  [['main','Main Stage'],['lla','Marina'],['llb','Cove']].forEach(([k, lbl]) => {
+  [['main','Main Stage'],['lla','Marina'],['llb','Sound']].forEach(([k, lbl]) => {
     const li = leg.append('div').attr('class', 'legend-item');
     li.append('div').attr('class', `legend-swatch legend-swatch--${k}`);
     li.append('span').text(lbl);
