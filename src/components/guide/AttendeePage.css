@@ -314,6 +314,12 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
+  animation: pill-pulse 2s ease-in-out infinite;
+}
+
+@keyframes pill-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 172, 80, 0.7); }
+  50%       { box-shadow: 0 0 0 6px rgba(212, 172, 80, 0); }
 }
 
 /* Break row */
