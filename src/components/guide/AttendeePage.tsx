@@ -237,6 +237,7 @@ export function AttendeePage() {
         <div className="guide-footer">
           <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="guide-footer-logo" />
           <span>Basis Northwest 2026 · Seattle, WA</span>
+          <span className="guide-footer-contact">Questions? Contact Event Director Kailin Spencer · <a href="mailto:kspencer@brand-heist.com">kspencer@brand-heist.com</a> · 206-605-1651</span>
         </div>
       </div>
     </div>

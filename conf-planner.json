@@ -49,7 +49,7 @@
     {
       "id": "wed-expo-loadin",
       "dayId": "wed",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 60,
       "durationSlots": 60,
       "type": "load-in",
@@ -89,7 +89,7 @@
       "isSponsored": false,
       "isTbd": false,
       "notes": "",
-      "badge": "EXPO HALL"
+      "badge": "HARBOR ROOM"
     },
     {
       "id": "thu-main-opening-remarks",
@@ -98,8 +98,8 @@
       "startSlot": 18,
       "durationSlots": 1,
       "type": "event",
-      "company": "Canvas",
-      "title": "Welcome Remarks \u00b7 Chris Loveless \u00b7 Canvas",
+      "company": "Canvas (Franklin Templeton)",
+      "title": "Welcome Remarks \u00b7 Chris Loveless \u00b7 Canvas (Franklin Templeton)",
       "assignments": [
         {
           "contactId": "c-chris-loveless",
@@ -117,7 +117,7 @@
       "startSlot": 19,
       "durationSlots": 5,
       "type": "keynote",
-      "company": "Canvas",
+      "company": "Canvas (Franklin Templeton)",
       "title": "Taxable Wealth: From Core Strategies to Cutting Edge Solutions",
       "assignments": [
         {
@@ -239,7 +239,8 @@
       "assignments": [],
       "isSponsored": false,
       "isTbd": false,
-      "notes": "30 dedicated / 1.5 food available"
+      "notes": "30 dedicated / 1.5 food available",
+      "badge": "HARBOR ROOM"
     },
     {
       "id": "thu-main-alex",
@@ -248,7 +249,7 @@
       "startSlot": 78,
       "durationSlots": 5,
       "type": "solo",
-      "company": "f/m Investments",
+      "company": "F/m Investments",
       "title": "The Wrapper-Agnostic Future",
       "assignments": [
         {
@@ -435,7 +436,7 @@
       "durationSlots": 26,
       "type": "event",
       "company": "First Trust",
-      "title": "Thursday Happy Hour",
+      "title": "Thursday Evening Soiree",
       "assignments": [],
       "isSponsored": true,
       "isTbd": false,
@@ -445,7 +446,7 @@
     {
       "id": "thu-main-nuveen-dinner",
       "dayId": "thu",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 144,
       "durationSlots": 24,
       "type": "not-in-use",
@@ -459,7 +460,7 @@
     {
       "id": "thu-lla-pimco",
       "dayId": "thu",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 72,
       "durationSlots": 5,
       "type": "panel",
@@ -478,7 +479,7 @@
     {
       "id": "thu-lla-351",
       "dayId": "thu",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 66,
       "durationSlots": 5,
       "type": "panel",
@@ -513,7 +514,7 @@
     {
       "id": "thu-llb-oz",
       "dayId": "thu",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 66,
       "durationSlots": 5,
       "type": "panel",
@@ -544,7 +545,7 @@
     {
       "id": "thu-llb-johnwest",
       "dayId": "thu",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 72,
       "durationSlots": 5,
       "type": "solo",
@@ -577,12 +578,12 @@
       "isSponsored": false,
       "isTbd": false,
       "notes": "",
-      "badge": "EXPO HALL"
+      "badge": "HARBOR ROOM"
     },
     {
       "id": "fri-main-vip-breakfast",
       "dayId": "fri",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 0,
       "durationSlots": 18,
       "type": "solo",
@@ -607,7 +608,7 @@
       "venueId": "main-stage",
       "startSlot": 21,
       "durationSlots": 3,
-      "type": "break",
+      "type": "not-in-use",
       "company": "",
       "title": "BREAK",
       "assignments": [],
@@ -622,7 +623,7 @@
       "startSlot": 24,
       "durationSlots": 5,
       "type": "keynote",
-      "company": "Canvas",
+      "company": "Canvas (Franklin Templeton)",
       "title": "AMA: Canvas and Coffee and Everything Taxable Wealth In Between",
       "assignments": [
         {
@@ -706,7 +707,8 @@
       "assignments": [],
       "isSponsored": false,
       "isTbd": false,
-      "notes": "20 min dedicated"
+      "notes": "20 min dedicated",
+      "badge": "HARBOR ROOM"
     },
     {
       "id": "fri-main-practitioner",
@@ -730,7 +732,7 @@
     {
       "id": "fri-llb-practitioner-tba",
       "dayId": "fri",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 89,
       "durationSlots": 5,
       "type": "solo",
@@ -873,7 +875,7 @@
     {
       "id": "fri-lla-wealth",
       "dayId": "fri",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 66,
       "durationSlots": 5,
       "type": "panel",
@@ -908,7 +910,7 @@
     {
       "id": "fri-lla-fi-panel",
       "dayId": "fri",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 72,
       "durationSlots": 5,
       "type": "solo",
@@ -927,7 +929,7 @@
     {
       "id": "fri-llb-bondbloxx",
       "dayId": "fri",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 66,
       "durationSlots": 5,
       "type": "panel",
@@ -954,7 +956,7 @@
     {
       "id": "fri-llb-ppli",
       "dayId": "fri",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 72,
       "durationSlots": 5,
       "type": "panel",
@@ -985,7 +987,7 @@
     {
       "id": "fri-lla-private-markets",
       "dayId": "fri",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 84,
       "durationSlots": 5,
       "type": "panel",
@@ -1020,7 +1022,7 @@
     {
       "id": "fri-llb-taotao",
       "dayId": "fri",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 78,
       "durationSlots": 5,
       "type": "solo",
@@ -1029,6 +1031,10 @@
       "assignments": [
         {
           "contactId": "c-taotao",
+          "slotRole": "Speaker"
+        },
+        {
+          "contactId": "c-nate-bridgers",
           "slotRole": "Speaker"
         }
       ],
@@ -1039,7 +1045,7 @@
     {
       "id": "fri-llb-antti",
       "dayId": "fri",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 78,
       "durationSlots": 5,
       "type": "solo",
@@ -1081,13 +1087,14 @@
       "startSlot": 120,
       "durationSlots": 12,
       "type": "event",
-      "company": "Basis Northwest",
+      "company": "Symmetry Partners",
       "title": "Going Away Party",
       "assignments": [],
       "isSponsored": false,
       "isTbd": false,
       "notes": "5:00\u00b76:00 PM \u00b7 Farewell Reception",
-      "badge": ""
+      "badge": "",
+      "location": "Bell Harbor Lobby \u00b7 2211 Alaskan Way, Seattle"
     },
     {
       "id": "fri-main-open1",
@@ -1111,7 +1118,7 @@
     {
       "id": "thu-lla-burney",
       "dayId": "thu",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 78,
       "durationSlots": 5,
       "type": "panel",
@@ -1138,7 +1145,7 @@
     {
       "id": "thu-lla-syntheticfi",
       "dayId": "thu",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 84,
       "durationSlots": 5,
       "type": "panel",
@@ -1998,6 +2005,20 @@
       "firstName": "John",
       "lastName": "Stanko",
       "company": "BondBloxx",
+      "title": "",
+      "email": "",
+      "phone": "",
+      "supportName": "",
+      "supportEmail": "",
+      "supportPhone": "",
+      "notes": ""
+    },
+    {
+      "id": "c-nate-bridgers",
+      "name": "Nate Bridgers",
+      "firstName": "Nate",
+      "lastName": "Bridgers",
+      "company": "",
       "title": "",
       "email": "",
       "phone": "",

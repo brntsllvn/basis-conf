@@ -257,11 +257,11 @@
 /* Card content */
 .guide-card-company {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(26, 26, 13, 0.5);
   line-height: 1.2;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .guide-card-hosted {
@@ -273,9 +273,10 @@
 
 .guide-card-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 18px;
-  color: rgba(26, 26, 13, 0.65);
-  line-height: 1.45;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
   margin-bottom: 6px;
 }
 
@@ -350,6 +351,15 @@
   width: auto;
   background: #fff;
   padding: 8px 24px;
+}
+
+.guide-footer-contact {
+  font-size: 13px;
+  color: rgba(26, 26, 13, 0.4);
+}
+
+.guide-footer-contact a {
+  color: rgba(26, 26, 13, 0.5);
 }
 
 /* ── Mobile ─────────────────────────────── */

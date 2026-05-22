@@ -196,7 +196,7 @@
 /* ── Parallax hero ──────────────────────── */
 .lp-parallax-hero {
   position: relative;
-  height: 420px;
+  height: 300px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -855,6 +855,6 @@
   .lp-sponsors-section { padding: 60px 24px 72px; }
   .lp-footer { font-size: 17px; padding: 48px 24px 60px; }
   .lp-footer-map { font-size: 14px; }
-  .lp-parallax-hero { height: 280px; }
+  .lp-parallax-hero { height: 200px; }
   .lp-parallax-stripe { height: 130px; }
 }
