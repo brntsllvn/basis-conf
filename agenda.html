@@ -6,6 +6,7 @@
   <title>Basis Northwest 2026 · Preliminary Agenda</title>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,7 +27,7 @@
       --muted:     #3A2A1A;
     }
 
-    @page { size: 8.5in 22in portrait; margin: 0; }
+    @page { size: 8.5in 20in portrait; margin: 0; }
 
     html, body {
       width: 8.5in;
@@ -146,7 +147,7 @@
       --muted:     #3A2A1A;
     }
 
-    @page { size: 8.5in 22in portrait; margin: 0; }
+    @page { size: 8.5in 20in portrait; margin: 0; }
 
     html, body {
       width: 8.5in;
@@ -507,7 +508,17 @@ exportBtn.on('click', async function () {
 });
 
 const pdfBtn = exportBar.append('button').attr('class', 'export-btn').style('margin-left', '8px').text('Save as PDF');
-pdfBtn.on('click', function () { window.print(); });
+pdfBtn.on('click', async function () {
+  pdfBtn.attr('disabled', true).text('Rendering...');
+  const canvas = await html2canvas(document.getElementById('root'), {
+    scale: 2, useCORS: true, allowTaint: true, backgroundColor: '#F5F0E8', logging: false,
+  });
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({ orientation: 'portrait', unit: 'px', format: [canvas.width / 2, canvas.height / 2] });
+  pdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, canvas.width / 2, canvas.height / 2);
+  pdf.save(`basis-northwest-2026-agenda-${new Date().toISOString().slice(0, 10)}.pdf`);
+  pdfBtn.attr('disabled', null).text('Save as PDF');
+});
 
 // ── init ──────────────────────────────────────────────────
 
