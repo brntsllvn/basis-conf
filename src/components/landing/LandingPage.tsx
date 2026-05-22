@@ -250,7 +250,10 @@ export function LandingPage() {
             className="lp-sold-out"
             target="_blank"
             rel="noreferrer"
-          >2026 · Sold Out</a>
+          >
+            <span className="lp-sold-out-year">2026 · Sold Out</span>
+            <span className="lp-sold-out-sub">Stay up to date</span>
+          </a>
 
           <div className="lp-header-ornament">✦ · ✦</div>
 
