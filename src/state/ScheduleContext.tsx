@@ -14,7 +14,7 @@ const ScheduleContext = createContext<ScheduleContextValue | null>(null);
 export function ScheduleProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(scheduleReducer, undefined, () => createInitialState());
   const [loaded, setLoaded] = useState(false);
-  // Only save when a real user action has occurred — prevents clobbering the DB
+  // Only save when a real user action has occurred; prevents clobbering the DB
   // if the app loads stale/seed state and the user hasn't touched anything yet.
   const [dirty, setDirty] = useState(false);
   const saveTimeoutRef = useRef<number | undefined>(undefined);

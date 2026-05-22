@@ -7,8 +7,8 @@ interface Props {
   slot: TimeSlot;
   rowHeight: number;
   top: number;
-  left: number;   // percentage 0–100
-  width: number;  // percentage 0–100
+  left: number;   // percentage 0-100
+  width: number;  // percentage 0-100
   hasConflict: boolean;
   onClick: () => void;
 }

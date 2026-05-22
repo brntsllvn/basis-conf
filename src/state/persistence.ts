@@ -8,7 +8,7 @@ const LS_KEY = 'conf-planner-v1';
 
 // Tracks whether the server was reachable at load time.
 // Once false, we skip the server on subsequent loads to avoid repeated
-// failures on startup — but saves always retry the server so a transient
+// failures on startup, but saves always retry the server so a transient
 // failure during load doesn't permanently disable writes.
 let serverReachable = true;
 
@@ -39,7 +39,7 @@ export async function loadState(): Promise<AppState> {
 }
 
 export async function saveState(state: AppState): Promise<void> {
-  // Always attempt the server on save — a transient load failure shouldn't
+  // Always attempt the server on save; a transient load failure shouldn't
   // permanently disable writes for the session.
   try {
     await fetch(API_URL, {

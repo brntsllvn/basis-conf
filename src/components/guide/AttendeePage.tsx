@@ -44,7 +44,7 @@ export function AttendeePage() {
   const nowRef = useRef<HTMLDivElement>(null);
   const didInitialScroll = useRef(false);
 
-  // Clock ticks every second — never auto-override the user's day selection
+  // Clock ticks every second; never auto-override the user's day selection
   useEffect(() => {
     const id = setInterval(() => setNow(getPT()), 1000);
     return () => clearInterval(id);

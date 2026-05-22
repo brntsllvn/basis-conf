@@ -8,8 +8,8 @@ export interface SlotColor {
 
 export const VENUE_COLORS: Record<VenueId, SlotColor> = {
   'main-stage': { bg: '#DFC070', border: '#3D1F10', text: '#1B2E1A' },
-  'll-a':       { bg: '#7DB876', border: '#2E4823', text: '#0E2010' },
-  'll-b':       { bg: '#6EA2D8', border: '#2E52A8', text: '#0E1E40' },
+  'll-a':       { bg: '#6EA2D8', border: '#2E52A8', text: '#0E1E40' },
+  'll-b':       { bg: '#7DB876', border: '#2E4823', text: '#0E2010' },
 };
 
 export const BG_SLOT_COLOR: SlotColor = {

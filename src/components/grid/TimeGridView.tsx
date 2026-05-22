@@ -92,7 +92,7 @@ export function TimeGridView({ rowHeight }: Props) {
 
       {conflicts.length > 0 && (
         <div className="conflict-banner">
-          {conflicts.length} conflict{conflicts.length > 1 ? 's' : ''} — same speaker in overlapping slots
+          {conflicts.length} conflict{conflicts.length > 1 ? 's' : ''}: same speaker in overlapping slots
         </div>
       )}
 

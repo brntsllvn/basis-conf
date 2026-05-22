@@ -20,7 +20,7 @@ export function scheduleReducer(state: AppState, action: Action): AppState {
       const slot = state.slots.find((s) => s.id === action.slotId);
       if (!slot) return state;
       if (wouldOverlap(state.slots, slot.id, slot.dayId, action.toVenueId, action.toStartSlot, slot.durationSlots)) {
-        return state; // reject — would overlap
+        return state; // reject: would overlap
       }
       return {
         ...state,
@@ -38,7 +38,7 @@ export function scheduleReducer(state: AppState, action: Action): AppState {
       if (!slot) return state;
       const newDuration = Math.max(1, action.newDurationSlots);
       if (wouldOverlap(state.slots, slot.id, slot.dayId, slot.venueId, slot.startSlot, newDuration)) {
-        return state; // reject — would overlap
+        return state; // reject: would overlap
       }
       return {
         ...state,

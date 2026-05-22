@@ -2,15 +2,15 @@ import type { TimeSlot, Contact, ScheduleDay, Venue, AppState } from '../types/s
 import { timeToSlot, durationToSlots } from '../utils/time';
 
 const SEED_DAYS: ScheduleDay[] = [
-  { id: 'wed', label: 'Wed 5/27 — Load-In', date: '2025-05-27' },
-  { id: 'thu', label: 'Thu 5/28', date: '2025-05-28' },
-  { id: 'fri', label: 'Fri 5/29', date: '2025-05-29' },
+  { id: 'wed', label: 'Wed 5/27 · Load-In', date: '2026-05-27' },
+  { id: 'thu', label: 'Thu 5/28', date: '2026-05-28' },
+  { id: 'fri', label: 'Fri 5/29', date: '2026-05-29' },
 ];
 
 const SEED_VENUES: Venue[] = [
   { id: 'main-stage', label: 'Main Stage' },
-  { id: 'll-a', label: 'LL-A' },
-  { id: 'll-b', label: 'LL-B' },
+  { id: 'll-a', label: 'Sound' },
+  { id: 'll-b', label: 'Marina' },
 ];
 
 // === Contact IDs (stable so slot references work) ===
@@ -94,7 +94,7 @@ const SEED_CONTACTS: Contact[] = [
 ];
 
 const SEED_SLOTS: TimeSlot[] = [
-  // ===== WEDNESDAY — Load-In =====
+  // ===== WEDNESDAY ·Load-In =====
   {
     id: 'wed-main-loadin',
     dayId: 'wed',
@@ -138,7 +138,7 @@ const SEED_SLOTS: TimeSlot[] = [
     notes: 'Aerlume, 2003 Western Ave, Seattle. Near Pier 66 / waterfront. 5-7 PM. Hosted by Canvas.',
   },
 
-  // ===== THURSDAY — Thu 5/28: Main Stage =====
+  // ===== THURSDAY ·Thu 5/28: Main Stage =====
   {
     id: 'thu-main-doors',
     dayId: 'thu',
@@ -434,7 +434,7 @@ const SEED_SLOTS: TimeSlot[] = [
     notes: 'TBD offsite location. 7-9 PM.',
   },
 
-  // ===== THURSDAY — LL-A Breakout =====
+  // ===== THURSDAY ·LL-A Breakout =====
   {
     id: 'thu-lla-pimco',
     dayId: 'thu',
@@ -447,7 +447,7 @@ const SEED_SLOTS: TimeSlot[] = [
     assignments: [],
     isSponsored: false,
     isTbd: true,
-    notes: 'PIMCO #1 — speaker TBD',
+    notes: 'PIMCO #1 ·speaker TBD',
   },
   {
     id: 'thu-lla-351',
@@ -464,7 +464,7 @@ const SEED_SLOTS: TimeSlot[] = [
     notes: 'Moderator: John West. Panelists: Meb Faber, Ryan Kirlin, Rafael Zayas, TBD someone from Scharf. Ask Dorothy Friedrich dorothy@scharfinvestments.com',
   },
 
-  // ===== THURSDAY — LL-B Breakout =====
+  // ===== THURSDAY ·LL-B Breakout =====
   {
     id: 'thu-llb-oz',
     dayId: 'thu',
@@ -494,7 +494,7 @@ const SEED_SLOTS: TimeSlot[] = [
     notes: 'Session title TBD',
   },
 
-  // ===== FRIDAY — Fri 5/29: Main Stage =====
+  // ===== FRIDAY ·Fri 5/29: Main Stage =====
   {
     id: 'fri-main-doors',
     dayId: 'fri',
@@ -545,7 +545,7 @@ const SEED_SLOTS: TimeSlot[] = [
     durationSlots: durationToSlots(25),
     type: 'solo',
     company: 'Dimensional Fund Advisors',
-    title: 'Long-Only and Long-Short SMAs – The Dimensional Perspective',
+    title: 'Long-Only and Long-Short SMAs ·The Dimensional Perspective',
     assignments: [{ contactId: C.savina, slotRole: 'Speaker' }],
     isSponsored: false,
     isTbd: false,
@@ -591,7 +591,7 @@ const SEED_SLOTS: TimeSlot[] = [
     assignments: [{ contactId: C.jonFT, slotRole: 'Speaker' }],
     isSponsored: true,
     isTbd: true,
-    notes: 'First Trust Panel — Christian + who else? TBD',
+    notes: 'First Trust Panel ·Christian + who else? TBD',
   },
   {
     id: 'fri-main-open-1050',
@@ -601,7 +601,7 @@ const SEED_SLOTS: TimeSlot[] = [
     durationSlots: durationToSlots(35),
     type: 'open',
     company: '',
-    title: 'OPEN — Sponsorship Available',
+    title: 'OPEN ·Sponsorship Available',
     assignments: [],
     isSponsored: false,
     isTbd: true,
@@ -755,7 +755,7 @@ const SEED_SLOTS: TimeSlot[] = [
     durationSlots: durationToSlots(5),
     type: 'event',
     company: '',
-    title: 'Thanks for Coming — Brent Closing',
+    title: 'Thanks for Coming ·Brent Closing',
     assignments: [],
     isSponsored: false,
     isTbd: false,
@@ -776,7 +776,7 @@ const SEED_SLOTS: TimeSlot[] = [
     notes: 'First pitch 7:10 PM PT. Group outing.',
   },
 
-  // ===== FRIDAY — LL-A Breakout =====
+  // ===== FRIDAY ·LL-A Breakout =====
   {
     id: 'fri-lla-wealth',
     dayId: 'fri',
@@ -803,7 +803,7 @@ const SEED_SLOTS: TimeSlot[] = [
     assignments: [],
     isSponsored: false,
     isTbd: true,
-    notes: 'PIMCO #2 — speaker TBD',
+    notes: 'PIMCO #2 ·speaker TBD',
   },
   {
     id: 'fri-lla-fi-panel',
@@ -834,7 +834,7 @@ const SEED_SLOTS: TimeSlot[] = [
     notes: 'Ralph Drybrough, Roy Haya, Thomas Boczar. Session title TBD.',
   },
 
-  // ===== FRIDAY — LL-B Breakout =====
+  // ===== FRIDAY ·LL-B Breakout =====
   {
     id: 'fri-llb-ppli',
     dayId: 'fri',
@@ -847,7 +847,7 @@ const SEED_SLOTS: TimeSlot[] = [
     assignments: [{ contactId: C.daveReynolds, slotRole: 'Moderator' }, { contactId: C.michaelL, slotRole: 'Speaker' }, { contactId: C.jimCarroll, slotRole: 'Speaker' }, { contactId: C.mohsenG, slotRole: 'Speaker' }],
     isSponsored: false,
     isTbd: true,
-    notes: 'Moderator: Dave Reynolds (Spearhead). Michael Liebeskind (Golconda) — power of PPLI structure. Jim Carroll — investment flexibility of SMAs for PPLI. Mohsen Ghazi — family office use cases.',
+    notes: 'Moderator: Dave Reynolds (Spearhead). Michael Liebeskind (Golconda) ·power of PPLI structure. Jim Carroll ·investment flexibility of SMAs for PPLI. Mohsen Ghazi ·family office use cases.',
   },
   {
     id: 'fri-llb-open1',
