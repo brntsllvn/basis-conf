@@ -303,7 +303,7 @@ export function LandingPage() {
         <SectionTitle>Attire</SectionTitle>
         <p className="lp-attire-text">
           <span className="lp-attire-pull">Business Comfortable.</span>{' '}
-          Jeans and loafers are fine. Cardigans, sweater vests, a Patagonia fleece — whatever feels right.
+          Jeans and loafers are fine. Cardigans, sweater vests, a Patagonia fleece, whatever feels right.
           A blazer over anything works equally well. Wear a tie if that's your jam. Comfortable shoes. Wool socks are a personal decision we respect.
         </p>
       </section>
