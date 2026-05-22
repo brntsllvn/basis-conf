@@ -28,7 +28,7 @@ function importFromJson(json: string): AppState {
 describe('importFromJson', () => {
   const validState = {
     version: 1,
-    days: [{ id: 'thu', label: 'Thu', date: '2025-05-28' }],
+    days: [{ id: 'thu', label: 'Thu', date: '2026-05-28' }],
     venues: [{ id: 'main-stage', label: 'Main Stage' }],
     slots: [],
     contacts: [],
