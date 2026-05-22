@@ -24,11 +24,11 @@
     },
     {
       "id": "ll-a",
-      "label": "Marina"
+      "label": "Sound"
     },
     {
       "id": "ll-b",
-      "label": "Sound"
+      "label": "Marina"
     }
   ],
   "slots": [
@@ -732,7 +732,7 @@
     {
       "id": "fri-llb-practitioner-tba",
       "dayId": "fri",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 89,
       "durationSlots": 5,
       "type": "solo",

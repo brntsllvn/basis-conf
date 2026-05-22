@@ -68,8 +68,8 @@
     .legend-item  { display: flex; align-items: center; gap: 3px; font-size: 5.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
     .legend-swatch        { width: 8px; height: 8px; flex-shrink: 0; border-left: 2px solid; }
     .legend-swatch--main  { background: #DFC070; border-color: var(--cedar); }
-    .legend-swatch--lla   { background: #7DB876; border-color: var(--moss);  }
-    .legend-swatch--llb   { background: #6EA2D8; border-color: #2E52A8;      }
+    .legend-swatch--lla   { background: #6EA2D8; border-color: #2E52A8;      }
+    .legend-swatch--llb   { background: #7DB876; border-color: var(--moss);  }
 
     .day-grid { position: relative; overflow: visible; }
     .sb-area  { position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 1; }
@@ -378,7 +378,7 @@ function renderAgenda(state) {
   wb.append('div').attr('class', 'eve-sub').text('Hosted by Canvas (Franklin Templeton) · Aerlume · 2003 Western Ave, Seattle');
 
   const leg = page.append('div').attr('class', 'legend');
-  [['main','Main Stage'],['lla','Marina'],['llb','Sound']].forEach(([k, lbl]) => {
+  [['main','Main Stage'],['lla','Sound'],['llb','Marina']].forEach(([k, lbl]) => {
     const li = leg.append('div').attr('class', 'legend-item');
     li.append('div').attr('class', `legend-swatch legend-swatch--${k}`);
     li.append('span').text(lbl);
