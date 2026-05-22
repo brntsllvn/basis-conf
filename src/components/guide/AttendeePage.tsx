@@ -111,7 +111,7 @@ export function AttendeePage() {
           <span className="guide-clock">{clockStr(now)}</span>
         </div>
         <div className="guide-header-logo">
-          <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="guide-logo" />
+          <img src="/canvas-logo-dark.png" alt="Canvas by Franklin Templeton" className="guide-logo" />
         </div>
         <div className="guide-header-wifi">
           <svg className="guide-wifi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
