@@ -55,6 +55,8 @@ const SPEAKERS = [
   'speaker-john-chaffetz',
   'speaker-matt-crawford',
   'speaker-carolyn-barnette',
+  'speaker-graham-hopper',
+  'speaker-brian-smith',
 ];
 
 function slugToName(slug: string): string {
