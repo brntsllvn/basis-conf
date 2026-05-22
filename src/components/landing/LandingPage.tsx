@@ -229,7 +229,7 @@ export function LandingPage() {
           <div className="lp-presenting">
             <div className="lp-presenting-rule" />
             <span className="lp-presenting-label">Presented by</span>
-            <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="lp-canvas-logo" fetchPriority="high" />
+            <img src="/canvas-logo-dark.png" alt="Canvas by Franklin Templeton" className="lp-canvas-logo" fetchPriority="high" />
             <div className="lp-presenting-rule" />
           </div>
 
@@ -365,7 +365,7 @@ export function LandingPage() {
       </div>
 
       <footer className="lp-footer">
-        <img src="/canvas-logo.webp" alt="Canvas by Franklin Templeton" className="lp-footer-logo" />
+        <img src="/canvas-logo-dark.png" alt="Canvas by Franklin Templeton" className="lp-footer-logo" />
         <span>Basis Northwest 2026 · Bell Harbor International Conference Center · 2211 Alaskan Way, Pier 66, Seattle, Washington</span>
         <a
           className="lp-footer-map"

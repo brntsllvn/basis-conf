@@ -61,8 +61,6 @@
 .lp-canvas-logo {
   height: 52px;
   width: auto;
-  background: #fff;
-  padding: 6px 20px;
 }
 
 /* Title */
@@ -785,8 +783,6 @@
 .lp-footer-logo {
   height: 44px;
   width: auto;
-  background: #fff;
-  padding: 6px 20px;
   margin-bottom: 8px;
 }
 
