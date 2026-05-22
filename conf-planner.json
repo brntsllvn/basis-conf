@@ -732,7 +732,7 @@
     {
       "id": "fri-llb-practitioner-tba",
       "dayId": "fri",
-      "venueId": "ll-a",
+      "venueId": "ll-b",
       "startSlot": 89,
       "durationSlots": 5,
       "type": "solo",

@@ -245,7 +245,12 @@ export function LandingPage() {
             <span className="lp-dateline-city">Seattle, Washington</span>
           </div>
 
-          <div className="lp-sold-out">2026 · Sold Out</div>
+          <a
+            href="https://forms.gle/KVdt5PqhCYSQqeRU9"
+            className="lp-sold-out"
+            target="_blank"
+            rel="noreferrer"
+          >2026 · Sold Out</a>
 
           <div className="lp-header-ornament">✦ · ✦</div>
 
@@ -262,14 +267,6 @@ export function LandingPage() {
             View Live Schedule →
           </a>
 
-          <a
-            href="https://forms.gle/KVdt5PqhCYSQqeRU9"
-            className="lp-notify-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Stay up to date on future events →
-          </a>
         </div>
       </header>
 
