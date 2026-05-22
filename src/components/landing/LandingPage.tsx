@@ -302,10 +302,9 @@ export function LandingPage() {
       <section className="lp-section lp-attire">
         <SectionTitle>Attire</SectionTitle>
         <p className="lp-attire-text">
-          Seattle Business Casual. No tie required.{' '}
-          <span className="lp-attire-pull">A quality fleece is always appropriate.</span>{' '}
-          Sweater vests are strongly encouraged & wool socks are a personal decision we respect.
-          The forecast is partly cloudy with a chance of you being glad you brought a layer.
+          <span className="lp-attire-pull">Business Comfortable.</span>{' '}
+          Jeans and loafers are fine. Cardigans, sweater vests, a Patagonia fleece — whatever feels right.
+          Wear a tie if that's your jam. Comfortable shoes. Wool socks are a personal decision we respect.
         </p>
       </section>
 
