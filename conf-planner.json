@@ -28,7 +28,7 @@
     },
     {
       "id": "ll-b",
-      "label": "Sound"
+      "label": "Sound \u00b7 Marina"
     }
   ],
   "slots": [
@@ -732,7 +732,7 @@
     {
       "id": "fri-llb-practitioner-tba",
       "dayId": "fri",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 89,
       "durationSlots": 5,
       "type": "solo",
@@ -987,7 +987,7 @@
     {
       "id": "fri-lla-private-markets",
       "dayId": "fri",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 84,
       "durationSlots": 5,
       "type": "panel",
@@ -1118,7 +1118,7 @@
     {
       "id": "thu-lla-burney",
       "dayId": "thu",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 78,
       "durationSlots": 5,
       "type": "panel",
@@ -1145,7 +1145,7 @@
     {
       "id": "thu-lla-syntheticfi",
       "dayId": "thu",
-      "venueId": "ll-b",
+      "venueId": "ll-a",
       "startSlot": 84,
       "durationSlots": 5,
       "type": "panel",

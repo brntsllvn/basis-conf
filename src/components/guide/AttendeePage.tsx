@@ -9,7 +9,7 @@ const HIDDEN_TYPES = new Set(['not-in-use', 'load-in', 'emcee', 'open']);
 const VENUE: Record<string, { label: string; short: string; accent: string; dim: string }> = {
   'main-stage': { label: 'Main Stage', short: 'MAIN STAGE', accent: '#92400E', dim: '#FEF3C7' },
   'll-a':       { label: 'Marina',     short: 'MARINA',     accent: '#1E3A8A', dim: '#DBEAFE' },
-  'll-b':       { label: 'Sound',      short: 'SOUND',      accent: '#14532D', dim: '#DCFCE7' },
+  'll-b':       { label: 'Sound · Marina', short: 'SOUND · MARINA', accent: '#14532D', dim: '#DCFCE7' },
 };
 
 
