@@ -18,7 +18,7 @@ async function main() {
 
   const { blobs } = await list({ prefix: BLOB_NAME, token: TOKEN });
   if (!blobs.length) {
-    process.stderr.write('No blob found — PROD has no state yet.\n');
+    process.stderr.write('No blob found: PROD has no state yet.\n');
     process.exit(1);
   }
 

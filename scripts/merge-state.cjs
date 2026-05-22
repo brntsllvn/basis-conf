@@ -156,7 +156,7 @@ async function main() {
       }
 
     } else if (loc && !inc) {
-      console.log(`\n${R('DELETED')} in incoming — slot ${B(id)}`);
+      console.log(`\n${R('DELETED')} in incoming ·slot ${B(id)}`);
       console.log(`  title: ${loc.title || DIM('(none)')}`);
       const key = await askKey(
         `  ${DIM('[d]elete / [k]eep local')}  (default: k) > `,
@@ -196,7 +196,7 @@ async function main() {
       }
 
     } else if (!loc && inc) {
-      console.log(`\n${G('NEW')} contact ${B(id)} — ${inc.name || ''} · ${inc.company || ''}`);
+      console.log(`\n${G('NEW')} contact ${B(id)} ·${inc.name || ''} · ${inc.company || ''}`);
       const key = await askKey(
         `  ${DIM('[a]ccept / [s]kip')}  (default: s) > `,
         ['a', 's'], 's'
@@ -209,7 +209,7 @@ async function main() {
       }
 
     } else if (loc && !inc) {
-      console.log(`\n${R('DELETED')} in incoming — contact ${B(id)} ${DIM(loc.name || '')}`);
+      console.log(`\n${R('DELETED')} in incoming ·contact ${B(id)} ${DIM(loc.name || '')}`);
       const key = await askKey(
         `  ${DIM('[d]elete / [k]eep local')}  (default: k) > `,
         ['d', 'k'], 'k'

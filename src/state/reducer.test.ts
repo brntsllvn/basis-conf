@@ -39,7 +39,7 @@ describe('scheduleReducer', () => {
     it('rejects a slot that would overlap an existing slot in the same venue', () => {
       const state = makeState();
       const existing = state.slots.find((s) => s.dayId === 'thu');
-      if (!existing) return; // seed has no thu slots — skip
+      if (!existing) return; // seed has no thu slots, skip
       const overlap = {
         ...existing,
         id: 'overlap-test',

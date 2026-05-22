@@ -4,12 +4,12 @@
  * persistence.ts references window at module scope (for API_URL) so we
  * replicate the pure validation inline here rather than importing the module
  * into a node environment.  The validation logic itself is the contract under
- * test — these tests will catch any future drift if the guard is weakened.
+ * test: these tests will catch any future drift if the guard is weakened.
  */
 import { describe, it, expect } from 'vitest';
 import type { AppState } from '../types/schedule';
 
-// Mirrors the validation in persistence.ts importFromJson — update both if
+// Mirrors the validation in persistence.ts importFromJson; update both if
 // the guard changes.
 function importFromJson(json: string): AppState {
   const parsed = JSON.parse(json) as AppState;
