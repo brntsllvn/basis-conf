@@ -57,6 +57,17 @@ const SPEAKERS = [
   'speaker-carolyn-barnette',
   'speaker-graham-hopper',
   'speaker-brian-smith',
+  'speaker-antti-petajisto',
+  'speaker-jason-marcus',
+  'speaker-jeff-chang',
+  'speaker-jon-digiovanni',
+  'speaker-wayne-ferbert',
+  'speaker-andy-pratt',
+  'speaker-christian-lena',
+  'speaker-dave-donnelly',
+  'speaker-taotao-cai',
+  'speaker-nate-bridgers',
+  'speaker-keenan-szulik',
 ];
 
 function slugToName(slug: string): string {
