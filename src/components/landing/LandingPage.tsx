@@ -53,6 +53,7 @@ const SPEAKERS = [
   'speaker-tom-bratkovich',
   'speaker-elizabeth-chand',
   'speaker-john-chaffetz',
+  'speaker-josh-hile',
   'speaker-carolyn-barnette',
   'speaker-graham-hopper',
   'speaker-brian-smith',
